@@ -1,0 +1,587 @@
+import React, { createContext, useState, useContext } from 'react';
+
+const LanguageContext = createContext();
+
+export const translations = {
+  hi: {
+    // Header & Brand
+    titleLine1: "ज्योतिषाचार्य",
+    titleLine2: "पं. हरिओम शर्मा",
+    title: "ज्योतिषाचार्य पं. हरिओम शर्मा",
+    subtitle: "उज्जैन महाकाल धाम पूजन विशेषज्ञ",
+    shortTitle: "पंडित हरिओम शर्मा",
+    
+    // Nav links (Clear & Self-explanatory)
+    nav: {
+      home: "मुख्य पृष्ठ",
+      famousPandit: "प्रसिद्ध पंडित जी",
+      ourTeam: "हमारे विद्वान पंडित",
+      pujaServices: "पूजा सेवाएं",
+      blog: "ब्लॉग",
+      contact: "संपर्क करें",
+      enquireNow: "पूछताछ करें",
+      bookNow: "पूजा बुक करें"
+    },
+
+    // Hero Section Video Slider Items
+    heroSlides: [
+      {
+        id: "kaalsarp",
+        tag: "⚡ उज्जैन महाकालेश्वर धाम",
+        heading: "कालसर्पदोष पूजा in Ujjain",
+        subHeading: "Best Kaal Sarp Dosh puja by Pt. Hariom Sharma",
+        desc: "पंडित हरिओम शर्मा जी द्वारा उज्जैन महाकाल धाम में शास्त्रोक्त विधि-विधान से कालसर्प दोष, राहु-केतु शांति एवं विशेष नागबलि पूजन।",
+        ctaText: "कालसर्प पूजा बुक करें",
+        badge: "1. कालसर्प दोष पूजा"
+      },
+      {
+        id: "pitru",
+        tag: "⚡ उज्जैन सिद्ध क्षेत्र अनुष्ठान",
+        heading: "पितृदोष निवारण एवं शांति पूजा",
+        subHeading: "पूर्वज दोष शांति एवं परिवार की सुख-समृद्धि हेतु वैदिक अनुष्ठान",
+        desc: "अकाल मृत्यु, अंतिम संस्कार दोष या पूर्वज दोष से मुक्ति के लिए उज्जैन में विधि-विधान से पितृदोष शांति पूजा करवाएं।",
+        ctaText: "पितृदोष पूजा बुक करें",
+        badge: "2. पितृदोष शांति पूजा"
+      },
+      {
+        id: "navgrah",
+        tag: "⚡ उज्जैन अवंतिका नगरी",
+        heading: "नवग्रह शांति एवं ग्रह दोष पूजा",
+        subHeading: "सभी नौ ग्रहों की अनुकूलता और जीवन में संतुलन हेतु विशेष पूजा",
+        desc: "सूर्य, चंद्र, मंगल, बुध, गुरु, शुक्र, शनि, राहु एवं केतु ग्रहों के अशुभ प्रभाव को समाप्त कर शुभ फल प्राप्ति हेतु नवग्रह जाप।",
+        ctaText: "नवग्रह पूजा बुक करें",
+        badge: "3. नवग्रह शांति पूजा"
+      }
+    ],
+
+    // About Famous Pandit & Sacred Ujjain Section
+    about: {
+      badge: "प्रसिद्ध पंडित जी",
+      heading: "ज्योतिषाचार्य पंडित हरिओम शर्मा - Best Pandit in Ujjain",
+      subHeading: "अवंतिका नगरी (उज्जैन महाकाल धाम) पूजन विशेषज्ञ",
+      intro: "ज्योतिषाचार्य पंडित हरिओम शर्मा जी एक सिद्ध विद्वान पंडित हैं जो अवंतिका नगरी अर्थात उज्जैन में अनेक प्रकार के धार्मिक आयोजन एवं पूजा-पाठ जैसे कालसर्पदोष पूजा, मंगल भात पूजा करवाने में विशेष पारंगत हैं।",
+      
+      ujjainTitle: "पवित्र अवंतिका नगरी (उज्जैन) का आध्यात्मिक महत्व",
+      ujjainDesc: "उज्जैन भारत के मध्य प्रदेश राज्य में स्थित एक प्रमुख शहर है, जो प्राचीन समय से ही महत्वपूर्ण धार्मिक और सांस्कृतिक स्थल के रूप में प्रसिद्ध है। इसका प्राचीन नाम 'उज्जैनी' है और यह महाकालेश्वर ज्योतिर्लिंग के स्थान के रूप में मशहूर है, जिसे 'महाकालपुरी' भी कहा जाता है।",
+      
+      landmarksTitle: "उज्जैन के प्रमुख एवं महत्वपूर्ण धार्मिक स्थल:",
+      landmarks: [
+        {
+          title: "महाकालेश्वर ज्योतिर्लिंग",
+          desc: "उज्जैन का सबसे प्रमुख और पवित्र स्थान महाकालेश्वर ज्योतिर्लिंग है, जो भगवान शिव को समर्पित है। महाकालपुरी में हर द्वादश वर्ष महाकुंभ (सिंहस्थ) मेला आयोजित होता है जिसमें लाखों श्रद्धालु भगवान की अर्चना के लिए इकट्ठा होते हैं।"
+        },
+        {
+          title: "कालिदास नगरी",
+          desc: "उज्जैन ने विशेष रूप से संस्कृत के महाकवि कालिदास की प्रसिद्धता और कर्मभूमि के रूप में नगर को गौरवान्वित किया है।"
+        },
+        {
+          title: "कुंभ शक्तिपीठ",
+          desc: "महाकालेश्वर मंदिर क्षेत्र को पवित्र शक्तिपीठ के रूप में भी जाना जाता है, जहाँ माता सती एवं दक्ष यज्ञ की पावन कथा जुड़ी हुई है।"
+        },
+        {
+          title: "राजा विक्रमादित्य एवं गोपाचल पर्वत",
+          desc: "उज्जैन में न्यायप्रिय राजा विक्रमादित्य का ऐतिहासिक वैभव एवं अनेक धार्मिक कथाओं से जुड़ा पावन गोपाचल पर्वत स्थित है।"
+        },
+        {
+          title: "ऐतिहासिक व शिक्षात्मक महत्व",
+          desc: "उज्जैन का समृद्ध ऐतिहासिक महत्व है और यह प्राचीन समय से ही भारतीय सभ्यता, धर्म, शिक्षा और ज्योतिष ज्ञान का प्रमुख केंद्र रहा है।"
+        }
+      ],
+
+      callNow: "Call Now: +917999646783",
+      phone: "+917999646783"
+    },
+
+    // Associate Pandits / Our Team Section
+    ourTeam: {
+      badge: "सहयोगी विद्वान",
+      heading: "हमारे सिद्ध विद्वान पंडित गण",
+      subHeading: "उज्जैन महाकाल धाम में पं. हरिओम शर्मा जी के मार्गदर्शन में पूजा कराने वाले विद्वान आचार्य",
+      members: [
+        {
+          id: "hariom",
+          name: "पं. हरिओम शर्मा जी",
+          role: "मुख्य ज्योतिषाचार्य व पूजन विशेषज्ञ",
+          experience: "25+ वर्षों का अनुभव",
+          specialty: "कालसर्प दोष, मंगल भात पूजा व महामृत्युंजय जाप",
+          photoKey: "sharmaji"
+        },
+        {
+          id: "kanha",
+          name: "पं. कान्हा शर्मा जी",
+          role: "कर्मकांडी विद्वान पंडित",
+          experience: "2 वर्षों का अनुभव",
+          specialty: "रुद्राभिषेक, शिव पूजन व नवग्रह जाप",
+          photoKey: "kanha"
+        },
+        {
+          id: "rishi",
+          name: "पं. ऋषि गुरुजी",
+          role: "वैदिक ज्योतिष व अनुष्ठान विद्वान",
+          experience: "2 वर्षों का अनुभव",
+          specialty: "कालसर्प शांति, वास्तु दोष व गृह शांति",
+          photoKey: "rishi"
+        },
+        {
+          id: "dipesh",
+          name: "पं. दिपेश जोशी जी",
+          role: "वैदिक कर्मकांडी पंडित",
+          experience: "1 वर्ष का अनुभव",
+          specialty: "महामृत्युंजय जाप व महाकाल अभिषेक",
+          photoKey: "dipesh"
+        },
+        {
+          id: "shivam",
+          name: "पं. शिवम शर्मा जी",
+          role: "कर्मकांडी एवं पूजा सहायक",
+          experience: "2 वर्षों का अनुभव",
+          specialty: "पितृदोष शांति व मंगल भात पूजा सहायक",
+          photoKey: "shivam"
+        }
+      ]
+    },
+
+    // Rituals You Can Book Section
+    ritualsSection: {
+      title: "मुख्य पूजाएं जिन्हें आप बुक कर सकते हैं:",
+      desc: "महाकाल अभिषेक एक दिव्य अनुष्ठान है जो श्रद्धालुओं को भगवान शिव से गहराई से जोड़ता है। उज्जैन में नकारात्मक प्रभावों को दूर करने के लिए प्रसिद्ध पंडित जी के मार्गदर्शन में कालसर्प दोष पूजा की जाती है। गृह शांति पूजा घर में सकारात्मक ऊर्जा, शांति और संतुलन लाती है।",
+      journeyTitle: "अपनी आध्यात्मिक यात्रा शुरू करें",
+      journeyDesc: "उज्जैन में सर्वश्रेष्ठ पंडित जी से मिलने के लिए देश-विदेश से लोग आते हैं। यदि आप चाहते हैं कि उज्जैन में आपकी पूजा शांतिपूर्ण, दोषरहित और भगवान के आशीर्वाद से पूर्ण हो, तो पहुंचने से पहले ही पंडित जी से संपर्क करें।",
+      bookLink: "उज्जैन के सर्वश्रेष्ठ पंडित जी से पूजा बुक करें"
+    },
+
+    // Services Section (7 Pujas)
+    services: {
+      badge: "हमारी सेवाएं",
+      heading: "उज्जैन महाकाल धाम में मुख्य पूजा एवं अनुष्ठान",
+      subHeading: "हम उज्जैन में विद्वान पंडित द्वारा विभिन्न प्रकार के कर्म-कांड एवं पूजा पाठ करवाते हैं",
+      readMore: "विस्तार से पढ़ें...",
+      callNow: "अभी कॉल करें",
+
+      pujas: [
+        {
+          id: "kaalsarp",
+          title: "कालसर्प दोष पूजा",
+          subtitle: "उज्जैन में कालसर्प दोष निवारण",
+          desc: "कालसर्प दोष पूजा को कालसर्प योग भी कहा जाता है। कालसर्प पूजा तब होती है जब सभी ग्रह राहु और केतु के बीच आते हैं। यह पूजा जीवन की दुविधा और बाधाओं को दूर करती है।",
+          iconType: "snake"
+        },
+        {
+          id: "mangal",
+          title: "मंगलभात पूजा",
+          subtitle: "उज्जैन में मंगल भात पूजा",
+          desc: "मंगल पूजा उज्जैन में तब की जाती है जब व्यक्ति के जीवन में विवाह संबंधी समस्याएं होती हैं। मंगलनाथ मंदिर इस पूजा के लिए विश्व प्रसिद्ध है।",
+          iconType: "flame"
+        },
+        {
+          id: "pitru",
+          title: "पितृदोष निवारण पूजा",
+          subtitle: "पितृदोष शांति पूजन",
+          desc: "पितृदोष पूजा करने से सभी पूर्वज दोषों का निवारण हो जाता है। परिवार में शांति और सुख-समृद्धि के लिए उज्जैन में यह पूजा की जाती है।",
+          iconType: "shield"
+        },
+        {
+          id: "navgrah",
+          title: "नवग्रहशांति पूजा",
+          subtitle: "नवग्रह दोष शांति",
+          desc: "नवग्रह (सूर्य, चंद्र, मंगल, बुध, बृहस्पति, शुक्र, शनि, राहु, केतु) का मानव जीवन पर गहरा प्रभाव पड़ता है। नवग्रह शांति से जीवन में संतुलन आता है।",
+          iconType: "sun"
+        },
+        {
+          id: "vastu",
+          title: "वास्तुदोष पूजा",
+          subtitle: "घर व व्यापार वास्तु शांति",
+          desc: "वास्तु दोष पूजा घर या कार्यस्थल के दोषों (दिशा, रसोई, मुख्य द्वार) को दूर करने के लिए की जाती है। यह सकारात्मक ऊर्जा लाती है।",
+          iconType: "home"
+        },
+        {
+          id: "rudrabhishek",
+          title: "रुद्राभिषेक पूजा",
+          subtitle: "उज्जैन में शिव रुद्राभिषेक",
+          desc: "रुद्राभिषेक पूजा में भगवान शिव को पवित्र जल, दूध, धान्य और बिल्वपत्र समर्पित किए जाते हैं। इससे शिव कृपा और समृद्धि प्राप्त होती है।",
+          iconType: "water"
+        },
+        {
+          id: "kumbh",
+          title: "कुंभ विवाह / अर्क विवाह",
+          subtitle: "विवाह बाधा निवारण",
+          desc: "विवाह में विलंब या मांगलिक दोष दूर करने के लिए विवाह से पूर्व अर्क वृक्ष या कुंभ के साथ प्रतीकात्मक विवाह कराया जाता है।",
+          iconType: "heart"
+        }
+      ]
+    },
+
+    // Suvichar Banner
+    suvichar: {
+      title: "सुविचार",
+      quote: "डॉक्टर के पास आप बीमार पड़ने पर ही नहीं जाते, गर्भ में बच्चे के आने के बाद ही उससे सलाह लेकर काम करना आरंभ कर देते हैं! कानून की मदद आप झंझट में पड़ने के बाद नहीं लेते, वरन् होश संभालने के बाद ही कानून का पालन करते हैं! गुरू के संपर्क में तब नहीं जाते जब आप गुमराह हो जाते हैं, वरन् जीवन की शिक्षा पाने के लिए पहले से गुरू की सलाह लेते हैं! फिर एक ज्योतिषी के पास जाने के लिए आप बुरे समय का इंतजार क्यों करते हैं?"
+    },
+
+    // Blogs Section
+    blogs: {
+      title: "हमारे ब्लॉग व लेख",
+      subHeading: "उज्जैन धर्म एवं वैदिक ज्योतिष संबंधी महत्वपूर्ण जानकारी",
+      readArticle: "लेख पढ़ें",
+      posts: [
+        {
+          date: "20 मई, 2025",
+          title: "त्यौहार या महत्वपूर्ण तिथियां",
+          desc: "भारत में त्यौहारों और शुभ तिथियों का धार्मिक महत्व और पूजा का सही समय।"
+        },
+        {
+          date: "21 अप्रैल, 2025",
+          title: "कर्कोटक काल सर्प दोष",
+          desc: "कर्कोटक कालसर्प दोष क्या है और उज्जैन में इसके निवारण की सही विधि।"
+        },
+        {
+          date: "21 अप्रैल, 2025",
+          title: "विक्रांत भैरव - चमत्कारिक भैरव",
+          desc: "उज्जैन के सिद्ध अष्ट भैरव मंदिरों में से एक विक्रांत भैरव जी की महिमा।"
+        }
+      ]
+    },
+
+    // Kundli Form Section
+    kundli: {
+      badge: "परामर्श एवं पूजा बुकिंग",
+      heading: "अपनी जन्म डिटेल भेजें",
+      subHeading: "पं. हरिओम शर्मा जी आपकी जन्म कुंडली देखकर सही मार्गदर्शन करेंगे।",
+      formName: "आपका नाम",
+      formNamePlaceholder: "अपना नाम लिखें",
+      formPhone: "मोबाइल / व्हाट्सएप नंबर",
+      formPhonePlaceholder: "10 अंकों का फोन नंबर",
+      formDob: "जन्म तिथि (Date of Birth)",
+      formTob: "जन्म समय (Time of Birth)",
+      formPob: "जन्म स्थान (शहर/गांव)",
+      formGender: "लिंग",
+      genderMale: "पुरुष",
+      genderFemale: "महिला",
+      formQuery: "आपकी समस्या / पूजा की जानकारी",
+      formQueryPlaceholder: "उदा. कालसर्प दोष, मंगल पूजा, विवाह रुकावट या व्यापार घाटा...",
+      submitBtn: "व्हाट्सएप पर भेजें",
+      directCall: "सीधा कॉल करें:"
+    },
+
+    // Contact Details
+    contactInfo: {
+      phone: "+91-7999646783",
+      email: "hariomsharma@gmail.com",
+      address: "रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001"
+    },
+
+    // Footer
+    footer: {
+      brandDesc: "ज्योतिषाचार्य पं. हरिओम शर्मा - उज्जैन में कालसर्प दोष पूजा, मंगल भात पूजा और रुद्राभिषेक पूजा के विश्वसनीय विद्वान।",
+      quickLinks: "त्वरित लिंक",
+      ourServices: "मुख्य पूजा सेवाएं",
+      contactInfo: "संपर्क जानकारी",
+      rights: "सर्वाधिकार सुरक्षित।",
+      designedFor: "पं. हरिओम शर्मा"
+    }
+  },
+
+  en: {
+    // Header & Brand
+    titleLine1: "Jyotishacharya",
+    titleLine2: "Pt. Hariom Sharma",
+    title: "Jyotishacharya Pt. Hariom Sharma",
+    subtitle: "Ujjain Mahakal Puja Expert",
+    shortTitle: "Pt. Hariom Sharma",
+    
+    // Nav links
+    nav: {
+      home: "Home",
+      famousPandit: "Famous Pandit",
+      ourTeam: "Our Pandits Team",
+      pujaServices: "Puja Services",
+      blog: "Blog",
+      contact: "Contact Us",
+      enquireNow: "Enquire Now",
+      bookNow: "Book Puja"
+    },
+
+    // Hero Section Video Slider Items
+    heroSlides: [
+      {
+        id: "kaalsarp",
+        tag: "⚡ Ujjain Mahakaleshwar Dham",
+        heading: "Kaal Sarp Dosh Puja in Ujjain",
+        subHeading: "Best Kaal Sarp Dosh puja by Pt. Hariom Sharma",
+        desc: "Authentic Kaal Sarp Dosh Puja & Rahu-Ketu Shanti Puja performed at Ujjain Mahakal Dham.",
+        ctaText: "Book Kaal Sarp Puja",
+        badge: "1. Kaal Sarp Dosh Puja"
+      },
+      {
+        id: "pitru",
+        tag: "⚡ Ujjain Sacred Shanti Ritual",
+        heading: "Pitru Dosh Nivaran & Shanti Puja",
+        subHeading: "Vedic Rituals for Ancestral Peace & Family Prosperity",
+        desc: "Authentic Pitru Dosh Shanti Puja performed at Ujjain to seek peace for ancestors and ancestral blessing.",
+        ctaText: "Book Pitru Dosh Puja",
+        badge: "2. Pitru Dosh Shanti Puja"
+      },
+      {
+        id: "navgrah",
+        tag: "⚡ Ujjain Avantika Dham",
+        heading: "Navgrah Shanti & Dosh Puja",
+        subHeading: "Harmonizing 9 Celestial Planetary Energies for Life Balance",
+        desc: "Special Vedic Jaap and Puja to balance Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu & Ketu planets.",
+        ctaText: "Book Navgrah Puja",
+        badge: "3. Navgrah Shanti Puja"
+      }
+    ],
+
+    // About Section
+    about: {
+      badge: "Famous Pandit",
+      heading: "Jyotishacharya Pandit Hariom Sharma - Best Pandit in Ujjain",
+      subHeading: "Avantika Nagari (Ujjain Mahakal Dham) Rituals Specialist",
+      intro: "Jyotishacharya Pandit Hariom Sharma Ji is an experienced scholar Pandit who specializes in conducting various religious events and Pujas such as Kaal Sarp Dosh Puja and Mangal Bhaat Puja in Avantika Nagari (Ujjain).",
+      
+      ujjainTitle: "Spiritual Significance of Sacred Avantika Nagari (Ujjain)",
+      ujjainDesc: "Ujjain is a prominent city located in the state of Madhya Pradesh, India, famous since ancient times as an important religious and cultural destination. Its ancient name is 'Ujjaini', and it is renowned as the abode of Mahakaleshwar Jyotirlinga, also known as 'Mahakalpuri'.",
+      
+      landmarksTitle: "Key Landmarks & Sacred Heritage of Ujjain:",
+      landmarks: [
+        {
+          title: "Mahakaleshwar Jyotirlinga",
+          desc: "The most prominent and sacred site in Ujjain is Mahakaleshwar Jyotirlinga dedicated to Lord Shiva. Every 12 years, the grand Mahakumbh (Simhastha) mela is organized here where millions of devotees gather."
+        },
+        {
+          title: "Kalidas Nagari",
+          desc: "Ujjain holds historic pride as the land of Mahakavi Kalidas, the legend of Sanskrit literature."
+        },
+        {
+          title: "Kumbh Shaktipeeth",
+          desc: "Mahakaleshwar Temple region is also celebrated as a revered Shaktipeeth associated with Mata Sati."
+        },
+        {
+          title: "King Vikramaditya & Gopachal Hill",
+          desc: "Home to the historic legacy of righteous King Vikramaditya and sacred Gopachal Parvat."
+        },
+        {
+          title: "Historical & Educational Hub",
+          desc: "Ujjain has been a major historical center for Indian civilization, religion, astrology, and spiritual education."
+        }
+      ],
+
+      callNow: "Call Now: +917999646783",
+      phone: "+917999646783"
+    },
+
+    // Associate Pandits / Our Team Section
+    ourTeam: {
+      badge: "Vedic Scholars",
+      heading: "Our Learned Vedic Pandits Team",
+      subHeading: "Experienced Pandits performing Pujas under the guidance of Pt. Hariom Sharma Ji in Ujjain",
+      members: [
+        {
+          id: "hariom",
+          name: "Pt. Hariom Sharma Ji",
+          role: "Lead Jyotishacharya & Puja Expert",
+          experience: "25+ Years Exp.",
+          specialty: "Kaal Sarp Dosh, Mangal Bhaat Puja & Mahamrityunjay Jaap",
+          photoKey: "sharmaji"
+        },
+        {
+          id: "kanha",
+          name: "Pt. Kanha Sharma Ji",
+          role: "Vedic Scholar Pandit",
+          experience: "2 Years Exp.",
+          specialty: "Rudrabhishek, Shiv Puja & Navgrah Jaap",
+          photoKey: "kanha"
+        },
+        {
+          id: "rishi",
+          name: "Pt. Rishi Guruji",
+          role: "Vedic Astrology & Ritual Scholar",
+          experience: "2 Years Exp.",
+          specialty: "Kaal Sarp Shanti, Vastu Dosh & Grah Shanti",
+          photoKey: "rishi"
+        },
+        {
+          id: "dipesh",
+          name: "Pt. Dipesh Joshi Ji",
+          role: "Vedic Scholar",
+          experience: "1 Year Exp.",
+          specialty: "Mahamrityunjay Jaap & Mahakal Abhishek",
+          photoKey: "dipesh"
+        },
+        {
+          id: "shivam",
+          name: "Pt. Shivam Sharma Ji",
+          role: "Vedic Ritual Assistant",
+          experience: "2 Years Exp.",
+          specialty: "Pitru Dosh Shanti & Mangal Bhaat Puja Assistant",
+          photoKey: "shivam"
+        }
+      ]
+    },
+
+    // Rituals You Can Book Section
+    ritualsSection: {
+      title: "Rituals You Can Book:",
+      desc: "Mahakal Abhishek is a divine ritual that helps devotees deeply connect with Lord Shiva, while Kaal Sarp Dosh Puja is performed under the guidance of a Famous Pandit for Puja in Ujjain to remove negative influences. Grah Shanti Puja brings positive energy, peace, and balance into the home, and Family Puja in Ujjain is conducted privately for the health, happiness, and well-being of loved ones, creating a spiritually fulfilling experience.",
+      journeyTitle: "Start Your Spiritual Journey",
+      journeyDesc: "People travel from all over just to meet with the Best Pandit in Ujjain. If you want your Puja in Ujjain to be calm and full of blessings and be Dosh Rahit, it's a smart move to reach out to a Famous Pandit for Puja in Ujjain before you even get there.",
+      bookLink: "Book the Best Pandit in Ujjain Now"
+    },
+
+    // Services Section
+    services: {
+      badge: "Our Services",
+      heading: "Puja Services in Ujjain",
+      subHeading: "Authentic Vedic rituals performed by learned Pandits in Ujjain",
+      readMore: "Read More...",
+      callNow: "Call Now",
+
+      pujas: [
+        {
+          id: "kaalsarp",
+          title: "Kaal Sarp Dosh Puja",
+          subtitle: "Kaal Sarp Dosh Puja in Ujjain",
+          desc: "Kaal Sarp Dosh Puja is performed when all planets come between Rahu and Ketu. It helps resolve obstacles and bring peace.",
+          iconType: "snake"
+        },
+        {
+          id: "mangal",
+          title: "Mangal Bhaat Puja",
+          subtitle: "Mangal Bhaat Puja in Ujjain",
+          desc: "Performed at Mangalnath Temple Ujjain for marriage delay remedies and Mangal Dosh Nivaran.",
+          iconType: "flame"
+        },
+        {
+          id: "pitru",
+          title: "Pitru Dosh Nivaran Puja",
+          subtitle: "Pitru Dosh Nivaran Puja",
+          desc: "Vedic rituals performed in Ujjain to seek peace for ancestors and ancestral dosh remedies.",
+          iconType: "shield"
+        },
+        {
+          id: "navgrah",
+          title: "Navgrah Shanti Puja",
+          subtitle: "Navgrah Shanti Puja",
+          desc: "Harmonizing nine celestial planetary energies for peace, health, and prosperity.",
+          iconType: "sun"
+        },
+        {
+          id: "vastu",
+          title: "Vastu Dosh Puja",
+          subtitle: "Vastu Dosh Puja",
+          desc: "Balancing energy in home or workplace as per Vastu Shastra principles.",
+          iconType: "home"
+        },
+        {
+          id: "rudrabhishek",
+          title: "Rudrabhishek Puja",
+          subtitle: "Rudrabhishek Puja in Ujjain",
+          desc: "Sacred Shivling Abhishek ritual with milk, holy water, and bilvapatra for Lord Shiva's blessings.",
+          iconType: "water"
+        },
+        {
+          id: "kumbh",
+          title: "Kumbh Vivah / Ark Vivah",
+          subtitle: "Kumbh Vivah / Ark Vivah",
+          desc: "Symbolic wedding ritual performed before marriage to remove marriage delay and Mangal Dosh.",
+          iconType: "heart"
+        }
+      ]
+    },
+
+    // Suvichar Banner
+    suvichar: {
+      title: "Thought of Wisdom",
+      quote: "You consult doctors early, follow laws before trouble strikes, and seek teachers before losing direction. Why wait for hard times before consulting a wise Astrologer?"
+    },
+
+    // Blogs Section
+    blogs: {
+      title: "OUR BLOGS",
+      subHeading: "Vedic Astrology & Ujjain Spiritual Guidance",
+      readArticle: "Read Article",
+      posts: [
+        {
+          date: "20 May, 2025",
+          title: "Important Festivals & Dates",
+          desc: "Significance of sacred Vedic dates and auspicious timing for Pujas."
+        },
+        {
+          date: "21 April, 2025",
+          title: "Karkotak Kaal Sarp Dosh",
+          desc: "Understanding Karkotak Kaal Sarp Dosh and its remedies in Ujjain."
+        },
+        {
+          date: "21 April, 2025",
+          title: "Vikrant Bhairav - Divine Temple",
+          desc: "Glory of Vikrant Bhairav, one of the sacred Asht Bhairav shrines in Ujjain."
+        }
+      ]
+    },
+
+    // Kundli Form Section
+    kundli: {
+      badge: "Puja Booking & Guidance",
+      heading: "Enter Birth Details",
+      subHeading: "Pt. Hariom Sharma Ji will analyze your chart and reply on WhatsApp.",
+      formName: "Full Name",
+      formNamePlaceholder: "Enter your name",
+      formPhone: "Mobile / WhatsApp Number",
+      formPhonePlaceholder: "10-digit number",
+      formDob: "Date of Birth",
+      formTob: "Time of Birth",
+      formPob: "Birth Place (City/Village)",
+      formGender: "Gender",
+      genderMale: "Male",
+      genderFemale: "Female",
+      formQuery: "Your Query / Puja Details",
+      formQueryPlaceholder: "e.g., Kaal Sarp Dosh Puja, Mangal Dosh, Marriage delay...",
+      submitBtn: "Send Details on WhatsApp",
+      directCall: "Direct Call:"
+    },
+
+    // Contact Details
+    contactInfo: {
+      phone: "+91-7999646783",
+      email: "hariomsharma@gmail.com",
+      address: "Ramghat Marg, Near Mahakaleshwar Temple, Ujjain (M.P.) 456001"
+    },
+
+    // Footer
+    footer: {
+      brandDesc: "Jyotishacharya Pt. Hariom Sharma - Trusted expert in Ujjain Kaal Sarp Dosh Puja & Vedic rituals.",
+      quickLinks: "Quick Links",
+      ourServices: "Puja Services",
+      contactInfo: "Contact Information",
+      rights: "All Rights Reserved.",
+      designedFor: "Pt. Hariom Sharma"
+    }
+  }
+};
+
+export const LanguageProvider = ({ children }) => {
+  const [lang, setLang] = useState('hi');
+
+  const toggleLanguage = (newLang) => {
+    if (newLang) {
+      setLang(newLang);
+    } else {
+      setLang(prev => prev === 'hi' ? 'en' : 'hi');
+    }
+  };
+
+  const t = translations[lang] || translations.hi;
+
+  return (
+    <LanguageContext.Provider value={{ lang, setLang, toggleLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+};
