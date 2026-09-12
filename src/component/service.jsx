@@ -1,42 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Sparkles, Phone, ArrowRight, ShieldCheck, Flame, Compass, Heart, Sun, Home, Droplets } from 'lucide-react';
+import { Sparkles, Phone, ArrowRight } from 'lucide-react';
+
+// Crisp 7 Puja Images
+import kaalsarpImg from '../assets/puja_kaalsarp.jpg';
+import mangalImg from '../assets/puja_mangal.jpg';
+import pitruImg from '../assets/puja_pitru.jpg';
+import navgrahImg from '../assets/puja_navgrah.jpg';
+import vastuImg from '../assets/puja_vastu.jpg';
+import rudrabhishekImg from '../assets/puja_rudrabhishek.jpg';
+import kumbhImg from '../assets/puja_kumbh.jpg';
 
 const Service = () => {
   const { t } = useLanguage();
 
-  const getIcon = (type) => {
-    switch (type) {
-      case 'snake':
-      case 'flame':
-        return Flame;
-      case 'shield':
-        return ShieldCheck;
-      case 'sun':
-        return Sun;
-      case 'home':
-        return Home;
-      case 'water':
-        return Droplets;
-      case 'heart':
-        return Heart;
-      default:
-        return Compass;
-    }
+  const pujaPhotoMap = {
+    kaalsarp: kaalsarpImg,
+    mangal: mangalImg,
+    pitru: pitruImg,
+    navgrah: navgrahImg,
+    vastu: vastuImg,
+    rudrabhishek: rudrabhishekImg,
+    kumbh: kumbhImg
   };
 
   return (
-    <div className="bg-gradient-to-b from-white via-amber-50/30 to-white text-slate-800 py-16 border-b border-amber-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-b from-white via-amber-50/30 to-white text-slate-800 py-12 sm:py-16 border-b border-amber-200/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-red-950 text-amber-300 text-xs sm:text-sm font-bold shadow-xs border border-amber-500/40 uppercase tracking-wide">
             <Sparkles className="w-4 h-4 text-amber-400" />
             <span>{t.services.badge}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold font-serif text-slate-950">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-950">
             {t.services.heading}
           </h2>
           <p className="text-slate-700 text-base sm:text-lg font-medium">
@@ -46,48 +45,55 @@ const Service = () => {
 
         {/* 7 Pujas Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {t.services.pujas.map((srv) => {
-            const IconComp = getIcon(srv.iconType);
+          {(t.services?.pujas || []).map((srv) => {
+            const photo = pujaPhotoMap[srv.photoKey || srv.id] || kaalsarpImg;
+
             return (
               <div
                 key={srv.id}
-                className="vedic-card rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-sm hover:shadow-xl bg-white border-2 border-amber-200/80"
+                className="vedic-card rounded-3xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between shadow-md hover:shadow-2xl bg-white border-2 border-amber-200/80 space-y-5"
               >
-                <div>
-                  {/* Card Header Icon & Subtitle */}
-                  <div className="flex items-center justify-between mb-4 pb-3 border-b border-amber-100">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-red-800 via-amber-700 to-red-900 text-amber-200 flex items-center justify-center shadow-sm">
-                      <IconComp className="w-6 h-6" />
-                    </div>
-                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
+                <div className="space-y-4">
+                  
+                  {/* High Quality Clear Puja Image */}
+                  <div className="relative w-full h-52 sm:h-60 rounded-2xl overflow-hidden border border-amber-300 shadow-sm group">
+                    <img
+                      src={photo}
+                      alt={srv.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
+                    
+                    <span className="absolute bottom-3 left-3 text-xs font-bold px-3 py-1 rounded-full bg-red-950/90 text-amber-300 border border-amber-400/60 backdrop-blur-xs">
                       {srv.subtitle}
                     </span>
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="text-xl font-bold font-serif text-slate-900 mb-2 hover:text-red-800 transition-colors">
+                  {/* Title */}
+                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-slate-950 text-center hover:text-red-800 transition-colors">
                     {srv.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
+
+                  {/* Exact Text Content from Website Screenshots */}
+                  <p className="text-sm text-slate-700 leading-relaxed text-center font-normal">
                     {srv.desc}
                   </p>
                 </div>
 
-                {/* 2 CTA Buttons per card: Dynamic Read More & Call Now */}
+                {/* Dual Action Buttons (Matching Screenshot Style) */}
                 <div className="grid grid-cols-2 gap-3 pt-3 border-t border-amber-100">
                   <Link
                     to="/kundli"
-                    className="py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-600 to-red-700 hover:from-amber-500 hover:to-red-600 text-white font-bold text-xs shadow-xs text-center flex items-center justify-center gap-1"
+                    className="py-2.5 px-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs sm:text-sm shadow-sm text-center flex items-center justify-center gap-1 transition-all"
                   >
-                    <span>{t.services.readMore}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Read More...</span>
                   </Link>
                   <a
                     href="tel:+917999646783"
-                    className="py-2.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs shadow-xs text-center flex items-center justify-center gap-1"
+                    className="py-2.5 px-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs sm:text-sm shadow-sm text-center flex items-center justify-center gap-1 transition-all"
                   >
                     <Phone className="w-3.5 h-3.5" />
-                    <span>{t.services.callNow}</span>
+                    <span>Call Now</span>
                   </a>
                 </div>
 
