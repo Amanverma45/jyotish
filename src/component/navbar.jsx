@@ -82,6 +82,9 @@ const Navbar = () => {
             <NavLink to="/festivals" className={activeLinkClass}>
               {t?.nav?.festivals || (lang === 'hi' ? 'व्रत एवं त्योहार' : 'Festivals')}
             </NavLink>
+            <NavLink to="/gallery" className={activeLinkClass}>
+              {t?.nav?.gallery || (lang === 'hi' ? 'गैलरी' : 'Gallery')}
+            </NavLink>
             <NavLink to="/contact" className={activeLinkClass}>
               {t?.nav?.contact}
             </NavLink>
@@ -208,6 +211,13 @@ const Navbar = () => {
               className="block px-4 py-2.5 rounded-xl text-base font-bold text-slate-800 hover:text-red-700 hover:bg-amber-50/80 transition-colors"
             >
               {t?.nav?.festivals || (lang === 'hi' ? 'व्रत एवं त्योहार' : 'Festivals')}
+            </NavLink>
+            <NavLink
+              to="/gallery"
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-2.5 rounded-xl text-base font-bold text-slate-800 hover:text-red-700 hover:bg-amber-50/80 transition-colors"
+            >
+              {t?.nav?.gallery || (lang === 'hi' ? 'गैलरी' : 'Gallery')}
             </NavLink>
             <NavLink
               to="/contact"

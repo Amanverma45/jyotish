@@ -18,6 +18,7 @@ export const translations = {
       ourTeam: "हमारे विद्वान पंडित",
       pujaServices: "पूजा सेवाएं",
       festivals: "व्रत एवं त्योहार",
+      gallery: "फोटो गैलरी",
       contact: "संपर्क करें",
       enquireNow: "पूछताछ करें",
       bookNow: "पूजा बुक करें"
@@ -385,6 +386,20 @@ export const translations = {
       contactInfo: "संपर्क जानकारी",
       rights: "सर्वाधिकार सुरक्षित।",
       designedFor: "पं. हरिओम शर्मा"
+    },
+
+    // Gallery Page
+    galleryPage: {
+      badge: "पवित्र चित्र एवं फोटो दीर्घा",
+      heading: "उज्जैन महाकाल धाम पूजा एवं अनुष्ठान गैलरी",
+      subHeading: "ज्योतिषाचार्य पं. हरिओम शर्मा जी द्वारा उज्जैन महाकाल क्षेत्र में सम्पन्न मुख्य पूजाएं एवं दिव्य क्षण",
+      filterAll: "सभी तस्वीरें",
+      filterMahakal: "महाकाल धाम",
+      filterKaalsarp: "कालसर्प दोष",
+      filterMangal: "मंगल भात पूजा",
+      filterRudrabhishek: "रुद्राभिषेक",
+      filterAnushthan: "विशेष अनुष्ठान",
+      addPhotoHint: "फोटो पाथ डालें (src/assets/...) फोटो स्वतः दिखाई देने लगेगी"
     }
   },
 
@@ -403,6 +418,7 @@ export const translations = {
       ourTeam: "Our Pandits Team",
       pujaServices: "Puja Services",
       festivals: "Vedic Festivals",
+      gallery: "Photo Gallery",
       contact: "Contact Us",
       enquireNow: "Enquire Now",
       bookNow: "Book Puja"

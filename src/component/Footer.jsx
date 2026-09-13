@@ -61,6 +61,8 @@ const Footer = () => {
               <li><Link to="/about" className="hover:text-amber-400">{t.nav.famousPandit}</Link></li>
               <li><Link to="/panditji" className="hover:text-amber-400">{t.nav.ourTeam}</Link></li>
               <li><Link to="/services" className="hover:text-amber-400">{t.nav.pujaServices}</Link></li>
+              <li><Link to="/festivals" className="hover:text-amber-400">{t?.nav?.festivals || (isHindi ? 'व्रत एवं त्योहार' : 'Festivals')}</Link></li>
+              <li><Link to="/gallery" className="hover:text-amber-400">{t?.nav?.gallery || (isHindi ? 'फोटो गैलरी' : 'Gallery')}</Link></li>
               <li><Link to="/contact" className="hover:text-amber-400">{t.nav.contact}</Link></li>
             </ul>
           </div>
