@@ -12,17 +12,17 @@ const Home = () => {
       {/* 1. Hero Banner */}
       <Hero />
 
-      {/* 2. Rituals You Can Book & Start Your Spiritual Journey */}
+      {/* 2. Guruji Profile (Pandit Ji Introduction & Sacred Ujjain) */}
+      <About />
+
+      {/* 3. Rituals You Can Book & Start Your Spiritual Journey */}
       <RitualsJourney />
 
-      {/* 3. Our Services (7 Pujas with dual buttons) */}
+      {/* 4. Our Services (7 Pujas with dual buttons) */}
       <Service />
 
-      {/* 4. Suvichar Banner & Our Blogs */}
+      {/* 5. Suvichar Banner & Our Blogs */}
       <SuvicharBanner />
-
-      {/* 5. Guruji Profile */}
-      <About />
 
       {/* 6. Client Testimonials */}
       <Testimonials />

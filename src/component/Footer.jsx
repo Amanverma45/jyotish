@@ -5,7 +5,8 @@ import { Phone, Mail, MapPin, MessageCircle, Heart } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const isHindi = lang === 'hi';
 
   return (
     <footer className="bg-slate-900 text-slate-300 border-t border-amber-900/30 text-sm">
@@ -27,6 +28,27 @@ const Footer = () => {
             <p className="text-xs text-slate-400 leading-relaxed">
               {t.footer.brandDesc}
             </p>
+
+            {/* YouTube Official Channel Banner */}
+            <div className="pt-1">
+              <a
+                href="https://www.youtube.com/@JyotishacharyaPtHariomSharma"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-3 py-2 rounded-xl bg-red-950/80 hover:bg-red-900 border border-red-500/40 text-white text-xs font-bold transition-all shadow-md group"
+                title={isHindi ? "ज्योतिषाचार्य पं. हरिओम शर्मा जी का ऑफिशियल यूट्यूब चैनल" : "Official YouTube Channel of Pt. Hariom Sharma"}
+              >
+                <svg className="w-5 h-5 fill-current text-red-500 group-hover:scale-110 transition-transform shrink-0" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                <div className="flex flex-col text-left">
+                  <span className="text-[10px] text-amber-300 font-bold uppercase tracking-wider">
+                    {isHindi ? 'ऑफिशियल यूट्यूब चैनल' : 'Official YouTube Channel'}
+                  </span>
+                  <span className="text-xs font-bold text-white">@JyotishacharyaPtHariomSharma</span>
+                </div>
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -49,10 +71,10 @@ const Footer = () => {
               {t.footer.ourServices}
             </h4>
             <ul className="space-y-1.5 text-xs text-slate-400">
-              <li>✦ कालसर्प दोष पूजा (उज्जैन)</li>
-              <li>✦ मंगल भात पूजा</li>
-              <li>✦ जन्म कुंडली विश्लेषण</li>
-              <li>✦ शादी एवं गुण मिलान</li>
+              <li>✦ {isHindi ? 'कालसर्प दोष पूजा (उज्जैन)' : 'Kaal Sarp Dosh Puja'}</li>
+              <li>✦ {isHindi ? 'मंगल भात पूजा' : 'Mangal Bhaat Puja'}</li>
+              <li>✦ {isHindi ? 'जन्म कुंडली विश्लेषण' : 'Kundli Analysis'}</li>
+              <li>✦ {isHindi ? 'शादी एवं गुण मिलान' : 'Matchmaking & Marriage'}</li>
             </ul>
           </div>
 
@@ -64,17 +86,32 @@ const Footer = () => {
             <ul className="space-y-2 text-xs">
               <li className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
-                <span>रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001</span>
+                <span>{t?.contactInfo?.address || (isHindi ? "रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001" : "Ramghat Marg, Near Mahakaleshwar Temple, Ujjain (M.P.) 456001")}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <a href="tel:+917999646783" className="hover:text-amber-300 font-semibold text-amber-300">
-                  +91-7999646783
+                <a href={`tel:${t?.contactInfo?.phone || "+917999646783"}`} className="hover:text-amber-300 font-semibold text-amber-300">
+                  {t?.contactInfo?.phone || "+91-7999646783"}
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>hariomsharma@gmail.com</span>
+                <a href={`mailto:${t?.contactInfo?.email || "hariomsharma@gmail.com"}`} className="hover:text-amber-300">
+                  {t?.contactInfo?.email || "hariomsharma@gmail.com"}
+                </a>
+              </li>
+              <li className="flex items-center gap-2 pt-1">
+                <svg className="w-4 h-4 fill-current text-red-500 shrink-0" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                <a
+                  href="https://www.youtube.com/@JyotishacharyaPtHariomSharma"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-red-400 text-amber-200 font-semibold"
+                >
+                  {isHindi ? 'यूट्यूब चैनल' : 'YouTube Channel'}
+                </a>
               </li>
             </ul>
           </div>
@@ -84,7 +121,7 @@ const Footer = () => {
         <div className="mt-8 pt-4 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
           <p>© {new Date().getFullYear()} {t.footer.designedFor}. {t.footer.rights}</p>
           <div className="flex items-center gap-1 text-amber-400/80">
-            <span>उज्जैन महाकालेश्वर धाम</span>
+            <span>{isHindi ? 'उज्जैन महाकालेश्वर धाम' : 'Ujjain Mahakaleshwar Dham'}</span>
           </div>
         </div>
       </div>

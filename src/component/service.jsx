@@ -13,7 +13,8 @@ import rudrabhishekImg from '../assets/puja_rudrabhishek.jpg';
 import kumbhImg from '../assets/puja_kumbh.jpg';
 
 const Service = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const isHindi = lang === 'hi';
 
   const pujaPhotoMap = {
     kaalsarp: kaalsarpImg,
@@ -74,26 +75,26 @@ const Service = () => {
                     {srv.title}
                   </h3>
 
-                  {/* Exact Text Content from Website Screenshots */}
+                  {/* Description */}
                   <p className="text-sm text-slate-700 leading-relaxed text-center font-normal">
                     {srv.desc}
                   </p>
                 </div>
 
-                {/* Dual Action Buttons (Matching Screenshot Style) */}
+                {/* Dual Action Buttons */}
                 <div className="grid grid-cols-2 gap-3 pt-3 border-t border-amber-100">
                   <Link
                     to="/kundli"
                     className="py-2.5 px-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs sm:text-sm shadow-sm text-center flex items-center justify-center gap-1 transition-all"
                   >
-                    <span>Read More...</span>
+                    <span>{t?.services?.readMore || (isHindi ? "विस्तार से पढ़ें..." : "Read More...")}</span>
                   </Link>
                   <a
                     href="tel:+917999646783"
                     className="py-2.5 px-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs sm:text-sm shadow-sm text-center flex items-center justify-center gap-1 transition-all"
                   >
                     <Phone className="w-3.5 h-3.5" />
-                    <span>Call Now</span>
+                    <span>{t?.services?.callNow || (isHindi ? "अभी कॉल करें" : "Call Now")}</span>
                   </a>
                 </div>
 

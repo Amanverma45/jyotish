@@ -28,8 +28,8 @@ export const translations = {
       {
         id: "kaalsarp",
         tag: "⚡ उज्जैन महाकालेश्वर धाम",
-        heading: "कालसर्पदोष पूजा in Ujjain",
-        subHeading: "Best Kaal Sarp Dosh puja by Pt. Hariom Sharma",
+        heading: "उज्जैन में कालसर्पदोष पूजा",
+        subHeading: "पं. हरिओम शर्मा जी द्वारा शास्त्रोक्त कालसर्पदोष पूजन",
         desc: "पंडित हरिओम शर्मा जी द्वारा उज्जैन महाकाल धाम में शास्त्रोक्त विधि-विधान से कालसर्प दोष, राहु-केतु शांति एवं विशेष नागबलि पूजन।",
         ctaText: "कालसर्प पूजा बुक करें",
         badge: "1. कालसर्प दोष पूजा"
@@ -57,7 +57,7 @@ export const translations = {
     // About Famous Pandit & Sacred Ujjain Section
     about: {
       badge: "प्रसिद्ध पंडित जी",
-      heading: "ज्योतिषाचार्य पंडित हरिओम शर्मा - Best Pandit in Ujjain",
+      heading: "ज्योतिषाचार्य पंडित हरिओम शर्मा - उज्जैन के सर्वश्रेष्ठ पंडित",
       subHeading: "अवंतिका नगरी (उज्जैन महाकाल धाम) पूजन विशेषज्ञ",
       intro: "ज्योतिषाचार्य पंडित हरिओम शर्मा जी एक सिद्ध विद्वान पंडित हैं जो अवंतिका नगरी अर्थात उज्जैन में अनेक प्रकार के धार्मिक आयोजन एवं पूजा-पाठ जैसे कालसर्पदोष पूजा, मंगल भात पूजा करवाने में विशेष पारंगत हैं।",
       
@@ -88,7 +88,7 @@ export const translations = {
         }
       ],
 
-      callNow: "Call Now: +917999646783",
+      callNow: "अभी कॉल करें: +91-7999646783",
       phone: "+917999646783"
     },
 
@@ -266,7 +266,27 @@ export const translations = {
     contactInfo: {
       phone: "+91-7999646783",
       email: "hariomsharma@gmail.com",
-      address: "रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001"
+      address: "रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001",
+      homeAddress: "L 04 /2, श्री सिटी , दाउदखेडी उज्जैन- 456006"
+    },
+
+    contact: {
+      badge: "संपर्क करें",
+      heading: "ज्योतिषाचार्य पं. हरिओम शर्मा जी से संपर्क करें",
+      subHeading: "उज्जैन महाकाल धाम में पूजन, कालसर्प दोष निवारण एवं ज्योतिष सलाह हेतु संपर्क करें",
+      phoneTitle: "फोन नंबर",
+      phoneDesc: "फोन पर तुरंत बात करें",
+      whatsappTitle: "व्हाट्सएप परामर्श",
+      whatsappDesc: "व्हाट्सएप पर संदेश भेजें",
+      pujaAddressTitle: "मुख्य पूजन स्थल (उज्जैन महाकाल धाम)",
+      pujaAddressDesc: "रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001",
+      homeAddressTitle: "गृह एवं स्थायी निवास पता",
+      homeAddressDesc: "L 04 /2, श्री सिटी , दाउदखेडी उज्जैन- 456006",
+      emailTitle: "ईमेल पता",
+      emailDesc: "hariomsharma@gmail.com",
+      timingTitle: "संपर्क व परामर्श समय",
+      timingDesc: "प्रातः 07:00 बजे से रात्रि 10:00 बजे तक (प्रतिदिन)",
+      sendMessage: "संदेश भेजें"
     },
 
     // Footer
@@ -543,7 +563,27 @@ export const translations = {
     contactInfo: {
       phone: "+91-7999646783",
       email: "hariomsharma@gmail.com",
-      address: "Ramghat Marg, Near Mahakaleshwar Temple, Ujjain (M.P.) 456001"
+      address: "Ramghat Marg, Near Mahakaleshwar Temple, Ujjain (M.P.) 456001",
+      homeAddress: "L 04 /2, Shree City, Daudkhedi Ujjain - 456006"
+    },
+
+    contact: {
+      badge: "Contact Us",
+      heading: "Get in Touch with Pt. Hariom Sharma",
+      subHeading: "For Puja booking, Kaal Sarp Dosh remedies & Astrology consultation in Ujjain",
+      phoneTitle: "Phone Number",
+      phoneDesc: "Direct Phone Call",
+      whatsappTitle: "WhatsApp Consultation",
+      whatsappDesc: "Send a message on WhatsApp",
+      pujaAddressTitle: "Main Puja Location (Ujjain Dham)",
+      pujaAddressDesc: "Ramghat Marg, Near Mahakaleshwar Temple, Ujjain (M.P.) 456001",
+      homeAddressTitle: "Home & Permanent Address",
+      homeAddressDesc: "L 04 /2, Shree City, Daudkhedi Ujjain - 456006",
+      emailTitle: "Email Address",
+      emailDesc: "hariomsharma@gmail.com",
+      timingTitle: "Consultation Timings",
+      timingDesc: "07:00 AM to 10:00 PM (Daily)",
+      sendMessage: "Send Message"
     },
 
     // Footer
