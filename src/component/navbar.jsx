@@ -79,9 +79,6 @@ const Navbar = () => {
             <NavLink to="/services" className={activeLinkClass}>
               {t?.nav?.pujaServices}
             </NavLink>
-            <NavLink to="/services" className={activeLinkClass}>
-              {t?.nav?.blog}
-            </NavLink>
             <NavLink to="/contact" className={activeLinkClass}>
               {t?.nav?.contact}
             </NavLink>
@@ -201,13 +198,6 @@ const Navbar = () => {
               className="block px-4 py-2.5 rounded-xl text-base font-bold text-slate-800 hover:text-red-700 hover:bg-amber-50/80 transition-colors"
             >
               {t?.nav?.pujaServices}
-            </NavLink>
-            <NavLink
-              to="/services"
-              onClick={() => setIsOpen(false)}
-              className="block px-4 py-2.5 rounded-xl text-base font-bold text-slate-800 hover:text-red-700 hover:bg-amber-50/80 transition-colors"
-            >
-              {t?.nav?.blog}
             </NavLink>
             <NavLink
               to="/contact"
