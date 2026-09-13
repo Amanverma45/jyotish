@@ -34,7 +34,7 @@ const Navbar = () => {
     }`;
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-200/80 shadow-md text-slate-800 transition-all overflow-x-hidden">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-200/80 shadow-md text-slate-800 transition-all">
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +69,7 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links (Clean Top Navigation with Floating Overlay Dropdown) */}
+          {/* Desktop Navigation Links (5 Visible Outer Links + Floating More Dropdown Popup) */}
           <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-amber-50/70 p-1 rounded-xl border border-amber-200/70 shrink-0">
             <NavLink to="/" className={activeLinkClass}>
               {t?.nav?.home}
@@ -82,6 +82,9 @@ const Navbar = () => {
             </NavLink>
             <NavLink to="/services" className={activeLinkClass}>
               {t?.nav?.pujaServices}
+            </NavLink>
+            <NavLink to="/festivals" className={activeLinkClass}>
+              {t?.nav?.festivals || (lang === 'hi' ? 'व्रत एवं त्योहार' : 'Festivals')}
             </NavLink>
 
             {/* "More / अधिक" Floating Dropdown Menu */}
@@ -99,22 +102,8 @@ const Navbar = () => {
               </button>
 
               {/* Floating Overlay Dropdown Popup */}
-              <div className="absolute right-0 top-full mt-2 pt-1 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50 min-w-[210px]">
-                <div className="bg-white border-2 border-amber-300/90 rounded-2xl shadow-2xl p-2 space-y-1.5">
-                  <NavLink
-                    to="/festivals"
-                    className={({ isActive }) =>
-                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2.5 transition-colors ${
-                        isActive
-                          ? 'bg-amber-100/90 text-red-800'
-                          : 'text-slate-800 hover:bg-amber-50 hover:text-red-700'
-                      }`
-                    }
-                  >
-                    <Sparkles className="w-4 h-4 text-amber-700 shrink-0" />
-                    <span>{t?.nav?.festivals || (lang === 'hi' ? 'व्रत एवं त्योहार' : 'Festivals')}</span>
-                  </NavLink>
-
+              <div className="absolute right-0 top-full mt-2 pt-1 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50 min-w-[200px]">
+                <div className="bg-white/98 backdrop-blur-md border-2 border-amber-300/90 rounded-2xl shadow-2xl p-2 space-y-1.5">
                   <NavLink
                     to="/gallery"
                     className={({ isActive }) =>
