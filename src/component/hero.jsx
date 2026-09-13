@@ -74,8 +74,8 @@ const Hero = () => {
             <div
               key={slide.id || idx}
               className={`transition-all duration-700 ease-in-out ${isActive
-                  ? 'opacity-100 translate-x-0 relative z-10 pointer-events-auto'
-                  : 'opacity-0 translate-x-4 absolute inset-0 z-0 pointer-events-none hidden'
+                ? 'opacity-100 translate-x-0 relative z-10 pointer-events-auto'
+                : 'opacity-0 translate-x-4 absolute inset-0 z-0 pointer-events-none hidden'
                 }`}
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
@@ -196,7 +196,7 @@ const Hero = () => {
                       </div>
 
                       <a
-                        href="https://wa.me/917999646783"
+                        href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से उज्जैन महाकाल पूजन हेतु परामर्श चाहिए।" : "Jai Shree Mahakal! I want to consult Pt. Hariom Sharma Ji for Ujjain Puja.")}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow flex items-center justify-center gap-2"
@@ -220,8 +220,8 @@ const Hero = () => {
               key={s.id || idx}
               onClick={() => setCurrentIndex(idx)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${idx === safeIndex
-                  ? 'bg-red-800 text-white shadow-md scale-105 border border-red-900'
-                  : 'bg-white text-slate-700 hover:bg-amber-100 border border-amber-200'
+                ? 'bg-red-800 text-white shadow-md scale-105 border border-red-900'
+                : 'bg-white text-slate-700 hover:bg-amber-100 border border-amber-200'
                 }`}
             >
               {s.badge}

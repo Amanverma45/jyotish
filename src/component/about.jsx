@@ -62,7 +62,7 @@ const About = () => {
                     <span>{isHindi ? "कॉल करें" : "Call Now"}</span>
                   </a>
                   <a
-                    href="https://wa.me/917999646783"
+                    href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-2.5 px-3 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow hover:scale-102 transition-transform"
@@ -197,7 +197,7 @@ const About = () => {
                 <span>+91-7999646783</span>
               </a>
               <a
-                href="https://wa.me/917999646783"
+                href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md flex items-center gap-2"

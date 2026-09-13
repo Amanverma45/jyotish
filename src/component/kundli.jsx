@@ -43,7 +43,8 @@ const Kundli = () => {
         `*Gender:* ${formData.gender}%0A` +
         `*Query:* ${formData.query}`;
 
-    window.open(`https://wa.me/917999646783?text=${message}`, '_blank');
+    // Use direct location redirection for mobile browser compatibility (avoids popup blockers)
+    window.location.href = `https://api.whatsapp.com/send?phone=917999646783&text=${message}`;
   };
 
   return (

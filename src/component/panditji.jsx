@@ -125,7 +125,7 @@ const Panditji = () => {
                     <span>{isHindi ? "कॉल करें" : "Call Now"}</span>
                   </a>
                   <a
-                    href="https://wa.me/917999646783"
+                    href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप परामर्श हेतु संपर्क।" : "Jai Shree Mahakal! Contacting Pt. Hariom Sharma Ji for WhatsApp consultation.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"

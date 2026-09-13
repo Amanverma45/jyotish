@@ -15,7 +15,7 @@ const FloatingButtons = () => {
       <div className="relative group animate-float-slow">
         <div className="absolute inset-0 rounded-full bg-emerald-500 animate-pulse-ring pointer-events-none"></div>
         <a
-          href="https://wa.me/917999646783"
+          href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से पूजन हेतु संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I would like to consult Pt. Hariom Sharma Ji for Puja.")}`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
