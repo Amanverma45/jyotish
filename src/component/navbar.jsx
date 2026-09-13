@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Menu, X, Globe, Calendar, Phone, ChevronDown, Users, Sparkles, Image as ImageIcon, Mail } from 'lucide-react';
+import { Menu, X, Globe, Calendar, Phone, ChevronDown, Sparkles, Image as ImageIcon, Mail } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
 const Navbar = () => {
@@ -24,7 +24,7 @@ const Navbar = () => {
   }, [isOpen]);
 
   // Check if any link inside the "More" dropdown is active
-  const isMoreActive = ['/panditji', '/festivals', '/gallery', '/contact'].includes(location.pathname);
+  const isMoreActive = ['/festivals', '/gallery', '/contact'].includes(location.pathname);
 
   const activeLinkClass = ({ isActive }) =>
     `font-semibold text-xs xl:text-sm transition-all py-1.5 px-2 xl:px-3 rounded-lg flex items-center gap-1 whitespace-nowrap ${
@@ -69,7 +69,7 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links (Clean Layout with "More" Dropdown Menu) */}
+          {/* Desktop Navigation Links (Clean Top Navigation with Floating Overlay Dropdown) */}
           <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-amber-50/70 p-1 rounded-xl border border-amber-200/70 shrink-0">
             <NavLink to="/" className={activeLinkClass}>
               {t?.nav?.home}
@@ -77,11 +77,14 @@ const Navbar = () => {
             <NavLink to="/about" className={activeLinkClass}>
               {t?.nav?.famousPandit}
             </NavLink>
+            <NavLink to="/panditji" className={activeLinkClass}>
+              {t?.nav?.ourTeam}
+            </NavLink>
             <NavLink to="/services" className={activeLinkClass}>
               {t?.nav?.pujaServices}
             </NavLink>
 
-            {/* "More / अधिक" Dropdown Menu Container */}
+            {/* "More / अधिक" Floating Dropdown Menu */}
             <div className="relative group">
               <button
                 type="button"
@@ -95,27 +98,13 @@ const Navbar = () => {
                 <ChevronDown className="w-3.5 h-3.5 text-amber-700 group-hover:rotate-180 transition-transform duration-300" />
               </button>
 
-              {/* Dropdown Menu Floating Box */}
-              <div className="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50 min-w-[210px]">
-                <div className="bg-white/95 backdrop-blur-xl border border-amber-200/90 rounded-2xl shadow-xl p-2 space-y-1">
-                  <NavLink
-                    to="/panditji"
-                    className={({ isActive }) =>
-                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2 transition-colors ${
-                        isActive
-                          ? 'bg-amber-100/90 text-red-800'
-                          : 'text-slate-800 hover:bg-amber-50 hover:text-red-700'
-                      }`
-                    }
-                  >
-                    <Users className="w-4 h-4 text-amber-700 shrink-0" />
-                    <span>{t?.nav?.ourTeam}</span>
-                  </NavLink>
-
+              {/* Floating Overlay Dropdown Popup */}
+              <div className="absolute right-0 top-full mt-2 pt-1 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50 min-w-[210px]">
+                <div className="bg-white border-2 border-amber-300/90 rounded-2xl shadow-2xl p-2 space-y-1.5">
                   <NavLink
                     to="/festivals"
                     className={({ isActive }) =>
-                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2 transition-colors ${
+                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2.5 transition-colors ${
                         isActive
                           ? 'bg-amber-100/90 text-red-800'
                           : 'text-slate-800 hover:bg-amber-50 hover:text-red-700'
@@ -129,7 +118,7 @@ const Navbar = () => {
                   <NavLink
                     to="/gallery"
                     className={({ isActive }) =>
-                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2 transition-colors ${
+                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2.5 transition-colors ${
                         isActive
                           ? 'bg-amber-100/90 text-red-800'
                           : 'text-slate-800 hover:bg-amber-50 hover:text-red-700'
@@ -137,13 +126,13 @@ const Navbar = () => {
                     }
                   >
                     <ImageIcon className="w-4 h-4 text-amber-700 shrink-0" />
-                    <span>{t?.nav?.gallery || (lang === 'hi' ? 'गैलरी' : 'Gallery')}</span>
+                    <span>{t?.nav?.gallery || (lang === 'hi' ? 'फोटो गैलरी' : 'Gallery')}</span>
                   </NavLink>
 
                   <NavLink
                     to="/contact"
                     className={({ isActive }) =>
-                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2 transition-colors ${
+                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2.5 transition-colors ${
                         isActive
                           ? 'bg-amber-100/90 text-red-800'
                           : 'text-slate-800 hover:bg-amber-50 hover:text-red-700'
