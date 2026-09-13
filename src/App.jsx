@@ -11,6 +11,7 @@ import Panditji from './component/panditji';
 import Service from './component/service';
 import Kundli from './component/kundli';
 import Contact from './component/contact';
+import Festivals from './component/festivals';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/panditji" element={<Panditji />} />
               <Route path="/services" element={<Service />} />
+              <Route path="/festivals" element={<Festivals />} />
               <Route path="/kundli" element={<Kundli />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>

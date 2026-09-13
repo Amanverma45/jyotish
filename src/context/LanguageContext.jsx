@@ -17,7 +17,7 @@ export const translations = {
       famousPandit: "प्रसिद्ध पंडित जी",
       ourTeam: "हमारे विद्वान पंडित",
       pujaServices: "पूजा सेवाएं",
-      blog: "ब्लॉग",
+      festivals: "व्रत एवं त्योहार",
       contact: "संपर्क करें",
       enquireNow: "पूछताछ करें",
       bookNow: "पूजा बुक करें"
@@ -217,26 +217,76 @@ export const translations = {
       quote: "डॉक्टर के पास आप बीमार पड़ने पर ही नहीं जाते, गर्भ में बच्चे के आने के बाद ही उससे सलाह लेकर काम करना आरंभ कर देते हैं! कानून की मदद आप झंझट में पड़ने के बाद नहीं लेते, वरन् होश संभालने के बाद ही कानून का पालन करते हैं! गुरू के संपर्क में तब नहीं जाते जब आप गुमराह हो जाते हैं, वरन् जीवन की शिक्षा पाने के लिए पहले से गुरू की सलाह लेते हैं! फिर एक ज्योतिषी के पास जाने के लिए आप बुरे समय का इंतजार क्यों करते हैं?"
     },
 
-    // Blogs Section
-    blogs: {
-      title: "हमारे ब्लॉग व लेख",
-      subHeading: "उज्जैन धर्म एवं वैदिक ज्योतिष संबंधी महत्वपूर्ण जानकारी",
-      readArticle: "लेख पढ़ें",
-      posts: [
+    // Festivals Section
+    festivalsSection: {
+      badge: "वैदिक पंचांग एवं व्रत-त्योहार",
+      heading: "आगामी प्रमुख व्रत, त्योहार एवं शुभ मुहूर्त",
+      subHeading: "उज्जैन महाकाल धाम के अनुसार आगामी धार्मिक पर्व, तिथि महात्म्य एवं पूजन मुहूर्त जानकारी",
+      activeFestivalTitle: "🔥 वर्तमान/आगामी मुख्य महात्योहार",
+      bookFestivalPuja: "त्योहार विशेष पूजा बुक करें",
+      featured: {
+        title: "शारदीय नवरात्रि एवं महाकालेश्वर विशेष अनुष्ठान 2026",
+        date: "आश्विन शुक्ल प्रतिपदा से नवमी",
+        muhurat: "प्रातः 06:15 से 08:30 (घटस्थापना शुभ मुहूर्त)",
+        imageKey: "rudrabhishek",
+        desc: "नवरात्रि के नौ पावन दिनों में नौ दुर्गा पूजन, चंडी पाठ एवं महाकाल मंदिर क्षेत्र में विशेष शक्ति अनुष्ठान कराने से सभी मनोकामनाएं सिद्ध होती हैं।",
+        vidhi: "घटस्थापना, दुर्गा सप्तशती पाठ, कन्या पूजन एवं हवन अनुष्ठान विद्वान आचार्यों द्वारा सम्पन्न होता है।",
+        status: "वर्तमान में बुकिंग चालू है"
+      },
+      list: [
         {
-          date: "20 मई, 2025",
-          title: "त्यौहार या महत्वपूर्ण तिथियां",
-          desc: "भारत में त्यौहारों और शुभ तिथियों का धार्मिक महत्व और पूजा का सही समय।"
+          id: "mahashivratri",
+          title: "महाशिवरात्रि महापूजन एवं भस्म आरती दर्शन",
+          date: "फाल्गुन कृष्ण चतुर्दशी",
+          tithi: "चतुर्दशी तिथि",
+          muhurat: "रात्रि चार प्रहर पूजा व महाकाल भस्म आरती",
+          imageKey: "rudrabhishek",
+          desc: "उज्जैन में महाशिवरात्रि पर्व अत्यंत दिव्य और फलदायी होता है। इस दिन विशेष रुद्राभिषेक व महामृत्युंजय जाप कराने से जन्मों के पाप नष्ट होते हैं।"
         },
         {
-          date: "21 अप्रैल, 2025",
-          title: "कर्कोटक काल सर्प दोष",
-          desc: "कर्कोटक कालसर्प दोष क्या है और उज्जैन में इसके निवारण की सही विधि।"
+          id: "kaalsarp_fest",
+          title: "नागपंचमी एवं कालसर्प दोष महाशांति अनुष्ठान",
+          date: "श्रावण शुक्ल पंचमी",
+          tithi: "पंचमी तिथि",
+          muhurat: "प्रातः 05:00 से सायं 07:00 बजे तक",
+          imageKey: "kaalsarp",
+          desc: "वर्ष में केवल नागपंचमी के दिन उज्जैन के नागचंद्रेश्वर मंदिर के पट खुलते हैं। इस पवित्र दिन कालसर्पदोष पूजा कराने का अनंत गुना फल मिलता है।"
         },
         {
-          date: "21 अप्रैल, 2025",
-          title: "विक्रांत भैरव - चमत्कारिक भैरव",
-          desc: "उज्जैन के सिद्ध अष्ट भैरव मंदिरों में से एक विक्रांत भैरव जी की महिमा।"
+          id: "shravan",
+          title: "पावन श्रावण सोमवार व पार्थिव शिव लिंग पूजन",
+          date: "श्रावण माह (प्रति सोमवार)",
+          tithi: "श्रावण मास",
+          muhurat: "प्रातःकाल एवं संध्या आरती समय",
+          imageKey: "rudrabhishek",
+          desc: "श्रावण मास में भगवान महाकाल का जल एवं दूध से अभिषेक करने तथा पार्थिव शिवलिंग निर्माण पूजन कराने से आरोग्य व समृद्धि प्राप्त होती है।"
+        },
+        {
+          id: "mangal_fest",
+          title: "भौमवती अमावस्या एवं मंगल भात पूजा महायज्ञ",
+          date: "मंगलवार अमावस्या तिथि",
+          tithi: "अमावस्या तिथि",
+          muhurat: "प्रातः 06:00 से दोपहर 02:00 बजे",
+          imageKey: "mangal",
+          desc: "उज्जैन के सिद्ध मंगलनाथ मंदिर में भौमवती अमावस्या पर मंगल दोष निवारण एवं भात पूजा कराने से विवाह संबंधी समस्त विघ्न दूर होते हैं।"
+        },
+        {
+          id: "pitru_fest",
+          title: "पितृ पक्ष (श्राद्ध पक्ष) एवं महालय तर्पण पूजन",
+          date: "भाद्रपद पूर्णिमा से आश्विन अमावस्या",
+          tithi: "पितृ पक्ष 16 तिथियां",
+          muhurat: "कुतप व रोहिण काल (दोपहर 11:30 से 02:30)",
+          imageKey: "pitru",
+          desc: "उज्जैन के सिद्धवट एवं रामघाट तट पर पितरों की आत्मा की शांति हेतु पिंडदान, तर्पण एवं नारायण बलि अनुष्ठान कराया जाता है।"
+        },
+        {
+          id: "ganesh",
+          title: "गणेश चतुर्थी व रिद्धि-सिद्धि गणपति स्थापना",
+          date: "भाद्रपद शुक्ल चतुर्थी",
+          tithi: "चतुर्थी तिथि",
+          muhurat: "मध्याह्न शुभ मुहूर्त 11:05 से 01:35",
+          imageKey: "navgrah",
+          desc: "गणेश चतुर्थी से अनंत चतुर्दशी तक भगवान श्री गणेश का मोदक व दुर्वा से अर्चन एवं रिद्धि-सिद्धि दायक गणपति अथर्वशीर्ष पाठ।"
         }
       ]
     },
@@ -314,7 +364,7 @@ export const translations = {
       famousPandit: "Famous Pandit",
       ourTeam: "Our Pandits Team",
       pujaServices: "Puja Services",
-      blog: "Blog",
+      festivals: "Vedic Festivals",
       contact: "Contact Us",
       enquireNow: "Enquire Now",
       bookNow: "Book Puja"
@@ -514,26 +564,76 @@ export const translations = {
       quote: "You consult doctors early, follow laws before trouble strikes, and seek teachers before losing direction. Why wait for hard times before consulting a wise Astrologer?"
     },
 
-    // Blogs Section
-    blogs: {
-      title: "OUR BLOGS",
-      subHeading: "Vedic Astrology & Ujjain Spiritual Guidance",
-      readArticle: "Read Article",
-      posts: [
+    // Festivals Section
+    festivalsSection: {
+      badge: "Vedic Panchang & Festivals",
+      heading: "Upcoming Vedic Festivals & Shubh Muhurat",
+      subHeading: "Sacred festival calendar, significance & special Puja Muhurat as per Ujjain Mahakal Dham",
+      activeFestivalTitle: "🔥 Current / Featured Festival",
+      bookFestivalPuja: "Book Special Festival Puja",
+      featured: {
+        title: "Shardiya Navratri & Mahakal Special Anushthan 2026",
+        date: "Ashwin Shukla Pratipada to Navami",
+        muhurat: "06:15 AM to 08:30 AM (Ghatasthapana Muhurat)",
+        imageKey: "rudrabhishek",
+        desc: "Performing Durga Saptashati Path, Chandi Yagya & Navratri Mahakal Pujas in Ujjain brings supreme prosperity and protection.",
+        vidhi: "Ghatasthapana, Durga Path, Kanya Pujan & Hawan Anushthan performed by learned Vedic Pandits.",
+        status: "Special Booking Open Now"
+      },
+      list: [
         {
-          date: "20 May, 2025",
-          title: "Important Festivals & Dates",
-          desc: "Significance of sacred Vedic dates and auspicious timing for Pujas."
+          id: "mahashivratri",
+          title: "Maha Shivratri Mahapujan & Bhasma Aarti",
+          date: "Phalguna Krishna Chaturdashi",
+          tithi: "Chaturdashi Tithi",
+          muhurat: "4 Prahar Night Puja & Bhasma Aarti",
+          imageKey: "rudrabhishek",
+          desc: "Celebrating Maha Shivratri at Ujjain Mahakal Dham is divine. Performing Rudrabhishek and Mahamrityunjay Jaap fulfills all desires."
         },
         {
-          date: "21 April, 2025",
-          title: "Karkotak Kaal Sarp Dosh",
-          desc: "Understanding Karkotak Kaal Sarp Dosh and its remedies in Ujjain."
+          id: "kaalsarp_fest",
+          title: "Nag Panchami & Kaal Sarp Dosh Mahashanti",
+          date: "Shravan Shukla Panchami",
+          tithi: "Panchami Tithi",
+          muhurat: "05:00 AM to 07:00 PM",
+          imageKey: "kaalsarp",
+          desc: "Nagchandreshwar Temple in Ujjain opens only once a year on Nag Panchami. Kaal Sarp Dosh Puja done on this day offers infinite merits."
         },
         {
-          date: "21 April, 2025",
-          title: "Vikrant Bhairav - Divine Temple",
-          desc: "Glory of Vikrant Bhairav, one of the sacred Asht Bhairav shrines in Ujjain."
+          id: "shravan",
+          title: "Sacred Shravan Somwar & Parthiv Shivling Pujan",
+          date: "Shravan Month (Every Monday)",
+          tithi: "Shravan Month",
+          muhurat: "Morning & Evening Aarti Time",
+          imageKey: "rudrabhishek",
+          desc: "Offering Shivling Jalabhishek and performing Parthiv Shivling Pujan during Shravan brings health, peace, and divine grace."
+        },
+        {
+          id: "mangal_fest",
+          title: "Bhaumvati Amavasya & Mangal Bhaat Puja Yagya",
+          date: "Tuesday Amavasya Tithi",
+          tithi: "Amavasya Tithi",
+          muhurat: "06:00 AM to 02:00 PM",
+          imageKey: "mangal",
+          desc: "Performing Mangal Bhaat Puja at Mangalnath Temple Ujjain on Bhaumvati Amavasya eliminates marriage delays and Mangal Dosh."
+        },
+        {
+          id: "pitru_fest",
+          title: "Pitru Paksha (Shraddh) & Mahalaya Tarpan Puja",
+          date: "Bhadrapad Purnima to Ashwin Amavasya",
+          tithi: "16 Days Pitru Paksha",
+          muhurat: "Kutap & Rohin Kaal (11:30 AM - 02:30 PM)",
+          imageKey: "pitru",
+          desc: "Performing Pind Daan, Tarpan & Narayan Bali Anushthan at Siddhavat & Ramghat Ujjain brings peace to ancestors."
+        },
+        {
+          id: "ganesh",
+          title: "Ganesh Chaturthi & Riddhi-Siddhi Ganpati Sthapana",
+          date: "Bhadrapad Shukla Chaturdashi",
+          tithi: "Chaturthi Tithi",
+          muhurat: "Midday Shubh Muhurat 11:05 AM - 01:35 PM",
+          imageKey: "navgrah",
+          desc: "Celebrating 10 days of Lord Ganesha with Modak Archana, Ganpati Atharvashirsha Path, and Riddhi-Siddhi Pujan."
         }
       ]
     },
