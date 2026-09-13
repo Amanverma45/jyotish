@@ -165,54 +165,54 @@ const Navbar = () => {
       {/* Mobile Drawer & Click-Outside Backdrop */}
       {isOpen && (
         <>
-          {/* Click Outside Backdrop Overlay */}
+          {/* Click Outside Backdrop Overlay with Main Page Blur */}
           <div
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 top-16 sm:top-22 bg-slate-950/60 backdrop-blur-xs z-30 lg:hidden animate-fadeIn"
+            className="fixed inset-0 top-16 sm:top-22 bg-slate-950/60 backdrop-blur-md z-30 lg:hidden transition-opacity animate-fadeIn cursor-pointer"
             aria-hidden="true"
           />
 
           {/* Mobile Drawer Content */}
-          <div className="relative z-40 lg:hidden bg-white border-b border-amber-200 px-4 pt-3 pb-5 space-y-2 animate-fadeIn shadow-2xl">
+          <div className="relative z-40 lg:hidden bg-white/95 backdrop-blur-xl border-b border-amber-200 px-4 pt-3 pb-5 space-y-2 animate-fadeIn shadow-2xl">
             <NavLink
               to="/"
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:text-red-700 hover:bg-amber-50"
+              className="block px-4 py-2.5 rounded-xl text-base font-bold text-slate-800 hover:text-red-700 hover:bg-amber-50/80 transition-colors"
             >
               {t?.nav?.home}
             </NavLink>
             <NavLink
               to="/about"
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:text-red-700 hover:bg-amber-50"
+              className="block px-4 py-2.5 rounded-xl text-base font-bold text-slate-800 hover:text-red-700 hover:bg-amber-50/80 transition-colors"
             >
               {t?.nav?.famousPandit}
             </NavLink>
             <NavLink
               to="/panditji"
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:text-red-700 hover:bg-amber-50"
+              className="block px-4 py-2.5 rounded-xl text-base font-bold text-slate-800 hover:text-red-700 hover:bg-amber-50/80 transition-colors"
             >
               {t?.nav?.ourTeam}
             </NavLink>
             <NavLink
               to="/services"
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:text-red-700 hover:bg-amber-50"
+              className="block px-4 py-2.5 rounded-xl text-base font-bold text-slate-800 hover:text-red-700 hover:bg-amber-50/80 transition-colors"
             >
               {t?.nav?.pujaServices}
             </NavLink>
             <NavLink
               to="/services"
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:text-red-700 hover:bg-amber-50"
+              className="block px-4 py-2.5 rounded-xl text-base font-bold text-slate-800 hover:text-red-700 hover:bg-amber-50/80 transition-colors"
             >
               {t?.nav?.blog}
             </NavLink>
             <NavLink
               to="/contact"
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:text-red-700 hover:bg-amber-50"
+              className="block px-4 py-2.5 rounded-xl text-base font-bold text-slate-800 hover:text-red-700 hover:bg-amber-50/80 transition-colors"
             >
               {t?.nav?.contact}
             </NavLink>
@@ -220,7 +220,7 @@ const Navbar = () => {
             <div className="pt-3 border-t border-amber-100 flex flex-col gap-2.5">
               <a
                 href="tel:+917999646783"
-                className="w-full text-center py-2.5 bg-amber-100 border border-amber-300 text-amber-900 font-bold rounded-xl flex items-center justify-center gap-2 text-sm"
+                className="w-full text-center py-2.5 bg-amber-100/90 border border-amber-300 text-amber-900 font-bold rounded-xl flex items-center justify-center gap-2 text-sm shadow-2xs active:scale-[0.98] transition-transform"
               >
                 <Phone className="w-4 h-4 text-red-700" />
                 <span>{lang === 'hi' ? "कॉल करें: +91-7999646783" : "Call Now: +91-7999646783"}</span>
@@ -229,11 +229,20 @@ const Navbar = () => {
               <Link
                 to="/kundli"
                 onClick={() => setIsOpen(false)}
-                className="w-full text-center py-3 bg-gradient-to-r from-amber-600 to-red-700 text-white font-bold rounded-xl shadow-md text-sm flex items-center justify-center gap-2"
+                className="w-full text-center py-3 bg-gradient-to-r from-amber-600 via-red-700 to-red-800 text-white font-bold rounded-xl shadow-md text-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
               >
                 <Calendar className="w-4 h-4" />
                 <span>{t?.nav?.bookNow || (lang === 'hi' ? "पूजा बुक करें" : "Book Puja")}</span>
               </Link>
+
+              {/* End of Menu Close Button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="w-full py-2 mt-1 text-center text-xs font-bold text-slate-500 hover:text-red-700 hover:bg-slate-100 rounded-lg flex items-center justify-center gap-1 transition-colors border border-dashed border-slate-300"
+              >
+                <X className="w-3.5 h-3.5" />
+                <span>{lang === 'hi' ? "मेनू बंद करें (Close)" : "Close Menu"}</span>
+              </button>
             </div>
           </div>
         </>
