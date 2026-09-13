@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Menu, X, Globe, Calendar, Phone } from 'lucide-react';
+import { Menu, X, Globe, Calendar, Phone, ChevronDown, Users, Sparkles, Image as ImageIcon, Mail } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
 const Navbar = () => {
   const { lang, toggleLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -22,6 +23,9 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
+  // Check if any link inside the "More" dropdown is active
+  const isMoreActive = ['/panditji', '/festivals', '/gallery', '/contact'].includes(location.pathname);
+
   const activeLinkClass = ({ isActive }) =>
     `font-semibold text-xs xl:text-sm transition-all py-1.5 px-2 xl:px-3 rounded-lg flex items-center gap-1 whitespace-nowrap ${
       isActive
@@ -36,8 +40,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-22 py-1.5 gap-2 sm:gap-4">
 
-          {/* Brand Logo & Two-Line Title Header */}
-          <Link to="/" className="flex items-center gap-2.5 sm:gap-3.5 group shrink min-w-0 flex-1 pr-1">
+          {/* Brand Logo & Two-Line Title Header (Never Collapses / Truncates) */}
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-max pr-2">
             <div className="relative shrink-0 ml-0.5 sm:ml-0">
               <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-amber-500 to-red-600 opacity-50 blur-xs group-hover:opacity-100 transition duration-300"></div>
               <img
@@ -47,47 +51,112 @@ const Navbar = () => {
               />
             </div>
 
-            <div className="flex flex-col justify-center min-w-0 flex-1">
+            <div className="flex flex-col justify-center min-w-max">
               {/* Line 1: Jyotishacharya */}
-              <span className="text-[10px] sm:text-xs font-bold text-amber-900 tracking-wider font-serif uppercase truncate">
+              <span className="text-[10px] sm:text-xs font-bold text-amber-900 tracking-wider font-serif uppercase whitespace-nowrap">
                 {t?.titleLine1 || "ज्योतिषाचार्य"}
               </span>
 
               {/* Line 2: Pt. Hariom Sharma */}
-              <span className="text-base sm:text-lg lg:text-xl xl:text-2xl font-extrabold bg-gradient-to-r from-red-900 via-amber-800 to-red-800 bg-clip-text text-transparent font-serif tracking-tight leading-snug truncate">
+              <span className="text-base sm:text-lg lg:text-xl xl:text-2xl font-extrabold bg-gradient-to-r from-red-900 via-amber-800 to-red-800 bg-clip-text text-transparent font-serif tracking-tight leading-snug whitespace-nowrap">
                 {t?.titleLine2 || "पं. हरिओम शर्मा"}
               </span>
 
               {/* Subtitle */}
-              <span className="text-[9px] sm:text-[11px] text-slate-600 font-medium tracking-wide truncate">
+              <span className="text-[9px] sm:text-[11px] text-slate-600 font-medium tracking-wide whitespace-nowrap">
                 {t?.subtitle || "उज्जैन महाकाल धाम पूजन विशेषज्ञ"}
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-amber-50/70 p-1 rounded-xl border border-amber-200/70 shrink">
+          {/* Desktop Navigation Links (Clean Layout with "More" Dropdown Menu) */}
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-amber-50/70 p-1 rounded-xl border border-amber-200/70 shrink-0">
             <NavLink to="/" className={activeLinkClass}>
               {t?.nav?.home}
             </NavLink>
             <NavLink to="/about" className={activeLinkClass}>
               {t?.nav?.famousPandit}
             </NavLink>
-            <NavLink to="/panditji" className={activeLinkClass}>
-              {t?.nav?.ourTeam}
-            </NavLink>
             <NavLink to="/services" className={activeLinkClass}>
               {t?.nav?.pujaServices}
             </NavLink>
-            <NavLink to="/festivals" className={activeLinkClass}>
-              {t?.nav?.festivals || (lang === 'hi' ? 'व्रत एवं त्योहार' : 'Festivals')}
-            </NavLink>
-            <NavLink to="/gallery" className={activeLinkClass}>
-              {t?.nav?.gallery || (lang === 'hi' ? 'गैलरी' : 'Gallery')}
-            </NavLink>
-            <NavLink to="/contact" className={activeLinkClass}>
-              {t?.nav?.contact}
-            </NavLink>
+
+            {/* "More / अधिक" Dropdown Menu Container */}
+            <div className="relative group">
+              <button
+                type="button"
+                className={`font-semibold text-xs xl:text-sm transition-all py-1.5 px-2.5 xl:px-3 rounded-lg flex items-center gap-1 whitespace-nowrap cursor-pointer ${
+                  isMoreActive
+                    ? 'text-red-700 bg-red-50 border border-red-200/80 font-bold shadow-xs'
+                    : 'text-slate-700 hover:text-red-700 hover:bg-amber-50/60'
+                }`}
+              >
+                <span>{lang === 'hi' ? 'अधिक' : 'More'}</span>
+                <ChevronDown className="w-3.5 h-3.5 text-amber-700 group-hover:rotate-180 transition-transform duration-300" />
+              </button>
+
+              {/* Dropdown Menu Floating Box */}
+              <div className="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50 min-w-[210px]">
+                <div className="bg-white/95 backdrop-blur-xl border border-amber-200/90 rounded-2xl shadow-xl p-2 space-y-1">
+                  <NavLink
+                    to="/panditji"
+                    className={({ isActive }) =>
+                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2 transition-colors ${
+                        isActive
+                          ? 'bg-amber-100/90 text-red-800'
+                          : 'text-slate-800 hover:bg-amber-50 hover:text-red-700'
+                      }`
+                    }
+                  >
+                    <Users className="w-4 h-4 text-amber-700 shrink-0" />
+                    <span>{t?.nav?.ourTeam}</span>
+                  </NavLink>
+
+                  <NavLink
+                    to="/festivals"
+                    className={({ isActive }) =>
+                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2 transition-colors ${
+                        isActive
+                          ? 'bg-amber-100/90 text-red-800'
+                          : 'text-slate-800 hover:bg-amber-50 hover:text-red-700'
+                      }`
+                    }
+                  >
+                    <Sparkles className="w-4 h-4 text-amber-700 shrink-0" />
+                    <span>{t?.nav?.festivals || (lang === 'hi' ? 'व्रत एवं त्योहार' : 'Festivals')}</span>
+                  </NavLink>
+
+                  <NavLink
+                    to="/gallery"
+                    className={({ isActive }) =>
+                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2 transition-colors ${
+                        isActive
+                          ? 'bg-amber-100/90 text-red-800'
+                          : 'text-slate-800 hover:bg-amber-50 hover:text-red-700'
+                      }`
+                    }
+                  >
+                    <ImageIcon className="w-4 h-4 text-amber-700 shrink-0" />
+                    <span>{t?.nav?.gallery || (lang === 'hi' ? 'गैलरी' : 'Gallery')}</span>
+                  </NavLink>
+
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive }) =>
+                      `px-3 py-2 rounded-xl text-xs xl:text-sm font-bold flex items-center gap-2 transition-colors ${
+                        isActive
+                          ? 'bg-amber-100/90 text-red-800'
+                          : 'text-slate-800 hover:bg-amber-50 hover:text-red-700'
+                      }`
+                    }
+                  >
+                    <Mail className="w-4 h-4 text-amber-700 shrink-0" />
+                    <span>{t?.nav?.contact}</span>
+                  </NavLink>
+                </div>
+              </div>
+            </div>
+
           </nav>
 
           {/* Right Controls: Language Switcher + Call / Book CTA (Desktop) */}
@@ -97,7 +166,7 @@ const Navbar = () => {
             <div className="flex items-center bg-amber-100/80 border border-amber-300 rounded-lg p-0.5 text-xs font-bold shadow-2xs">
               <button
                 onClick={() => toggleLanguage('hi')}
-                className={`px-2 py-1 rounded-md transition-all ${
+                className={`px-2 py-1 rounded-md transition-all cursor-pointer ${
                   lang === 'hi'
                     ? 'bg-gradient-to-r from-amber-600 to-red-700 text-white shadow-xs font-bold'
                     : 'text-amber-900 hover:text-red-900'
@@ -108,7 +177,7 @@ const Navbar = () => {
               </button>
               <button
                 onClick={() => toggleLanguage('en')}
-                className={`px-2 py-1 rounded-md transition-all ${
+                className={`px-2 py-1 rounded-md transition-all cursor-pointer ${
                   lang === 'en'
                     ? 'bg-gradient-to-r from-amber-600 to-red-700 text-white shadow-xs font-bold'
                     : 'text-amber-900 hover:text-red-900'
@@ -155,7 +224,7 @@ const Navbar = () => {
             {/* Mobile Drawer Hamburger Button */}
             <button
               onClick={toggleMenu}
-              className="p-1.5 sm:p-2 rounded-lg bg-amber-50 text-slate-800 border border-amber-300 focus:outline-none active:bg-amber-100 flex items-center justify-center shrink-0"
+              className="p-1.5 sm:p-2 rounded-lg bg-amber-50 text-slate-800 border border-amber-300 focus:outline-none active:bg-amber-100 flex items-center justify-center shrink-0 cursor-pointer"
               aria-label="Toggle Navigation Menu"
             >
               {isOpen ? <X className="w-5.5 h-5.5 text-red-700" /> : <Menu className="w-5.5 h-5.5 text-slate-800" />}
