@@ -3,28 +3,19 @@ import { useLanguage } from '../context/LanguageContext';
 import { Camera, Eye, X, Phone, MessageCircle, Award } from 'lucide-react';
 
 import sharmaji from '../assets/sharmaji.png';
-import hariomsharmaji2 from '../assets/hariomsharmaji2.png';
-import pujaKaalsarp from '../assets/puja_kaalsarp.jpg';
-import pujaRudrabhishek from '../assets/puja_rudrabhishek.jpg';
-import pujaMangal from '../assets/puja_mangal.jpg';
-import pujaPitru from '../assets/puja_pitru.jpg';
-import pujaNavgrah from '../assets/puja_navgrah.jpg';
-import pujaKumbh from '../assets/puja_kumbh.jpg';
-import pujaVastu from '../assets/puja_vastu.jpg';
-import ganeshPoster from '../assets/ganesh_chaturthi_poster.jpg';
 
-const initialGalleryItems = [
-  { id: 1, src: sharmaji, alt: "Pt. Hariom Sharma Ujjain" },
-  { id: 2, src: pujaKaalsarp, alt: "Kaal Sarp Dosh Puja Ujjain" },
-  { id: 3, src: pujaMangal, alt: "Mangal Bhaat Puja Ujjain" },
-  { id: 4, src: pujaRudrabhishek, alt: "Rudrabhishek Puja Ujjain" },
-  { id: 5, src: ganeshPoster, alt: "Ganesh Chaturthi Ujjain" },
-  { id: 6, src: pujaPitru, alt: "Pitru Dosh Puja Ujjain" },
-  { id: 7, src: pujaNavgrah, alt: "Navgrah Shanti Puja Ujjain" },
-  { id: 8, src: pujaKumbh, alt: "Kumbh Vivah Ujjain" },
-  { id: 9, src: pujaVastu, alt: "Vastu Puja Ujjain" },
-  { id: 10, src: hariomsharmaji2, alt: "Pt. Hariom Sharma Puja" }
-];
+// Dynamically auto-load ALL images placed inside 'src/assets/gallery_images' folder!
+// Simply drag & drop any new photo into 'src/assets/gallery_images' and it will display automatically.
+const galleryImageModules = import.meta.glob('../assets/gallery_images/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}', { eager: true });
+
+const galleryImages = Object.entries(galleryImageModules).map(([filePath, mod], index) => {
+  const fileName = filePath.split('/').pop() || `Photo ${index + 1}`;
+  return {
+    id: index + 1,
+    src: mod.default || mod,
+    alt: fileName.split('.')[0].replace(/[-_]/g, ' ')
+  };
+});
 
 const Gallery = () => {
   const { t, lang } = useLanguage();
@@ -57,27 +48,35 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* GALLERY PHOTO GRID (PURE IMAGES ONLY) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          {initialGalleryItems.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => setSelectedImage(item)}
-              className="group relative aspect-4/3 rounded-2xl overflow-hidden bg-white border-2 border-amber-200/80 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all duration-300 cursor-pointer"
-            >
-              <img
-                src={item.src}
-                alt={item.alt || "Gallery Photo"}
-                className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="p-3 rounded-full bg-amber-500/90 text-slate-950 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <Eye className="w-6 h-6" />
+        {/* DYNAMIC GALLERY PHOTO GRID (Auto-mapped from src/assets/gallery_images) */}
+        {galleryImages.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            {galleryImages.map((item) => (
+              <div
+                key={item.id}
+                onClick={() => setSelectedImage(item)}
+                className="group relative aspect-4/3 rounded-2xl overflow-hidden bg-white border-2 border-amber-200/80 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all duration-300 cursor-pointer"
+              >
+                <img
+                  src={item.src}
+                  alt={item.alt || "Gallery Photo"}
+                  className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="p-3 rounded-full bg-amber-500/90 text-slate-950 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <Eye className="w-6 h-6" />
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12 px-4 rounded-3xl bg-white/80 border border-amber-200">
+            <p className="text-slate-600 font-bold text-base">
+              {isHindi ? "gallery_images फ़ोल्डर में कोई फोटो उपलब्ध नहीं है।" : "No images found in gallery_images folder."}
+            </p>
+          </div>
+        )}
 
         {/* CTA BANNER */}
         <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-red-900 via-amber-800 to-red-900 border-2 border-amber-400 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
