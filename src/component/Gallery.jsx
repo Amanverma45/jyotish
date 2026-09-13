@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Sparkles, Camera, Image as ImageIcon, Eye, X, PlusCircle, Phone, MessageCircle, Award, CheckCircle2 } from 'lucide-react';
+import { Camera, Eye, X, Phone, MessageCircle, Award } from 'lucide-react';
 
 import sharmaji from '../assets/sharmaji.png';
 import hariomsharmaji2 from '../assets/hariomsharmaji2.png';
@@ -13,118 +13,17 @@ import pujaKumbh from '../assets/puja_kumbh.jpg';
 import pujaVastu from '../assets/puja_vastu.jpg';
 import ganeshPoster from '../assets/ganesh_chaturthi_poster.jpg';
 
-// Initial Gallery Photos Data List
-// Note for USER: Naye photo add karne ke liye 'src' field me photo path daal dein (e.g. src: pujaPhoto).
 const initialGalleryItems = [
-  {
-    id: 1,
-    title: "ज्योतिषाचार्य पं. हरिओम शर्मा जी",
-    subtitle: "मुख्य पूजन विशेषज्ञ (उज्जैन महाकाल धाम)",
-    category: "mahakal",
-    categoryLabel: "महाकाल धाम",
-    src: sharmaji,
-    alt: "Pt. Hariom Sharma Ujjain"
-  },
-  {
-    id: 2,
-    title: "कालसर्प दोष निवारण एवं राहु-केतु शांति पूजा",
-    subtitle: "उज्जैन महाकालेश्वर सिद्ध क्षेत्र",
-    category: "kaalsarp",
-    categoryLabel: "कालसर्प दोष",
-    src: pujaKaalsarp,
-    alt: "Kaal Sarp Dosh Puja Ujjain"
-  },
-  {
-    id: 3,
-    title: "मंगलनाथ मंदिर मंगल भात पूजा",
-    subtitle: "विवाह बाधा एवं मंगल दोष निवारण",
-    category: "mangal",
-    categoryLabel: "मंगल भात पूजा",
-    src: pujaMangal,
-    alt: "Mangal Bhaat Puja Ujjain"
-  },
-  {
-    id: 4,
-    title: "भगवान शिव महाकाल रुद्राभिषेक पूजा",
-    subtitle: "दूध, जल एवं बिल्वपत्र अभिषेक अनुष्ठान",
-    category: "rudrabhishek",
-    categoryLabel: "रुद्राभिषेक",
-    src: pujaRudrabhishek,
-    alt: "Rudrabhishek Puja Ujjain"
-  },
-  {
-    id: 5,
-    title: "गणेश चतुर्थी 2026 महापर्व पंचांग",
-    subtitle: "विनायक चतुर्थी से अनंत चतुर्दशी उत्सव",
-    category: "anushthan",
-    categoryLabel: "विशेष अनुष्ठान",
-    src: ganeshPoster,
-    alt: "Ganesh Chaturthi Ujjain"
-  },
-  {
-    id: 6,
-    title: "पितृदोष शांति एवं पिंडदान तर्पण अनुष्ठान",
-    subtitle: "सिद्धवट एवं रामघाट तट उज्जैन",
-    category: "anushthan",
-    categoryLabel: "विशेष अनुष्ठान",
-    src: pujaPitru,
-    alt: "Pitru Dosh Puja Ujjain"
-  },
-  {
-    id: 7,
-    title: "नवग्रह शांति एवं ग्रह दोष जाप",
-    subtitle: "नौ ग्रहों की अनुकूलता हेतु वैदिक जाप",
-    category: "anushthan",
-    categoryLabel: "विशेष अनुष्ठान",
-    src: pujaNavgrah,
-    alt: "Navgrah Shanti Puja Ujjain"
-  },
-  {
-    id: 8,
-    title: "कुंभ विवाह व अर्क विवाह अनुष्ठान",
-    subtitle: "शीघ्र विवाह योग हेतु विशेष वैदिक विधि",
-    category: "anushthan",
-    categoryLabel: "विशेष अनुष्ठान",
-    src: pujaKumbh,
-    alt: "Kumbh Vivah Ujjain"
-  },
-  // BLANK PLACEHOLDERS (User Can Paste Image Paths Here!)
-  {
-    id: 9,
-    title: "महाकालेश्वर भस्म आरती एवं विशेष पूजन",
-    subtitle: "उज्जैन धाम पावन दर्शन",
-    category: "mahakal",
-    categoryLabel: "महाकाल धाम",
-    src: "", // Image Path Yahan Daalein
-    alt: "Mahakal Aarti"
-  },
-  {
-    id: 10,
-    title: "वास्तु दोष शांति एवं गृह प्रवेश पूजा",
-    subtitle: "सकारात्मक ऊर्जा एवं शांति हेतु",
-    category: "anushthan",
-    categoryLabel: "विशेष अनुष्ठान",
-    src: pujaVastu,
-    alt: "Vastu Puja Ujjain"
-  },
-  {
-    id: 11,
-    title: "महामृत्युंजय जाप अनुष्ठान",
-    subtitle: "आरोग्य व दीर्घायु प्राप्ति हेतु",
-    category: "rudrabhishek",
-    categoryLabel: "रुद्राभिषेक",
-    src: "", // Image Path Yahan Daalein
-    alt: "Mahamrityunjay Jaap"
-  },
-  {
-    id: 12,
-    title: "पंडित हरिओम शर्मा जी यजमान पूजन",
-    subtitle: "उज्जैन तीर्थ क्षेत्र पूजन",
-    category: "mahakal",
-    categoryLabel: "महाकाल धाम",
-    src: hariomsharmaji2,
-    alt: "Pt. Hariom Sharma Puja"
-  }
+  { id: 1, src: sharmaji, alt: "Pt. Hariom Sharma Ujjain" },
+  { id: 2, src: pujaKaalsarp, alt: "Kaal Sarp Dosh Puja Ujjain" },
+  { id: 3, src: pujaMangal, alt: "Mangal Bhaat Puja Ujjain" },
+  { id: 4, src: pujaRudrabhishek, alt: "Rudrabhishek Puja Ujjain" },
+  { id: 5, src: ganeshPoster, alt: "Ganesh Chaturthi Ujjain" },
+  { id: 6, src: pujaPitru, alt: "Pitru Dosh Puja Ujjain" },
+  { id: 7, src: pujaNavgrah, alt: "Navgrah Shanti Puja Ujjain" },
+  { id: 8, src: pujaKumbh, alt: "Kumbh Vivah Ujjain" },
+  { id: 9, src: pujaVastu, alt: "Vastu Puja Ujjain" },
+  { id: 10, src: hariomsharmaji2, alt: "Pt. Hariom Sharma Puja" }
 ];
 
 const Gallery = () => {
@@ -132,12 +31,7 @@ const Gallery = () => {
   const isHindi = lang === 'hi';
   const gal = t?.galleryPage;
 
-  const [activeCategory, setActiveCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
-
-  const filteredItems = activeCategory === 'all'
-    ? initialGalleryItems
-    : initialGalleryItems.filter(item => item.category === activeCategory);
 
   return (
     <div className="bg-gradient-to-b from-amber-50/80 via-orange-50/30 to-amber-50/60 text-slate-800 min-h-screen py-10 lg:py-16 relative overflow-hidden">
@@ -155,136 +49,32 @@ const Gallery = () => {
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif bg-gradient-to-r from-red-900 via-amber-800 to-red-800 bg-clip-text text-transparent leading-tight">
-            {gal?.heading || (isHindi ? "उज्जैन महाकाल धाम पूजा एवं अनुष्ठान गैलरी" : "Ujjain Mahakal Dham Puja Gallery")}
+            {gal?.heading || (isHindi ? "उज्जैन महाकाल धाम फोटो गैलरी" : "Ujjain Mahakal Dham Photo Gallery")}
           </h1>
 
           <p className="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed font-medium">
-            {gal?.subHeading || (isHindi ? "ज्योतिषाचार्य पं. हरिओम शर्मा जी द्वारा उज्जैन महाकाल क्षेत्र में सम्पन्न मुख्य पूजाएं एवं दिव्य क्षण" : "Sacred moments & Pujas conducted by Pt. Hariom Sharma in Ujjain")}
+            {gal?.subHeading || (isHindi ? "ज्योतिषाचार्य पं. हरिओम शर्मा जी द्वारा उज्जैन महाकाल क्षेत्र में सम्पन्न मुख्य पूजाएं एवं पावन क्षण" : "Sacred moments & Pujas conducted by Pt. Hariom Sharma in Ujjain")}
           </p>
         </div>
 
-        {/* CATEGORY FILTER TABS */}
-        <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-3">
-          <button
-            onClick={() => setActiveCategory('all')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-              activeCategory === 'all'
-                ? 'bg-gradient-to-r from-red-800 via-amber-800 to-red-900 text-white shadow-md scale-105'
-                : 'bg-white border border-amber-200 text-slate-800 hover:bg-amber-100/60'
-            }`}
-          >
-            {gal?.filterAll || (isHindi ? 'सभी तस्वीरें' : 'All Photos')}
-          </button>
-
-          <button
-            onClick={() => setActiveCategory('mahakal')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-              activeCategory === 'mahakal'
-                ? 'bg-gradient-to-r from-red-800 via-amber-800 to-red-900 text-white shadow-md scale-105'
-                : 'bg-white border border-amber-200 text-slate-800 hover:bg-amber-100/60'
-            }`}
-          >
-            {gal?.filterMahakal || (isHindi ? 'महाकाल धाम' : 'Mahakal Dham')}
-          </button>
-
-          <button
-            onClick={() => setActiveCategory('kaalsarp')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-              activeCategory === 'kaalsarp'
-                ? 'bg-gradient-to-r from-red-800 via-amber-800 to-red-900 text-white shadow-md scale-105'
-                : 'bg-white border border-amber-200 text-slate-800 hover:bg-amber-100/60'
-            }`}
-          >
-            {gal?.filterKaalsarp || (isHindi ? 'कालसर्प दोष' : 'Kaal Sarp Puja')}
-          </button>
-
-          <button
-            onClick={() => setActiveCategory('mangal')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-              activeCategory === 'mangal'
-                ? 'bg-gradient-to-r from-red-800 via-amber-800 to-red-900 text-white shadow-md scale-105'
-                : 'bg-white border border-amber-200 text-slate-800 hover:bg-amber-100/60'
-            }`}
-          >
-            {gal?.filterMangal || (isHindi ? 'मंगल भात पूजा' : 'Mangal Puja')}
-          </button>
-
-          <button
-            onClick={() => setActiveCategory('rudrabhishek')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-              activeCategory === 'rudrabhishek'
-                ? 'bg-gradient-to-r from-red-800 via-amber-800 to-red-900 text-white shadow-md scale-105'
-                : 'bg-white border border-amber-200 text-slate-800 hover:bg-amber-100/60'
-            }`}
-          >
-            {gal?.filterRudrabhishek || (isHindi ? 'रुद्राभिषेक' : 'Rudrabhishek')}
-          </button>
-
-          <button
-            onClick={() => setActiveCategory('anushthan')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-              activeCategory === 'anushthan'
-                ? 'bg-gradient-to-r from-red-800 via-amber-800 to-red-900 text-white shadow-md scale-105'
-                : 'bg-white border border-amber-200 text-slate-800 hover:bg-amber-100/60'
-            }`}
-          >
-            {gal?.filterAnushthan || (isHindi ? 'विशेष अनुष्ठान' : 'Anushthan')}
-          </button>
-        </div>
-
-        {/* GALLERY PHOTO GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredItems.map((item) => (
+        {/* GALLERY PHOTO GRID (PURE IMAGES ONLY) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          {initialGalleryItems.map((item) => (
             <div
               key={item.id}
-              className="bg-white border border-amber-200/90 hover:border-amber-400 rounded-2xl p-3 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+              onClick={() => setSelectedImage(item)}
+              className="group relative aspect-4/3 rounded-2xl overflow-hidden bg-white border-2 border-amber-200/80 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all duration-300 cursor-pointer"
             >
-              {item.src ? (
-                /* Active Photo View */
-                <div
-                  className="relative aspect-4/3 rounded-xl overflow-hidden cursor-pointer border border-amber-200"
-                  onClick={() => setSelectedImage(item)}
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt || item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                  
-                  <div className="absolute top-2 right-2 p-1.5 rounded-lg bg-slate-900/80 text-amber-300 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Eye className="w-4 h-4" />
-                  </div>
-
-                  <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-slate-900/90 text-amber-300 text-[10px] font-bold">
-                    {item.categoryLabel}
-                  </span>
+              <img
+                src={item.src}
+                alt={item.alt || "Gallery Photo"}
+                className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="p-3 rounded-full bg-amber-500/90 text-slate-950 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <Eye className="w-6 h-6" />
                 </div>
-              ) : (
-                /* Blank Placeholder Box (Ready for User to add photo path!) */
-                <div className="relative aspect-4/3 rounded-xl bg-amber-50/70 border-2 border-dashed border-amber-300 flex flex-col items-center justify-center p-4 text-center space-y-2 group-hover:bg-amber-100/50 transition-colors">
-                  <div className="w-10 h-10 rounded-full bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-800 shadow-2xs">
-                    <ImageIcon className="w-5 h-5 text-red-700" />
-                  </div>
-                  <span className="text-xs font-bold text-amber-950">
-                    {isHindi ? 'फोटो स्थान तैयार है' : 'Photo Slot Ready'}
-                  </span>
-                  <p className="text-[10px] text-slate-500 italic">
-                    {gal?.addPhotoHint || (isHindi ? 'गैलरी में फोटो जोड़ने के लिए src field में इमेज पाथ डालें।' : 'Add image path in src field to display photo.')}
-                  </p>
-                </div>
-              )}
-
-              {/* Title & Subtitle */}
-              <div className="pt-3 px-1 space-y-1">
-                <h3 className="text-sm font-bold font-serif text-slate-900 line-clamp-1 group-hover:text-red-800 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-slate-600 line-clamp-1">
-                  {item.subtitle}
-                </p>
               </div>
-
             </div>
           ))}
         </div>
@@ -335,29 +125,28 @@ const Gallery = () => {
       </div>
 
       {/* PHOTO LIGHTBOX MODAL */}
-      {selectedImage && selectedImage.src && (
-        <div className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
-          <div className="relative max-w-4xl w-full bg-white border-2 border-amber-400 rounded-3xl p-4 shadow-2xl space-y-3" onClick={(e) => e.stopPropagation()}>
-            <div className="flex justify-between items-center border-b border-amber-200 pb-2.5">
-              <div>
-                <h3 className="text-lg font-bold font-serif text-slate-900">
-                  {selectedImage.title}
-                </h3>
-                <p className="text-xs text-red-800 font-semibold">{selectedImage.subtitle}</p>
-              </div>
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="p-1.5 rounded-xl bg-red-800 text-white hover:bg-red-900 transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 cursor-pointer"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full bg-slate-950/90 border-2 border-amber-400/80 rounded-3xl p-3 sm:p-4 shadow-2xl flex flex-col items-center justify-center cursor-default"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-3 -right-3 z-10 p-2 rounded-full bg-red-700 text-white hover:bg-red-800 shadow-lg cursor-pointer transition-transform hover:scale-110"
+              aria-label="Close modal"
+            >
+              <X className="w-6 h-6" />
+            </button>
 
-            <div className="max-h-[75vh] overflow-hidden rounded-2xl border border-amber-200 flex items-center justify-center bg-slate-950">
+            <div className="max-h-[85vh] w-full overflow-hidden rounded-2xl flex items-center justify-center bg-black/50">
               <img
                 src={selectedImage.src}
-                alt={selectedImage.alt || selectedImage.title}
-                className="max-h-[75vh] w-auto object-contain rounded-xl"
+                alt={selectedImage.alt || "Full View"}
+                className="max-h-[85vh] w-auto max-w-full object-contain rounded-xl"
               />
             </div>
           </div>
