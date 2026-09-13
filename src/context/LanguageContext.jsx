@@ -225,13 +225,43 @@ export const translations = {
       activeFestivalTitle: "🔥 वर्तमान/आगामी मुख्य महात्योहार",
       bookFestivalPuja: "त्योहार विशेष पूजा बुक करें",
       featured: {
-        title: "शारदीय नवरात्रि एवं महाकालेश्वर विशेष अनुष्ठान 2026",
-        date: "आश्विन शुक्ल प्रतिपदा से नवमी",
-        muhurat: "प्रातः 06:15 से 08:30 (घटस्थापना शुभ मुहूर्त)",
-        imageKey: "rudrabhishek",
-        desc: "नवरात्रि के नौ पावन दिनों में नौ दुर्गा पूजन, चंडी पाठ एवं महाकाल मंदिर क्षेत्र में विशेष शक्ति अनुष्ठान कराने से सभी मनोकामनाएं सिद्ध होती हैं।",
-        vidhi: "घटस्थापना, दुर्गा सप्तशती पाठ, कन्या पूजन एवं हवन अनुष्ठान विद्वान आचार्यों द्वारा सम्पन्न होता है।",
-        status: "वर्तमान में बुकिंग चालू है"
+        title: "गणेश चतुर्थी 2026 (विनायक चतुर्थी से अनंत चतुर्दशी महामहोत्सव)",
+        date: "14 सितंबर 2026 (सोमवार) से 25 सितंबर 2026 (शुक्रवार)",
+        panchangInfo: "भाद्रपद मास के शुक्ल पक्ष की चतुर्थी तिथि (विनायक चतुर्थी / गणेश चौथ)",
+        tithiStart: "14 सितंबर 2026, प्रातः 7:06 बजे",
+        tithiEnd: "15 सितंबर 2026, प्रातः 7:44 बजे",
+        sthapanaDate: "14 सितंबर 2026, सोमवार",
+        muhurat: "प्रातः 11:09 बजे से दोपहर 1:35 बजे तक (उज्जैन पंचांग अनुसार)",
+        visarjanDate: "25 सितंबर 2026 (शुक्रवार - अनंत चतुर्दशी)",
+        mantra: "ॐ गं गणपतये नमः ॥",
+        shloka: "वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ। निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥",
+        imageKey: "ganesh_poster",
+        desc: "विघ्नहर्ता, मंगलकर्ता भगवान श्री गणेश के पावन जन्मोत्सव गणेश चतुर्थी से अनंत चतुर्दशी तक 10 दिवसीय गणेशोत्सव का महापर्व मनाया जाता है। उज्जैन महाकाल धाम में गणपति स्थापना, रिद्धि-सिद्धि पूजन व मोदक अर्चन कराने से जीवन के सभी विघ्न दूर होते हैं।",
+        samagri: [
+          "भगवान गणेश की प्रतिमा",
+          "लाल वस्त्र",
+          "दूर्वा (21 या अधिक)",
+          "लाल पुष्प (विशेषतः गुड़हल)",
+          "अक्षत (चावल)",
+          "सिंदूर, चंदन, रोली",
+          "मोदक या लड्डू",
+          "फल, मिठाई, पंचामृत",
+          "धूप, दीप, अगरबत्ती",
+          "कलश, जल, नारियल",
+          "पान, सुपारी, इलायची",
+          "नैवेद्य एवं आरती की सामग्री"
+        ],
+        vidhiSteps: [
+          "पूजा स्थान को स्वच्छ कर लें और चौकी पर लाल वस्त्र बिछाएं।",
+          "कलश स्थापना करें और श्री गणेश की प्रतिमा विधिवत स्थापित करें।",
+          "भगवान गणेश का ध्यान कर संकल्प लें।",
+          "पंचामृत से अभिषेक करें, वस्त्र, चंदन, अक्षत, पुष्प, दूर्वा अर्पित करें।",
+          "मोदक/लड्डू का भोग लगाएं।",
+          "गणेश जी की आरती करें और मंत्रों का जाप करें।",
+          "परिवार की सुख-समृद्धि, आरोग्य और विघ्नों के निवारण की प्रार्थना करें।"
+        ],
+        mahatmya: "भगवान गणेश बुद्धि, सिद्धि, समृद्धि और सौभाग्य के देवता हैं। गणेश चतुर्थी का व्रत एवं पूजन करने से जीवन के सभी विघ्न दूर होते हैं और घर में सुख-शांति एवं समृद्धि आती है।",
+        status: "गणपति स्थापना व विशेष अनुष्ठान बुकिंग चालू है"
       },
       list: [
         {
@@ -572,13 +602,43 @@ export const translations = {
       activeFestivalTitle: "🔥 Current / Featured Festival",
       bookFestivalPuja: "Book Special Festival Puja",
       featured: {
-        title: "Shardiya Navratri & Mahakal Special Anushthan 2026",
-        date: "Ashwin Shukla Pratipada to Navami",
-        muhurat: "06:15 AM to 08:30 AM (Ghatasthapana Muhurat)",
-        imageKey: "rudrabhishek",
-        desc: "Performing Durga Saptashati Path, Chandi Yagya & Navratri Mahakal Pujas in Ujjain brings supreme prosperity and protection.",
-        vidhi: "Ghatasthapana, Durga Path, Kanya Pujan & Hawan Anushthan performed by learned Vedic Pandits.",
-        status: "Special Booking Open Now"
+        title: "Ganesh Chaturthi 2026 (Vinayak Chaturthi to Anant Chaturdashi)",
+        date: "14 September 2026 (Monday) to 25 September 2026 (Friday)",
+        panchangInfo: "Bhadrapad Shukla Paksha Chaturthi Tithi (Vinayak Chaturthi / Ganesh Chauth)",
+        tithiStart: "14 September 2026, 07:06 AM",
+        tithiEnd: "15 September 2026, 07:44 AM",
+        sthapanaDate: "14 September 2026, Monday",
+        muhurat: "11:09 AM to 01:35 PM (As per Ujjain Panchang)",
+        visarjanDate: "25 September 2026 (Friday - Anant Chaturdashi)",
+        mantra: "Om Gam Ganapataye Namah ||",
+        shloka: "Vakratunda Mahakaya Suryakoti Samaprabha | Nirvighnam Kuru Me Deva Sarva-Karyeshu Sarvada ||",
+        imageKey: "ganesh_poster",
+        desc: "Celebrating the divine 10-day festival of Vighnaharta Lord Ganesha from Ganesh Chaturthi to Anant Chaturdashi. Performing Ganpati Sthapana, Riddhi-Siddhi Pujan & Modak Archana at Ujjain Mahakal Dham removes all obstacles from life.",
+        samagri: [
+          "Lord Ganesha Idol",
+          "Red Cloth",
+          "Durva Grass (21 or more)",
+          "Red Flowers (especially Hibiscus)",
+          "Akshat (Sacred Rice)",
+          "Sindoor, Chandan, Roli",
+          "Modak or Laddoo",
+          "Fruits, Sweets, Panchamrit",
+          "Dhoop, Deep, Agarbatti",
+          "Kalash, Water, Coconut",
+          "Paan, Supari, Cardamom",
+          "Naivedya & Aarti Items"
+        ],
+        vidhiSteps: [
+          "Clean the Puja space and place a clean red cloth on the wooden platform.",
+          "Perform Kalash Sthapana and reverently install Lord Ganesha idol.",
+          "Meditate upon Lord Ganesha and take solemn Sankalp.",
+          "Perform Panchamrit Abhishek; offer clothes, Chandan, Akshat, flowers & Durva.",
+          "Offer fresh Modak or Laddoos as Naivedya.",
+          "Perform Ganesha Aarti and chant divine Ganesha mantras.",
+          "Pray for family peace, prosperity, good health & removal of obstacles."
+        ],
+        mahatmya: "Lord Ganesha is the deity of Wisdom, Prosperity, Siddhi, and Good Fortune. Observing Ganesh Chaturthi Vrat & Puja removes all hardships and brings peace and abundance to the household.",
+        status: "Ganpati Sthapana & Anushthan Booking Open"
       },
       list: [
         {
