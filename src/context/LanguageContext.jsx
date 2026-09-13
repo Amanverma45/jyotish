@@ -217,6 +217,14 @@ export const translations = {
       quote: "डॉक्टर के पास आप बीमार पड़ने पर ही नहीं जाते, गर्भ में बच्चे के आने के बाद ही उससे सलाह लेकर काम करना आरंभ कर देते हैं! कानून की मदद आप झंझट में पड़ने के बाद नहीं लेते, वरन् होश संभालने के बाद ही कानून का पालन करते हैं! गुरू के संपर्क में तब नहीं जाते जब आप गुमराह हो जाते हैं, वरन् जीवन की शिक्षा पाने के लिए पहले से गुरू की सलाह लेते हैं! फिर एक ज्योतिषी के पास जाने के लिए आप बुरे समय का इंतजार क्यों करते हैं?"
     },
 
+    // Fallback blogs object
+    blogs: {
+      title: "वैदिक पंचांग एवं व्रत-त्योहार",
+      subHeading: "उज्जैन महाकाल धाम के अनुसार प्रमुख धार्मिक पर्व, तिथि महात्म्य एवं पूजन मुहूर्त जानकारी",
+      readArticle: "त्योहार विवरण देखें",
+      posts: []
+    },
+
     // Festivals Section
     festivalsSection: {
       badge: "वैदिक पंचांग एवं व्रत-त्योहार",
@@ -592,6 +600,14 @@ export const translations = {
     suvichar: {
       title: "Thought of Wisdom",
       quote: "You consult doctors early, follow laws before trouble strikes, and seek teachers before losing direction. Why wait for hard times before consulting a wise Astrologer?"
+    },
+
+    // Fallback blogs object
+    blogs: {
+      title: "Vedic Panchang & Festivals",
+      subHeading: "Sacred festival calendar, significance & special Puja Muhurat as per Ujjain Mahakal Dham",
+      readArticle: "View Festival Details",
+      posts: []
     },
 
     // Festivals Section
