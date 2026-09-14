@@ -65,32 +65,32 @@ export const translations = {
       ujjainTitle: "पवित्र अवंतिका नगरी (उज्जैन) का आध्यात्मिक महत्व",
       ujjainDesc: "उज्जैन भारत के मध्य प्रदेश राज्य में स्थित एक प्रमुख शहर है, जो प्राचीन समय से ही महत्वपूर्ण धार्मिक और सांस्कृतिक स्थल के रूप में प्रसिद्ध है। इसका प्राचीन नाम 'उज्जैनी' है और यह महाकालेश्वर ज्योतिर्लिंग के स्थान के रूप में मशहूर है, जिसे 'महाकालपुरी' भी कहा जाता है।",
       
-      landmarksTitle: "उज्जैन के प्रमुख एवं महत्वपूर्ण धार्मिक स्थल:",
+      landmarksTitle: "उज्जैन के प्रमुख एवं पावन धार्मिक स्थल:",
       landmarks: [
         {
-          title: "महाकालेश्वर ज्योतिर्लिंग",
-          desc: "उज्जैन का सबसे प्रमुख और पवित्र स्थान महाकालेश्वर ज्योतिर्लिंग है, जो भगवान शिव को समर्पित है। महाकालपुरी में हर द्वादश वर्ष महाकुंभ (सिंहस्थ) मेला आयोजित होता है जिसमें लाखों श्रद्धालु भगवान की अर्चना के लिए इकट्ठा होते हैं।"
+          title: "श्री महाकालेश्वर ज्योतिर्लिंग",
+          desc: "उज्जैन का सबसे प्रमुख और पावन स्थान भगवान श्री महाकालेश्वर ज्योतिर्लिंग है। यहाँ भगवान शिव दक्षिणामुखी रूप में विराजमान हैं और नित्य प्रातः पावन भस्म आरती सम्पन्न होती है।",
+          imageKey: "mahakal"
         },
         {
-          title: "कालिदास नगरी",
-          desc: "उज्जैन ने विशेष रूप से संस्कृत के महाकवि कालिदास की प्रसिद्धता और कर्मभूमि के रूप में नगर को गौरवान्वित किया है।"
+          title: "श्री काल भैरव मंदिर (उज्जैन)",
+          desc: "उज्जैन के अधिपति एवं रक्षक देव भगवान श्री काल भैरव का अति सिद्ध मंदिर। उज्जैन तीर्थ यात्रा भगवान काल भैरव के दर्शन और आशीर्वाद के बिना अधूरी मानी जाती है।",
+          imageKey: "kaal_bhairav"
         },
         {
-          title: "कुंभ शक्तिपीठ",
-          desc: "महाकालेश्वर मंदिर क्षेत्र को पवित्र शक्तिपीठ के रूप में भी जाना जाता है, जहाँ माता सती एवं दक्ष यज्ञ की पावन कथा जुड़ी हुई है।"
+          title: "श्री मंगलनाथ मंदिर (उज्जैन)",
+          desc: "समस्त ब्रह्मांड में मंगल ग्रह की पावन जन्मभूमि सिद्ध मंगलनाथ मंदिर। यहाँ मंगल दोष शांति एवं भात पूजा हेतु देश-विदेश से श्रद्धालु पधारते हैं।",
+          imageKey: "mangalnath"
         },
         {
-          title: "राजा विक्रमादित्य एवं गोपाचल पर्वत",
-          desc: "उज्जैन में न्यायप्रिय राजा विक्रमादित्य का ऐतिहासिक वैभव एवं अनेक धार्मिक कथाओं से जुड़ा पावन गोपाचल पर्वत स्थित है।"
-        },
-        {
-          title: "ऐतिहासिक व शिक्षात्मक महत्व",
-          desc: "उज्जैन का समृद्ध ऐतिहासिक महत्व है और यह प्राचीन समय से ही भारतीय सभ्यता, धर्म, शिक्षा और ज्योतिष ज्ञान का प्रमुख केंद्र रहा है।"
+          title: "माँ हरसिद्धि माता शक्तिपीठ",
+          desc: "51 पावन शक्तिपीठों में से एक अत्यंत दिव्य माँ हरसिद्धि मंदिर। सम्राट विक्रमादित्य की कुलदेवी माँ हरसिद्धि के दीप स्तंभ एवं दर्शन से समस्त कष्ट दूर होते हैं।",
+          imageKey: "harsiddhi_mata"
         }
       ],
 
-      callNow: "अभी कॉल करें: +91-7999646783",
-      phone: "+917999646783"
+      callNow: "अभी कॉल करें: +91-8435856067",
+      phone: "+918435856067"
     },
 
     // Associate Pandits / Our Team Section
@@ -353,7 +353,7 @@ export const translations = {
 
     // Contact Details
     contactInfo: {
-      phone: "+91-7999646783",
+      phone: "+91-8435856067",
       email: "hariomsharma@gmail.com",
       address: "रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001",
       homeAddress: "L 04 /2, श्री सिटी , दाउदखेडी उज्जैन- 456006"
@@ -465,32 +465,32 @@ export const translations = {
       ujjainTitle: "Spiritual Significance of Sacred Avantika Nagari (Ujjain)",
       ujjainDesc: "Ujjain is a prominent city located in the state of Madhya Pradesh, India, famous since ancient times as an important religious and cultural destination. Its ancient name is 'Ujjaini', and it is renowned as the abode of Mahakaleshwar Jyotirlinga, also known as 'Mahakalpuri'.",
       
-      landmarksTitle: "Key Landmarks & Sacred Heritage of Ujjain:",
+      landmarksTitle: "Key Sacred Landmarks of Ujjain:",
       landmarks: [
         {
-          title: "Mahakaleshwar Jyotirlinga",
-          desc: "The most prominent and sacred site in Ujjain is Mahakaleshwar Jyotirlinga dedicated to Lord Shiva. Every 12 years, the grand Mahakumbh (Simhastha) mela is organized here where millions of devotees gather."
+          title: "Shree Mahakaleshwar Jyotirlinga",
+          desc: "The most sacred Jyotirlinga shrine of Lord Shiva in Ujjain, featuring the divine Dakshinamukhi Mahakal form and holy morning Bhasma Aarti.",
+          imageKey: "mahakal"
         },
         {
-          title: "Kalidas Nagari",
-          desc: "Ujjain holds historic pride as the land of Mahakavi Kalidas, the legend of Sanskrit literature."
+          title: "Shree Kaal Bhairav Temple Ujjain",
+          desc: "Ancient Siddha Peeth of Lord Kaal Bhairav, the divine protector and guardian deity of Ujjain. Pilgrimage is complete only with Kaal Bhairav's blessings.",
+          imageKey: "kaal_bhairav"
         },
         {
-          title: "Kumbh Shaktipeeth",
-          desc: "Mahakaleshwar Temple region is also celebrated as a revered Shaktipeeth associated with Mata Sati."
+          title: "Shree Mangalnath Temple Ujjain",
+          desc: "Cosmic birthplace of Mars (Mangal Graha). Renowned worldwide for authentic Mangal Dosh Nivaran and Mangal Bhaat Puja rituals.",
+          imageKey: "mangalnath"
         },
         {
-          title: "King Vikramaditya & Gopachal Hill",
-          desc: "Home to the historic legacy of righteous King Vikramaditya and sacred Gopachal Parvat."
-        },
-        {
-          title: "Historical & Educational Hub",
-          desc: "Ujjain has been a major historical center for Indian civilization, religion, astrology, and spiritual education."
+          title: "Maa Harsiddhi Shaktipeeth",
+          desc: "One of the 51 revered Shaktipeeths of Mata Sati and Kuldevi of legendary Emperor Vikramaditya, renowned for its 51 glowing lamp pillars.",
+          imageKey: "harsiddhi_mata"
         }
       ],
 
-      callNow: "Call Now: +917999646783",
-      phone: "+917999646783"
+      callNow: "Call Now: +918435856067",
+      phone: "+918435856067"
     },
 
     // Associate Pandits / Our Team Section
@@ -753,7 +753,7 @@ export const translations = {
 
     // Contact Details
     contactInfo: {
-      phone: "+91-7999646783",
+      phone: "+91-8435856067",
       email: "hariomsharma@gmail.com",
       address: "Ramghat Marg, Near Mahakaleshwar Temple, Ujjain (M.P.) 456001",
       homeAddress: "L 04 /2, Shree City, Daudkhedi Ujjain - 456006"

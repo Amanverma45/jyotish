@@ -117,11 +117,11 @@ const Hero = () => {
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-3 pt-2">
                     <a
-                      href="tel:+917999646783"
+                      href="tel:+918435856067"
                       className="px-4 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-gradient-to-r from-red-700 via-amber-700 to-red-800 hover:from-red-600 hover:to-amber-600 text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 text-center"
                     >
                       <Phone className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
-                      <span>{isHindi ? "अभी कॉल करें: +91-7999646783" : "Call Now: +91-7999646783"}</span>
+                      <span>{isHindi ? "अभी कॉल करें: +91-8435856067" : "Call Now: +91-8435856067"}</span>
                     </a>
 
                     <Link
@@ -196,7 +196,7 @@ const Hero = () => {
                       </div>
 
                       <a
-                        href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से उज्जैन महाकाल पूजन हेतु परामर्श चाहिए।" : "Jai Shree Mahakal! I want to consult Pt. Hariom Sharma Ji for Ujjain Puja.")}`}
+                        href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से उज्जैन महाकाल पूजन हेतु परामर्श चाहिए।" : "Jai Shree Mahakal! I want to consult Pt. Hariom Sharma Ji for Ujjain Puja.")}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow flex items-center justify-center gap-2"

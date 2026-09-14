@@ -15,7 +15,7 @@ const FloatingButtons = () => {
       <div className="relative group animate-float-slow">
         <div className="absolute inset-0 rounded-full bg-emerald-500 animate-pulse-ring pointer-events-none"></div>
         <a
-          href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से पूजन हेतु संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I would like to consult Pt. Hariom Sharma Ji for Puja.")}`}
+          href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से पूजन हेतु संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I would like to consult Pt. Hariom Sharma Ji for Puja.")}`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
@@ -34,7 +34,7 @@ const FloatingButtons = () => {
       <div className="relative group animate-float-delayed">
         <div className="absolute inset-0 rounded-full bg-amber-500 animate-pulse-ring pointer-events-none"></div>
         <a
-          href="tel:+917999646783"
+          href="tel:+918435856067"
           aria-label="Direct Phone Call"
           className="relative flex items-center justify-center w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-orange-600 via-amber-500 to-amber-400 hover:from-amber-500 hover:to-orange-400 text-slate-950 shadow-xl shadow-amber-500/50 border-2 border-white hover:scale-115 active:scale-95 transition-all duration-300 group-hover:-rotate-12 cursor-pointer"
         >

@@ -6,6 +6,30 @@ const Contact = () => {
   const { t, lang } = useLanguage();
   const isHindi = lang === 'hi';
 
+  const [formData, setFormData] = React.useState({
+    name: '',
+    phone: '',
+    topic: isHindi ? 'जन्म कुंडली विश्लेषण' : 'Janma Kundli Analysis',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const whatsappMsg =
+      `*जय श्री महाकाल!*%0A` +
+      `*नया पूछताछ संदेश (Website Contact Form):*%0A%0A` +
+      `*नाम:* ${formData.name}%0A` +
+      `*फोन नंबर:* ${formData.phone}%0A` +
+      `*विषय/पूजा:* ${formData.topic}%0A` +
+      `*संदेश:* ${formData.message}`;
+
+    window.location.href = `https://api.whatsapp.com/send?phone=918435856067&text=${whatsappMsg}`;
+  };
+
   return (
     <div className="bg-gradient-to-b from-amber-50/80 via-orange-50/30 to-amber-50/60 text-slate-800 min-h-screen py-12 lg:py-20 relative overflow-hidden">
       
@@ -43,8 +67,8 @@ const Contact = () => {
                   {t?.contact?.phoneTitle || (isHindi ? "फोन नंबर" : "Phone Number")}
                 </h3>
                 <p className="text-xs text-slate-600 mb-2">{t?.contact?.phoneDesc || (isHindi ? "फोन पर तुरंत बात करें" : "Direct Phone Call")}</p>
-                <a href="tel:+917999646783" className="text-base font-extrabold text-red-900 hover:underline">
-                  +91-7999646783
+                <a href="tel:+918435856067" className="text-base font-extrabold text-red-900 hover:underline">
+                  +91-8435856067
                 </a>
               </div>
             </div>
@@ -60,12 +84,12 @@ const Contact = () => {
                 </h3>
                 <p className="text-xs text-slate-600 mb-2">{t?.contact?.whatsappDesc || (isHindi ? "व्हाट्सएप पर मैसेज भेजें" : "Send a message on WhatsApp")}</p>
                 <a
-                  href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप पर संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
+                  href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप पर संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-base font-extrabold text-emerald-700 hover:underline"
                 >
-                  +91-7999646783 (WhatsApp)
+                  +91-8435856067 (WhatsApp)
                 </a>
               </div>
             </div>
@@ -135,19 +159,19 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="lg:col-span-7 bg-white border-2 border-amber-300 rounded-3xl p-6 sm:p-8 shadow-xl">
             <h3 className="text-2xl font-bold font-serif text-slate-900 mb-6">
-              {isHindi ? "सीधा संदेश भेजें" : "Send Direct Message"}
+              {isHindi ? "सीधा संदेश भेजें (WhatsApp पर)" : "Send Direct Message (on WhatsApp)"}
             </h3>
             
-            <form className="space-y-4" onSubmit={(e) => {
-              e.preventDefault();
-              alert(isHindi ? 'धन्यवाद! आपका संदेश प्राप्त हो गया है। हम शीघ्र संपर्क करेंगे।' : 'Thank you! Your message has been received. We will contact you shortly.');
-            }}>
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-xs font-bold text-slate-800 mb-1">
                   {isHindi ? "आपका नाम *" : "Your Full Name *"}
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                   placeholder={isHindi ? "अपना नाम दर्ज करें" : "Enter your name"}
                   className="w-full px-4 py-3 rounded-xl bg-amber-50/50 border border-amber-300 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-amber-600 text-sm font-medium"
@@ -160,6 +184,9 @@ const Contact = () => {
                 </label>
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   required
                   placeholder={isHindi ? "10 अंकों का फोन नंबर" : "10-digit mobile number"}
                   className="w-full px-4 py-3 rounded-xl bg-amber-50/50 border border-amber-300 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-amber-600 text-sm font-medium"
@@ -170,13 +197,18 @@ const Contact = () => {
                 <label className="block text-xs font-bold text-slate-800 mb-1">
                   {isHindi ? "पूजन या ज्योतिष विषय *" : "Puja / Astrology Topic *"}
                 </label>
-                <select className="w-full px-4 py-3 rounded-xl bg-amber-50/50 border border-amber-300 text-slate-900 focus:outline-none focus:border-amber-600 text-sm font-medium">
-                  <option value="kundli">{isHindi ? "जन्म कुंडली विश्लेषण" : "Janma Kundli Analysis"}</option>
-                  <option value="kaalsarp">{isHindi ? "कालसर्प / मंगल दोष पूजा (उज्जैन)" : "Kaal Sarp / Mangal Dosh Puja (Ujjain)"}</option>
-                  <option value="marriage">{isHindi ? "विवाह एवं गुण मिलान" : "Marriage & Matchmaking"}</option>
-                  <option value="business">{isHindi ? "व्यापार एवं नौकरी परामर्श" : "Business & Career Consultation"}</option>
-                  <option value="gemstone">{isHindi ? "रत्न परामर्श" : "Gemstone Recommendation"}</option>
-                  <option value="other">{isHindi ? "अन्य ज्योतिष समस्या" : "Other Query"}</option>
+                <select
+                  name="topic"
+                  value={formData.topic}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl bg-amber-50/50 border border-amber-300 text-slate-900 focus:outline-none focus:border-amber-600 text-sm font-medium"
+                >
+                  <option value={isHindi ? "जन्म कुंडली विश्लेषण" : "Janma Kundli Analysis"}>{isHindi ? "जन्म कुंडली विश्लेषण" : "Janma Kundli Analysis"}</option>
+                  <option value={isHindi ? "कालसर्प / मंगल दोष पूजा (उज्जैन)" : "Kaal Sarp / Mangal Dosh Puja (Ujjain)"}>{isHindi ? "कालसर्प / मंगल दोष पूजा (उज्जैन)" : "Kaal Sarp / Mangal Dosh Puja (Ujjain)"}</option>
+                  <option value={isHindi ? "विवाह एवं गुण मिलान" : "Marriage & Matchmaking"}>{isHindi ? "विवाह एवं गुण मिलान" : "Marriage & Matchmaking"}</option>
+                  <option value={isHindi ? "व्यापार एवं नौकरी परामर्श" : "Business & Career Consultation"}>{isHindi ? "व्यापार एवं नौकरी परामर्श" : "Business & Career Consultation"}</option>
+                  <option value={isHindi ? "रत्न परामर्श" : "Gemstone Recommendation"}>{isHindi ? "रत्न परामर्श" : "Gemstone Recommendation"}</option>
+                  <option value={isHindi ? "अन्य ज्योतिष समस्या" : "Other Query"}>{isHindi ? "अन्य ज्योतिष समस्या" : "Other Query"}</option>
                 </select>
               </div>
 
@@ -186,6 +218,9 @@ const Contact = () => {
                 </label>
                 <textarea
                   rows={4}
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                   placeholder={isHindi ? "अपनी समस्या संक्षेप में लिखें..." : "Briefly describe your query..."}
                   className="w-full px-4 py-3 rounded-xl bg-amber-50/50 border border-amber-300 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-amber-600 text-sm font-medium"
@@ -194,10 +229,10 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-red-800 via-amber-800 to-red-900 hover:from-red-700 hover:to-amber-700 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 active:scale-98"
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-700 via-emerald-600 to-teal-700 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 active:scale-98 cursor-pointer"
               >
-                <Send className="w-4 h-4" />
-                <span>{t?.contact?.sendMessage || (isHindi ? "संदेश भेजें" : "Send Message")}</span>
+                <MessageCircle className="w-4.5 h-4.5" />
+                <span>{isHindi ? "व्हाट्सएप पर संदेश भेजें" : "Send Message on WhatsApp"}</span>
               </button>
             </form>
           </div>

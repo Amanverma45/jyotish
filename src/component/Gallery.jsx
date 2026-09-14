@@ -102,7 +102,7 @@ const Gallery = () => {
 
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
             <a
-              href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से उज्जैन पूजा हेतु संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji for Ujjain Puja.")}`}
+              href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से उज्जैन पूजा हेतु संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji for Ujjain Puja.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-md flex items-center justify-center gap-2"
@@ -112,11 +112,11 @@ const Gallery = () => {
             </a>
 
             <a
-              href="tel:+917999646783"
+              href="tel:+918435856067"
               className="px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs sm:text-sm shadow-md flex items-center justify-center gap-2"
             >
               <Phone className="w-4 h-4" />
-              <span>+91-7999646783</span>
+              <span>+91-8435856067</span>
             </a>
           </div>
         </div>

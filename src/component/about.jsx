@@ -1,7 +1,18 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Sparkles, Phone, MessageCircle, Landmark, Compass, Scroll, ShieldCheck, Flame } from 'lucide-react';
+import { Sparkles, Phone, MessageCircle, Landmark, ShieldCheck, Flame } from 'lucide-react';
 import sharmajiImg from '../assets/sharmaji.png';
+import mahakalGod from '../assets/mahakal_god.jpg';
+import kaalBhairavGod from '../assets/kaal_bhairav_god.jpg';
+import mangalnathGod from '../assets/mangalnath_god.jpg';
+import harsiddhiMataGod from '../assets/harsiddhi_mata_god.jpg';
+
+const godImagesMap = {
+  mahakal: mahakalGod,
+  kaal_bhairav: kaalBhairavGod,
+  mangalnath: mangalnathGod,
+  harsiddhi_mata: harsiddhiMataGod
+};
 
 const About = () => {
   const { t, lang } = useLanguage();
@@ -54,7 +65,7 @@ const About = () => {
 
                 <div className="grid grid-cols-2 gap-2.5 pt-1">
                   <a
-                    href="tel:+917999646783"
+                    href="tel:+918435856067"
                     className="py-2.5 px-3 rounded-xl bg-gradient-to-r from-red-700 to-amber-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow hover:scale-102 transition-transform"
                     title={isHindi ? "पंडित हरिओम शर्मा जी को कॉल करें" : "Call Pt. Hariom Sharma"}
                   >
@@ -62,7 +73,7 @@ const About = () => {
                     <span>{isHindi ? "कॉल करें" : "Call Now"}</span>
                   </a>
                   <a
-                    href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
+                    href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-2.5 px-3 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow hover:scale-102 transition-transform"
@@ -119,10 +130,10 @@ const About = () => {
                 <div className="text-amber-400 font-bold text-xs uppercase tracking-wider">
                   {isHindi ? "परामर्श व पूजन अपॉइंटमेंट" : "Consultation & Puja Appointment"}
                 </div>
-                <div className="text-lg font-bold font-serif text-amber-200">Call Now : +917999646783</div>
+                <div className="text-lg font-bold font-serif text-amber-200">Call Now : +918435856067</div>
               </div>
               <a
-                href="tel:+917999646783"
+                href="tel:+918435856067"
                 className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs sm:text-sm shadow-md whitespace-nowrap"
               >
                 {isHindi ? "अभी कॉल करें" : "Call Now"}
@@ -151,31 +162,46 @@ const About = () => {
             </p>
           </div>
 
-          {/* Landmarks Grid */}
-          <div className="space-y-4">
+          {/* Landmarks Grid with Divine God Images */}
+          <div className="space-y-5">
             <h3 className="text-lg sm:text-xl font-bold font-serif text-amber-300 border-b border-amber-500/30 pb-2">
-              {abt.landmarksTitle || (isHindi ? "महत्वपूर्ण स्थल एवं विशेषताएं:" : "Key Landmarks & Sacred Heritage:")}
+              {abt.landmarksTitle || (isHindi ? "उज्जैन के प्रमुख एवं पावन धार्मिक स्थल:" : "Key Sacred Landmarks of Ujjain:")}
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {(abt.landmarks || []).map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-amber-400/20 hover:border-amber-400/50 transition-all space-y-2"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-bold text-xs flex items-center justify-center font-mono shrink-0">
-                      {idx + 1}
-                    </span>
-                    <h4 className="font-bold font-serif text-amber-200 text-base">
-                      {item.title}
-                    </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {(abt.landmarks || []).map((item, idx) => {
+                const godImg = godImagesMap[item.imageKey] || mahakalGod;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-slate-900/90 rounded-3xl border-2 border-amber-500/40 hover:border-amber-400 transition-all overflow-hidden flex flex-col group shadow-xl"
+                  >
+                    {/* Deity God Divine Image Banner */}
+                    <div className="relative h-56 sm:h-64 overflow-hidden">
+                      <img
+                        src={godImg}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+                      
+                      <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-extrabold text-xs shadow-md uppercase tracking-wider">
+                        #{idx + 1} {isHindi ? 'पावन सिद्ध धाम' : 'Sacred Peeth'}
+                      </div>
+
+                      <h4 className="absolute bottom-3 left-4 right-4 font-bold font-serif text-amber-200 text-lg sm:text-2xl drop-shadow-md">
+                        {item.title}
+                      </h4>
+                    </div>
+
+                    <div className="p-5 sm:p-6 space-y-2 flex-1 flex flex-col justify-between bg-slate-950/80">
+                      <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-normal">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -185,19 +211,19 @@ const About = () => {
               <span className="text-xs text-amber-300 font-bold uppercase tracking-wider block">
                 {isHindi ? "उज्जैन महाकाल धाम में विधि-विधान से पूजा कराने हेतु संपर्क करें" : "Contact for Authentic Vedic Pujas at Ujjain Mahakal Dham"}
               </span>
-              <span className="text-xl sm:text-2xl font-extrabold font-serif text-amber-400">Call Now : +917999646783</span>
+              <span className="text-xl sm:text-2xl font-extrabold font-serif text-amber-400">Call Now : +918435856067</span>
             </div>
             
             <div className="flex gap-3">
               <a
-                href="tel:+917999646783"
+                href="tel:+918435856067"
                 className="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shadow-md flex items-center gap-2"
               >
                 <Phone className="w-4 h-4" />
-                <span>+91-7999646783</span>
+                <span>+91-8435856067</span>
               </a>
               <a
-                href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
+                href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md flex items-center gap-2"

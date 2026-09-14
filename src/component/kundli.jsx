@@ -44,7 +44,7 @@ const Kundli = () => {
         `*Query:* ${formData.query}`;
 
     // Use direct location redirection for mobile browser compatibility (avoids popup blockers)
-    window.location.href = `https://api.whatsapp.com/send?phone=917999646783&text=${message}`;
+    window.location.href = `https://api.whatsapp.com/send?phone=918435856067&text=${message}`;
   };
 
   return (
@@ -205,8 +205,8 @@ const Kundli = () => {
             <p className="text-xs text-slate-600 mb-1">
               {t?.kundli?.directCall || (isHindi ? "सीधा कॉल करें:" : "Direct Call:")}
             </p>
-            <a href="tel:+917999646783" className="text-base font-bold text-amber-700 hover:underline">
-              📞 +91-7999646783
+            <a href="tel:+918435856067" className="text-base font-bold text-amber-700 hover:underline">
+              📞 +91-8435856067
             </a>
           </div>
 

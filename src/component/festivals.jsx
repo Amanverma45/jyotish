@@ -186,7 +186,7 @@ const Festivals = () => {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <a
-                  href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से गणेश चतुर्थी 2026 गणपति स्थापना एवं अनुष्ठान पूजन बुक करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to book Ganesh Chaturthi 2026 Puja with Pt. Hariom Sharma Ji.")}`}
+                  href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से गणेश चतुर्थी 2026 गणपति स्थापना एवं अनुष्ठान पूजन बुक करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to book Ganesh Chaturthi 2026 Puja with Pt. Hariom Sharma Ji.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 active:scale-98 transition-transform"
@@ -196,11 +196,11 @@ const Festivals = () => {
                 </a>
 
                 <a
-                  href="tel:+917999646783"
+                  href="tel:+918435856067"
                   className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-red-800 via-amber-800 to-red-900 hover:from-red-700 hover:to-amber-700 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all"
                 >
                   <Phone className="w-4 h-4 text-amber-300" />
-                  <span>+91-7999646783</span>
+                  <span>+91-8435856067</span>
                 </a>
               </div>
 
@@ -351,7 +351,7 @@ const Festivals = () => {
                     </span>
 
                     <a
-                      href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? `जय श्री महाकाल! पं. हरिओम शर्मा जी से ${item.title} पर पूजा परामर्श हेतु संपर्क।` : `Jai Shree Mahakal! Consulting Pt. Hariom Sharma Ji for ${item.title}.`)}`}
+                      href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? `जय श्री महाकाल! पं. हरिओम शर्मा जी से ${item.title} पर पूजा परामर्श हेतु संपर्क।` : `Jai Shree Mahakal! Consulting Pt. Hariom Sharma Ji for ${item.title}.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-1 transition-colors shadow-xs"
@@ -391,11 +391,11 @@ const Festivals = () => {
           </div>
 
           <a
-            href="tel:+917999646783"
+            href="tel:+918435856067"
             className="px-6 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-sm shadow-xl flex items-center gap-2 shrink-0 hover:scale-105 active:scale-95 transition-all cursor-pointer"
           >
             <Phone className="w-4.5 h-4.5" />
-            <span>+91-7999646783</span>
+            <span>+91-8435856067</span>
           </a>
         </div>
 

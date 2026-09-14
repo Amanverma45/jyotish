@@ -106,7 +106,7 @@ const SuvicharBanner = () => {
                   </Link>
 
                   <a
-                    href={`https://api.whatsapp.com/send?phone=917999646783&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से गणेश चतुर्थी 2026 पूजन अनुष्ठान हेतु संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! Consulting Pt. Hariom Sharma Ji for Ganesh Chaturthi 2026 Puja.")}`}
+                    href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से गणेश चतुर्थी 2026 पूजन अनुष्ठान हेतु संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! Consulting Pt. Hariom Sharma Ji for Ganesh Chaturthi 2026 Puja.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md flex items-center gap-1.5"
