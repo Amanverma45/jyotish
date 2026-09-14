@@ -27,7 +27,7 @@ const Contact = () => {
       `*विषय/पूजा:* ${formData.topic}%0A` +
       `*संदेश:* ${formData.message}`;
 
-    window.location.href = `https://api.whatsapp.com/send?phone=918435856067&text=${whatsappMsg}`;
+    window.location.href = `https://api.whatsapp.com/send?phone=919826525736&text=${whatsappMsg}`;
   };
 
   return (
@@ -67,8 +67,8 @@ const Contact = () => {
                   {t?.contact?.phoneTitle || (isHindi ? "फोन नंबर" : "Phone Number")}
                 </h3>
                 <p className="text-xs text-slate-600 mb-2">{t?.contact?.phoneDesc || (isHindi ? "फोन पर तुरंत बात करें" : "Direct Phone Call")}</p>
-                <a href="tel:+918435856067" className="text-base font-extrabold text-red-900 hover:underline">
-                  +91-8435856067
+                <a href="tel:+919826525736" className="text-base font-extrabold text-red-900 hover:underline">
+                  +91-9826525736
                 </a>
               </div>
             </div>
@@ -84,12 +84,12 @@ const Contact = () => {
                 </h3>
                 <p className="text-xs text-slate-600 mb-2">{t?.contact?.whatsappDesc || (isHindi ? "व्हाट्सएप पर मैसेज भेजें" : "Send a message on WhatsApp")}</p>
                 <a
-                  href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप पर संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
+                  href={`https://api.whatsapp.com/send?phone=919826525736&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप पर संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-base font-extrabold text-emerald-700 hover:underline"
                 >
-                  +91-8435856067 (WhatsApp)
+                  +91-9826525736 (WhatsApp)
                 </a>
               </div>
             </div>

@@ -90,7 +90,7 @@ const Service = () => {
                     <span>{t?.services?.readMore || (isHindi ? "विस्तार से पढ़ें..." : "Read More...")}</span>
                   </Link>
                   <a
-                    href="tel:+918435856067"
+                    href="tel:+919826525736"
                     className="py-2.5 px-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs sm:text-sm shadow-sm text-center flex items-center justify-center gap-1 transition-all"
                   >
                     <Phone className="w-3.5 h-3.5" />

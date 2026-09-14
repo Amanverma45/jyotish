@@ -117,7 +117,7 @@ const Panditji = () => {
                 {/* Direct Action Buttons */}
                 <div className="grid grid-cols-2 gap-2.5 pt-3 border-t border-amber-100 relative z-10">
                   <a
-                    href="tel:+918435856067"
+                    href="tel:+919826525736"
                     className="py-2.5 px-3 rounded-xl bg-gradient-to-r from-red-700 via-amber-800 to-red-800 hover:from-red-600 hover:to-amber-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
                     title={isHindi ? "पंडित हरिओम शर्मा जी को कॉल करें" : "Call Pt. Hariom Sharma"}
                   >
@@ -125,7 +125,7 @@ const Panditji = () => {
                     <span>{isHindi ? "कॉल करें" : "Call Now"}</span>
                   </a>
                   <a
-                    href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप परामर्श हेतु संपर्क।" : "Jai Shree Mahakal! Contacting Pt. Hariom Sharma Ji for WhatsApp consultation.")}`}
+                    href={`https://api.whatsapp.com/send?phone=919826525736&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप परामर्श हेतु संपर्क।" : "Jai Shree Mahakal! Contacting Pt. Hariom Sharma Ji for WhatsApp consultation.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
@@ -153,11 +153,11 @@ const Panditji = () => {
             </h3>
           </div>
           <a
-            href="tel:+918435856067"
+            href="tel:+919826525736"
             className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-xl flex items-center gap-2 shrink-0 hover:scale-105 active:scale-95 transition-all cursor-pointer"
           >
             <Phone className="w-4.5 h-4.5 animate-bounce" />
-            <span>{isHindi ? "अभी कॉल करें: +91-8435856067" : "Call Now: +91-8435856067"}</span>
+            <span>{isHindi ? "अभी कॉल करें: +91-9826525736" : "Call Now: +91-9826525736"}</span>
           </a>
         </div>
 

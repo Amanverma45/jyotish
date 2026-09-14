@@ -65,7 +65,7 @@ const About = () => {
 
                 <div className="grid grid-cols-2 gap-2.5 pt-1">
                   <a
-                    href="tel:+918435856067"
+                    href="tel:+919826525736"
                     className="py-2.5 px-3 rounded-xl bg-gradient-to-r from-red-700 to-amber-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow hover:scale-102 transition-transform"
                     title={isHindi ? "पंडित हरिओम शर्मा जी को कॉल करें" : "Call Pt. Hariom Sharma"}
                   >
@@ -73,7 +73,7 @@ const About = () => {
                     <span>{isHindi ? "कॉल करें" : "Call Now"}</span>
                   </a>
                   <a
-                    href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
+                    href={`https://api.whatsapp.com/send?phone=919826525736&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-2.5 px-3 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow hover:scale-102 transition-transform"
@@ -130,10 +130,10 @@ const About = () => {
                 <div className="text-amber-400 font-bold text-xs uppercase tracking-wider">
                   {isHindi ? "परामर्श व पूजन अपॉइंटमेंट" : "Consultation & Puja Appointment"}
                 </div>
-                <div className="text-lg font-bold font-serif text-amber-200">Call Now : +918435856067</div>
+                <div className="text-lg font-bold font-serif text-amber-200">Call Now : +919826525736</div>
               </div>
               <a
-                href="tel:+918435856067"
+                href="tel:+919826525736"
                 className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs sm:text-sm shadow-md whitespace-nowrap"
               >
                 {isHindi ? "अभी कॉल करें" : "Call Now"}
@@ -211,19 +211,19 @@ const About = () => {
               <span className="text-xs text-amber-300 font-bold uppercase tracking-wider block">
                 {isHindi ? "उज्जैन महाकाल धाम में विधि-विधान से पूजा कराने हेतु संपर्क करें" : "Contact for Authentic Vedic Pujas at Ujjain Mahakal Dham"}
               </span>
-              <span className="text-xl sm:text-2xl font-extrabold font-serif text-amber-400">Call Now : +918435856067</span>
+              <span className="text-xl sm:text-2xl font-extrabold font-serif text-amber-400">Call Now : +919826525736</span>
             </div>
             
             <div className="flex gap-3">
               <a
-                href="tel:+918435856067"
+                href="tel:+919826525736"
                 className="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shadow-md flex items-center gap-2"
               >
                 <Phone className="w-4 h-4" />
-                <span>+91-8435856067</span>
+                <span>+91-9826525736</span>
               </a>
               <a
-                href={`https://api.whatsapp.com/send?phone=918435856067&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
+                href={`https://api.whatsapp.com/send?phone=919826525736&text=${encodeURIComponent(isHindi ? "जय श्री महाकाल! पं. हरिओम शर्मा जी से व्हाट्सएप संपर्क करना चाहता/चाहती हूँ।" : "Jai Shree Mahakal! I want to contact Pt. Hariom Sharma Ji on WhatsApp.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md flex items-center gap-2"

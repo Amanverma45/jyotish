@@ -168,11 +168,11 @@ const Navbar = () => {
 
             {/* Direct Phone Number Pill */}
             <a
-              href="tel:+918435856067"
+              href="tel:+919826525736"
               className="hidden 2xl:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 font-bold text-xs hover:bg-amber-100 transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-red-700" />
-              <span>+91-8435856067</span>
+              <span>+91-9826525736</span>
             </a>
 
             {/* Book Puja CTA Button */}
@@ -276,11 +276,11 @@ const Navbar = () => {
 
             <div className="pt-3 border-t border-amber-100 flex flex-col gap-2.5">
               <a
-                href="tel:+918435856067"
+                href="tel:+919826525736"
                 className="w-full text-center py-2.5 bg-amber-100/90 border border-amber-300 text-amber-900 font-bold rounded-xl flex items-center justify-center gap-2 text-sm shadow-2xs active:scale-[0.98] transition-transform"
               >
                 <Phone className="w-4 h-4 text-red-700" />
-                <span>{lang === 'hi' ? "कॉल करें: +91-8435856067" : "Call Now: +91-8435856067"}</span>
+                <span>{lang === 'hi' ? "कॉल करें: +91-9826525736" : "Call Now: +91-9826525736"}</span>
               </a>
 
               <Link

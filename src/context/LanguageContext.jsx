@@ -89,8 +89,8 @@ export const translations = {
         }
       ],
 
-      callNow: "अभी कॉल करें: +91-8435856067",
-      phone: "+918435856067"
+      callNow: "अभी कॉल करें: +91-9826525736",
+      phone: "+919826525736"
     },
 
     // Associate Pandits / Our Team Section
@@ -353,7 +353,7 @@ export const translations = {
 
     // Contact Details
     contactInfo: {
-      phone: "+91-8435856067",
+      phone: "+91-9826525736",
       email: "hariomsharma@gmail.com",
       address: "रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001",
       homeAddress: "L 04 /2, श्री सिटी , दाउदखेडी उज्जैन- 456006"
@@ -489,8 +489,8 @@ export const translations = {
         }
       ],
 
-      callNow: "Call Now: +918435856067",
-      phone: "+918435856067"
+      callNow: "Call Now: +919826525736",
+      phone: "+919826525736"
     },
 
     // Associate Pandits / Our Team Section
@@ -753,7 +753,7 @@ export const translations = {
 
     // Contact Details
     contactInfo: {
-      phone: "+91-8435856067",
+      phone: "+91-9826525736",
       email: "hariomsharma@gmail.com",
       address: "Ramghat Marg, Near Mahakaleshwar Temple, Ujjain (M.P.) 456001",
       homeAddress: "L 04 /2, Shree City, Daudkhedi Ujjain - 456006"
