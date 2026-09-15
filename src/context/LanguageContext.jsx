@@ -164,50 +164,106 @@ export const translations = {
           id: "kaalsarp",
           title: "कालसर्प दोष पूजा",
           subtitle: "उज्जैन में कालसर्प दोष निवारण",
-          desc: "कालसर्प दोष पूजा को कालसर्प योग भी कहा जाता है। कालसर्प पूजा तब होती है जब सभी ग्रह राहु और केतु के बीच आते हैं। कालसर्प हानि, दुविधा, बाधा को सूचित करता है। कुंडली में कालसर्प होने से कितने लोगो को कष्ट हुआ है। कालसर्प पूजा उज्जैन दोष निवारण के लिए की जाने वाली पूजा व्यक्ति की अनुपस्थिति में भी की जा सकती है।",
-          photoKey: "kaalsarp"
+          desc: "कालसर्प दोष पूजा को कालसर्प योग भी कहा जाता है। कालसर्प पूजा तब होती है जब सभी ग्रह राहु और केतु के बीच आते हैं। यह पूजा जीवन में आ रही निरंतर रुकावटों, मानसिक तनाव और आर्थिक कष्टों को दूर करने के लिए की जाती है।",
+          photoKey: "kaalsarp",
+          location: "उज्जैन (सिद्ध श्री महाकालेश्वर क्षेत्र / रामघाट)",
+          duration: "3 - 4 घंटे",
+          fullDesc: "उज्जैन को काल गणना की नगरी माना जाता है। उज्जैन में कालसर्प दोष पूजा कराने से राहु और केतु का अशुभ प्रभाव समाप्त होता है। पूजन में चांदी के नाग-नागिन जोड़ा, नवग्रह शांति, रुद्राभिषेक तथा संपूर्ण वैदिक मंत्रोच्चार के साथ संकल्प लिया जाता है।",
+          benefits: [
+            "व्यापार, नौकरी एवं करियर में आने वाली निरंतर बाधाएं समाप्त होती हैं।",
+            "मानसिक तनाव, अज्ञात भय, बुरे सपने एवं अनिष्ट आशंकाओं से मुक्ति।",
+            "पारिवारिक कलह दूर होकर जीवन में खुशहाली और स्थायित्व आता है।"
+          ]
         },
         {
           id: "mangal",
           title: "मंगलभात पूजा",
           subtitle: "उज्जैन में मंगल भात पूजा",
-          desc: "मंगल पूजा उज्जैन तब की जाती है जब व्यक्ति के जीवन में विवाह संबंधी समस्याएं होती हैं। मंगलनाथ मंदिर इस पूजा के लिए प्रसिद्ध है। यह मंगल ग्रह के साथ जुड़ा हुआ है। मंगल आत्म-सम्मान, स्वभाव, अहंकार और संघर्ष का प्रतिनिधित्व करता है। विवाह पर इसका प्रभाव समस्याएं ही बढ़ाता है, मंगल पूजा कर के यह दोष दूर किया जाता है।",
-          photoKey: "mangal"
+          desc: "मंगलनाथ मंदिर उज्जैन (मंगल देव की जन्मस्थली) में भात पूजा कराने से मंगल दोष पूर्णतः शांत होता है। यह पूजा विवाह विलंब एवं दांपत्य जीवन के विवाद दूर करने हेतु अत्यंत फलदायी है।",
+          photoKey: "mangal",
+          location: "श्री मंगलनाथ मंदिर, उज्जैन (मंगल ग्रह जन्मस्थान)",
+          duration: "2 - 3 घंटे",
+          fullDesc: "पौराणिक मान्यताओं के अनुसार उज्जैन का मंगलनाथ मंदिर मंगल देव का प्राकट्य स्थल है। यहाँ पके हुए भात (चावल) से भगवान शिव का विशेष श्रृंगार एवं अभिषेक किया जाता है, जिससे तीव्र मंगल दोष भी निष्प्रभावी हो जाता है।",
+          benefits: [
+            "विवाह में आ रही अड़चनें और अत्यधिक विलंब शीघ्र समाप्त होता है।",
+            "पति-पत्नी के बीच प्रेम, आपसी सामंजस्य एवं शांति स्थापित होती है।",
+            "उग्र स्वभाव, भूमि-संपत्ति विवाद और कर्ज से राहत मिलती है।"
+          ]
         },
         {
           id: "pitru",
           title: "पितृदोष निवारण पूजा",
           subtitle: "पितृदोष शांति पूजन",
-          desc: "पितृदोष पूजा करने से सभी दोषो का निवारण हो जाता है। अगर किसी व्यक्ति की मृत्यु के बाद विधि से अंतिम संस्कार न किया जाए तो पितृदोष होता है, या फिर किसी की अकाल मृत्यु हो जाए तो व्यक्ति के परिवार को कई पीढ़ियों तक पितृदोष के परिणाम झेलने पड़ते है। इससे मुक्ति के लिए पितृदोष पूजा उज्जैन की जाती है।",
-          photoKey: "pitru"
+          desc: "पितृदोष पूजा करने से पूर्वजों का आशीर्वाद प्राप्त होता है और परिवार में आ रही अशांति, संतान बाधा एवं आकस्मिक नुकसान समाप्त होते हैं।",
+          photoKey: "pitru",
+          location: "सिद्धवट / रामघाट, क्षिप्रा तट, उज्जैन",
+          duration: "2 - 3 घंटे",
+          fullDesc: "उज्जैन के पवित्र सिद्धवट एवं रामघाट पर पितृदोष शांति, पिंड दान एवं तर्पण कराने से अतृप्त पूर्वजों की आत्मा को शांति प्राप्त होती है तथा वंश वृद्धि में आ रही बाधाएं दूर होती हैं।",
+          benefits: [
+            "वंश वृद्धि एवं संतान सुख में आ रही रुकावटों का निवारण।",
+            "घर-परिवार में बार-बार होने वाले विवाद एवं आकस्मिक हानि से मुक्ति।",
+            "पितरों की प्रसन्नता से परिवार में सुख, समृद्धि व आरोग्यता।"
+          ]
         },
         {
           id: "navgrah",
           title: "नवग्रहशांति पूजा",
           subtitle: "नवग्रह दोष शांति",
-          desc: "नवग्रह नौ ब्रह्मांडीय वस्तुएं हैं और ऐसा कहा जाता है कि इनका मानव जीवन पर बहुत प्रभाव पड़ता है। ये नौ ग्रह सूर्य, चंद्र, मंगल, बुध, बृहस्पति, शुक्र, शनि, राहु और केतु हैं। नवग्रह शांति पूजा से जीवन में सुख, समृद्धि, शांति और संतुलन आता है।",
-          photoKey: "navgrah"
+          desc: "नवग्रह शांति पूजा से सभी 9 ग्रहों (सूर्य, चंद्र, मंगल, बुध, गुरु, शुक्र, शनि, राहु, केतु) का संतुलन एवं शुभ फल प्राप्त होता है।",
+          photoKey: "navgrah",
+          location: "उज्जैन महाकाल धाम / नवग्रह मंदिर",
+          duration: "2 - 3 घंटे",
+          fullDesc: "जन्मपत्रिका में ग्रहों की अशुभ दशा या महादशा के प्रभाव को शांत करने हेतु नवग्रह समिधा हवन एवं वैदिक मंत्र जाप कराया जाता है, जिससे जीवन में सकारात्मक ऊर्जा का संचार होता है।",
+          benefits: [
+            "सभी नौ ग्रहों के अशुभ प्रभावों का निवारण और शुभ फल प्राप्ति।",
+            "स्वास्थ्य लाभ, आर्थिक समृद्धि और व्यापार में सफलता।",
+            "मान-सम्मान, पद-प्रतिष्ठा एवं मानसिक शांति में वृद्धि।"
+          ]
         },
         {
           id: "vastu",
           title: "वास्तुदोष पूजा",
           subtitle: "घर व व्यापार वास्तु शांति",
-          desc: "वास्तु दोष पूजा एक महत्वपूर्ण अनुष्ठान है, जो वास्तु शास्त्र के मुताबिक घर या कार्यस्थल में होने वाले दोषों को दूर करने के लिए की जाती है। जैसे कि दरवाजों या खिड़कियों की गलत स्थानन, किचन या बाथरूम की गलत स्थानन, आदि। वास्तु दोष पूजा घर की ऊर्जा को संतुलित करके व्यक्ति के जीवन में सुख, समृद्धि, और शांति लाने में मदद कर सकती है।",
-          photoKey: "vastu"
+          desc: "घर, दुकान या कार्यस्थल में ऊर्जा के असंतुलन को दूर कर सकारात्मक ऊर्जा और सुख-समृद्धि लाने हेतु वास्तु शांति पूजन कराया जाता है।",
+          photoKey: "vastu",
+          location: "आवास / व्यापार स्थल / उज्जैन धाम",
+          duration: "2 - 3 घंटे",
+          fullDesc: "गलत दिशा में निर्माण या वास्तु दोष के कारण घर में बीमारी, क्लेश और धन हानि होती है। वास्तु पुरुष पूजन एवं हवन द्वारा वास्तु दोष दूर किया जाता है।",
+          benefits: [
+            "घर एवं व्यापार स्थल की नकारात्मक ऊर्जा नष्ट होती है।",
+            "धन आगमन के नए मार्ग खुलते हैं तथा बरकत बनी रहती है।",
+            "परिवार के सभी सदस्यों का स्वास्थ्य एवं आपसी संबंध बेहतर होते हैं।"
+          ]
         },
         {
           id: "rudrabhishek",
           title: "रुद्राभिषेक पूजा",
           subtitle: "उज्जैन में शिव रुद्राभिषेक",
-          desc: "रुद्राभिषेक पूजा हिन्दू धर्म में भगवान शिव की पूजा है, जिसमें शिवलिंग को पवित्र जल, दूध, धान्य, देवद्रव्य, और बिल्वपत्र के साथ समर्पित किया जाता है। इस पूजा के माध्यम से भगवान शिव की कृपा प्राप्त की जा सकती है और व्यक्ति के जीवन में सुख, समृद्धि, और आनंद की वर्षा हो सकती है। यह पूजा मन, शरीर, और आत्मा को पवित्र करने के लिए की जाती है और शिव भक्तों के लिए एक महत्वपूर्ण आध्यात्मिक अनुष्ठान है।",
-          photoKey: "rudrabhishek"
+          desc: "भगवान भोलेनाथ का दूध, जल, पंचामृत एवं बिल्वपत्र से रुद्राष्टाध्यायी मंत्रों द्वारा विशेष अभिषेक करने से मनोकामनाएं पूर्ण होती हैं।",
+          photoKey: "rudrabhishek",
+          location: "श्री महाकालेश्वर ज्योतिर्लिंग क्षेत्र, उज्जैन",
+          duration: "1.5 - 2 घंटे",
+          fullDesc: "रुद्राभिषेक भगवान शिव को परम प्रिय है। महाकाल की नगरी उज्जैन में रुद्राभिषेक कराने से व्यक्ति के समस्त पाप, भय, रोग और दुख मिट जाते हैं।",
+          benefits: [
+            "असाध्य रोगों से मुक्ति एवं दीर्घायु का आशीर्वाद मिलता है।",
+            "मन की समस्त मनोकामनाएं एवं कार्य सिद्ध होते हैं।",
+            "शत्रु बाधा, अकाल मृत्यु भय एवं नकारात्मक प्रभाव दूर होते हैं।"
+          ]
         },
         {
           id: "kumbh",
           title: "कुंभ विवाह / अर्क विवाह",
           subtitle: "विवाह बाधा निवारण",
-          desc: "जिस किसी पुरुष या स्त्री के विवाह मे विलम्ब हो रहा हो या अन्य किसी दोष को दूर करने के लिए उस पुरुष के विवाह के पूर्व सूर्य पुत्री जिन्हे अर्क वृक्ष के रूप मे पूज जाता है के साथ विवाह किया जाता है, जिससे उस पुरुष के विवाह मे आ रहे समस्त प्रकार के दोषो से मुक्ति मिल जाती है। पुरुष का विवाह से पूर्व किए गए इस प्रकार के विवाह को अर्क विवाह पूजा के नाम से जाना जाता है।",
-          photoKey: "kumbh"
+          desc: "विवाह में अत्यधिक विलंब, वैधव्य योग या मांगलिक दोष को दूर करने के लिए विवाह से पूर्व कुंभ (घट) या अर्क (मदार) वृक्ष के साथ सांकेतिक पूजन।",
+          photoKey: "kumbh",
+          location: "उज्जैन सिद्ध धाम / आश्रम",
+          duration: "2 - 3 घंटे",
+          fullDesc: "वर हेतु अर्क विवाह तथा कन्या हेतु कुंभ विवाह अत्यंत प्राचीन शास्त्रीय विधि है, जिससे कुंडली के घातक विवाह दोष समाप्त हो जाते हैं और वास्तविक विवाह सुचारू रूप से संपन्न होता है।",
+          benefits: [
+            "विवाह मार्ग में आ रही सभी प्रकार की अड़चनें दूर होती हैं।",
+            "योग्य, गुणवान एवं मनचाहा जीवनसाथी प्राप्त होता है।",
+            "वैवाहिक जीवन में अखंड सौभाग्य एवं सुख बना रहता है।"
+          ]
         }
       ]
     },
@@ -564,50 +620,106 @@ export const translations = {
           id: "kaalsarp",
           title: "Kaal Sarp Dosh Puja",
           subtitle: "Kaal Sarp Dosh Puja in Ujjain",
-          desc: "Kaal Sarp Dosh Puja is performed when all planets come between Rahu and Ketu. It helps resolve obstacles and bring peace.",
-          iconType: "snake"
+          desc: "Kaal Sarp Dosh Puja is performed when all planets come between Rahu and Ketu. It helps resolve severe life obstacles and brings peace.",
+          iconType: "snake",
+          location: "Ujjain (Sacred Mahakaleshwar Kshetra / Ram Ghat)",
+          duration: "3 - 4 Hours",
+          fullDesc: "Ujjain is renowned as the city of time and Lord Mahakal. Performing Kaal Sarp Dosh Puja in Ujjain neutralizes the negative impacts of Rahu and Ketu. Rituals include Rahu-Ketu Jaap, silver snake pairing, and Vedic Sankalp.",
+          benefits: [
+            "Removes persistent career, business, and financial blockages.",
+            "Relieves mental stress, unknown fears, nightmares, and anxiety.",
+            "Restores family harmony, stability, and peace of mind."
+          ]
         },
         {
           id: "mangal",
           title: "Mangal Bhaat Puja",
           subtitle: "Mangal Bhaat Puja in Ujjain",
           desc: "Performed at Mangalnath Temple Ujjain for marriage delay remedies and Mangal Dosh Nivaran.",
-          iconType: "flame"
+          iconType: "flame",
+          location: "Sri Mangalnath Temple, Ujjain (Birthplace of Mars)",
+          duration: "2 - 3 Hours",
+          fullDesc: "Mangalnath Temple in Ujjain is revered as the birthplace of Mars (Mangal Dev). Performing Bhaat Puja (offering cooked rice over Shivling) pacifies intense Mangal Dosh and removes delays in marriage.",
+          benefits: [
+            "Eliminates delays and obstacles in marriage proposals.",
+            "Enhances harmony, love, and understanding between partners.",
+            "Reduces aggression, debt issues, and land/property disputes."
+          ]
         },
         {
           id: "pitru",
           title: "Pitru Dosh Nivaran Puja",
           subtitle: "Pitru Dosh Nivaran Puja",
           desc: "Vedic rituals performed in Ujjain to seek peace for ancestors and ancestral dosh remedies.",
-          iconType: "shield"
+          iconType: "shield",
+          location: "Siddhavat / Ram Ghat, Kshipra Bank, Ujjain",
+          duration: "2 - 3 Hours",
+          fullDesc: "Performing Pitru Dosh Shanti and Pind Daan at the sacred Siddhavat tree and Ram Ghat in Ujjain brings peace to ancestral souls and grants blessings of lineage growth.",
+          benefits: [
+            "Resolves obstacles related to childbirth and lineage growth.",
+            "Protects family from recurring sudden losses and conflict.",
+            "Invites ancestral blessings for overall prosperity."
+          ]
         },
         {
           id: "navgrah",
           title: "Navgrah Shanti Puja",
           subtitle: "Navgrah Shanti Puja",
           desc: "Harmonizing nine celestial planetary energies for peace, health, and prosperity.",
-          iconType: "sun"
+          iconType: "sun",
+          location: "Ujjain Mahakal Dham / Navgrah Temple",
+          duration: "2 - 3 Hours",
+          fullDesc: "Navgrah Shanti Havan and Vedic Mantra Chanting balance planetary alignment in your horoscope, turning unfavorable planetary periods into auspicious results.",
+          benefits: [
+            "Mitigates malefic effects of all 9 celestial planets.",
+            "Promotes physical well-being, wealth, and success.",
+            "Enhances focus, social reputation, and career growth."
+          ]
         },
         {
           id: "vastu",
           title: "Vastu Dosh Puja",
           subtitle: "Vastu Dosh Puja",
           desc: "Balancing energy in home or workplace as per Vastu Shastra principles.",
-          iconType: "home"
+          iconType: "home",
+          location: "Residence / Commercial Space / Ujjain Dham",
+          duration: "2 - 3 Hours",
+          fullDesc: "Vastu Dosh Puja purifies spatial energies, rectifying architectural defects in homes or offices to attract positive vibrations and abundance.",
+          benefits: [
+            "Neutralizes negative energy in home or office spaces.",
+            "Unlocks new streams of income and business growth.",
+            "Improves health, longevity, and family togetherness."
+          ]
         },
         {
           id: "rudrabhishek",
           title: "Rudrabhishek Puja",
           subtitle: "Rudrabhishek Puja in Ujjain",
           desc: "Sacred Shivling Abhishek ritual with milk, holy water, and bilvapatra for Lord Shiva's blessings.",
-          iconType: "water"
+          iconType: "water",
+          location: "Sri Mahakaleshwar Jyotirlinga Kshetra, Ujjain",
+          duration: "1.5 - 2 Hours",
+          fullDesc: "Rudrabhishek involves chanting Rudrashtadhyayi mantras while consecrating the Shivling with sacred liquid offerings, granting divine grace and wish fulfillment.",
+          benefits: [
+            "Grants health, healing from chronic illnesses, and longevity.",
+            "Fulfills deep desires and brings inner peace.",
+            "Protects against evil eyes, enemies, and negativity."
+          ]
         },
         {
           id: "kumbh",
           title: "Kumbh Vivah / Ark Vivah",
           subtitle: "Kumbh Vivah / Ark Vivah",
           desc: "Symbolic wedding ritual performed before marriage to remove marriage delay and Mangal Dosh.",
-          iconType: "heart"
+          iconType: "heart",
+          location: "Ujjain Sacred Dham / Ashram",
+          duration: "2 - 3 Hours",
+          fullDesc: "Ark Vivah (for grooms) and Kumbh Vivah (for brides) are authentic ancient rituals that eliminate severe marital doshas before formal marriage.",
+          benefits: [
+            "Removes astrological barriers causing marriage delays.",
+            "Attracts a suitable, compatible life partner.",
+            "Ensures a prosperous and harmonious married life."
+          ]
         }
       ]
     },
