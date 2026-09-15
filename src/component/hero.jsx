@@ -4,6 +4,12 @@ import { useLanguage } from '../context/LanguageContext';
 import { Phone, MessageCircle, Sparkles, ChevronLeft, ChevronRight, Sun, Award, Users, Star } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 import sharmajiImg from '../assets/sharmaji.png';
+import hariomsharmaji1Img from '../assets/hariomsharmaji1.png';
+import hariomsharmaji2Img from '../assets/hariomsharmaji2.png';
+import hariomSharma3Img from '../assets/hariomSharma3.png';
+import hariomsharma4Img from '../assets/hariomsharma4.png';
+
+const slidePhotos = [hariomsharmaji1Img, hariomsharmaji2Img, hariomSharma3Img, hariomsharma4Img];
 
 const Hero = () => {
   const { t, lang } = useLanguage();
@@ -174,7 +180,7 @@ const Hero = () => {
                     <div className="relative bg-white border-2 border-amber-300 rounded-3xl p-6 text-center space-y-4 shadow-xl">
                       <div className="relative w-40 h-40 mx-auto rounded-full p-1 bg-gradient-to-tr from-amber-400 to-red-600 shadow-md overflow-hidden">
                         <img
-                          src={sharmajiImg}
+                          src={slidePhotos[idx % slidePhotos.length]}
                           alt="Jyotishacharya Pt. Hariom Sharma"
                           className="w-full h-full rounded-full object-cover object-top border-2 border-white"
                         />

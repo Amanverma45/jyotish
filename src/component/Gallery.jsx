@@ -8,14 +8,19 @@ import sharmaji from '../assets/sharmaji.png';
 // Simply drag & drop any new photo into 'src/assets/gallery_images' and it will display automatically.
 const galleryImageModules = import.meta.glob('../assets/gallery_images/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}', { eager: true });
 
-const galleryImages = Object.entries(galleryImageModules).map(([filePath, mod], index) => {
-  const fileName = filePath.split('/').pop() || `Photo ${index + 1}`;
-  return {
-    id: index + 1,
-    src: mod.default || mod,
-    alt: fileName.split('.')[0].replace(/[-_]/g, ' ')
-  };
-});
+const galleryImages = Object.entries(galleryImageModules)
+  .filter(([filePath]) => {
+    const lowerPath = filePath.toLowerCase();
+    return !lowerPath.includes('sharmaji') && !lowerPath.includes('pandit') && !lowerPath.includes('hariom');
+  })
+  .map(([filePath, mod], index) => {
+    const fileName = filePath.split('/').pop() || `Photo ${index + 1}`;
+    return {
+      id: index + 1,
+      src: mod.default || mod,
+      alt: fileName.split('.')[0].replace(/[-_]/g, ' ')
+    };
+  });
 
 const Gallery = () => {
   const { t, lang } = useLanguage();

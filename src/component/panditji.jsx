@@ -4,7 +4,10 @@ import { Sparkles, Award, ShieldCheck, Phone, MessageCircle } from 'lucide-react
 
 // Images uploaded by user
 import sharmajiImg from '../assets/sharmaji.png';
+import hariomsharmaji1Img from '../assets/hariomsharmaji1.png';
 import hariomsharmaji2Img from '../assets/hariomsharmaji2.png';
+import hariomSharma3Img from '../assets/hariomSharma3.png';
+import hariomsharma4Img from '../assets/hariomsharma4.png';
 import kanhaImg from '../assets/pandit-kanha-sharma.webp';
 import rishiImg from '../assets/jyotish-panditji-Rishi-Guruji.webp';
 import dipeshImg from '../assets/panditji-Dipesh-joshi.webp';
@@ -18,7 +21,7 @@ const Panditji = () => {
 
   // Team member photo mapping
   const photoMap = {
-    sharmaji: hariomsharmaji2Img,
+    sharmaji: hariomsharmaji1Img,
     kanha: kanhaImg,
     rishi: rishiImg,
     dipesh: dipeshImg,
@@ -29,7 +32,7 @@ const Panditji = () => {
     if (member?.photoKey && photoMap[member.photoKey]) {
       return photoMap[member.photoKey];
     }
-    if (idx === 0) return hariomsharmaji2Img;
+    if (idx === 0) return hariomsharmaji1Img;
     return null;
   };
 
