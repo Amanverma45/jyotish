@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useLanguage } from '../context/LanguageContext';
 import { supabase } from '../supabaseClient';
-import { ShieldCheck, Lock, LogOut, Check, Trash2, Star, Sparkles, Filter, RefreshCw, KeyRound, Mail, ArrowLeft } from 'lucide-react';
+import { ShieldCheck, Lock, LogOut, Check, Trash2, Star, Sparkles, Filter, RefreshCw, KeyRound, Mail, ArrowLeft, UserCheck } from 'lucide-react';
 
 const Admin = () => {
-  const { lang } = useLanguage();
-  const isHindi = lang === 'hi';
-
   const [session, setSession] = useState(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -47,9 +43,7 @@ const Admin = () => {
       if (error) {
         let msg = error.message;
         if (msg.includes('Invalid login credentials')) {
-          msg = isHindi 
-            ? 'ईमेल या पासवर्ड गलत है। कृपया Supabase Dashboard में चेक करें कि यूज़र Confirm हुआ है या पासवर्ड सही डाला है।' 
-            : 'Invalid email or password. Please check if user is confirmed in Supabase Dashboard.';
+          msg = 'Invalid email or password. Please check if your user is confirmed in Supabase Dashboard -> Authentication -> Users.';
         }
         setLoginError(msg);
       } else {
@@ -66,7 +60,7 @@ const Admin = () => {
     e.preventDefault();
     setResetMsg({ type: '', text: '' });
     if (!email.trim()) {
-      setResetMsg({ type: 'error', text: isHindi ? 'कृपया अपना ईमेल दर्ज करें' : 'Please enter your email' });
+      setResetMsg({ type: 'error', text: 'Please enter your registered admin email address.' });
       return;
     }
 
@@ -77,13 +71,11 @@ const Admin = () => {
       });
 
       if (error) {
-        setResetMsg({ type: 'error', text: isHindi ? `त्रुटि: ${error.message}` : `Error: ${error.message}` });
+        setResetMsg({ type: 'error', text: `Error: ${error.message}` });
       } else {
         setResetMsg({
           type: 'success',
-          text: isHindi 
-            ? 'पासवर्ड रीसेट लिंक आपके ईमेल पर भेज दिया गया है! अपना इनबॉक्स / स्पैम फोल्डर देखें।' 
-            : 'Password reset link sent to your email! Check your inbox/spam folder.'
+          text: 'Password reset link sent to your email! Please check your inbox and spam folder.'
         });
       }
     } catch (err) {
@@ -141,7 +133,7 @@ const Admin = () => {
   };
 
   const handleDelete = async (id) => {
-    if (!window.confirm(isHindi ? 'क्या आप इस समीक्षा को डिलीट करना चाहते हैं?' : 'Are you sure you want to delete this testimonial?')) return;
+    if (!window.confirm('Are you sure you want to permanently delete this testimonial?')) return;
     try {
       const { error } = await supabase
         .from('testimonials')
@@ -172,14 +164,17 @@ const Admin = () => {
         <div className="text-center space-y-2">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-950 border border-amber-500/40 text-amber-400 text-xs font-bold uppercase tracking-wider">
             <ShieldCheck className="w-4 h-4 text-amber-400" />
-            <span>{isHindi ? 'एडमिन पोर्टल' : 'Admin Portal'}</span>
+            <span>Admin Portal</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold font-serif text-amber-200">
-            {isHindi ? 'समीक्षा (Testimonials) प्रबंधन एडमिन पैनल' : 'Testimonials Management Admin'}
+            Testimonials Management Dashboard
           </h1>
+          <p className="text-xs sm:text-sm text-slate-400">
+            Review, approve, and delete client feedback & star ratings
+          </p>
         </div>
 
-        {/* If NOT Logged In: Login or Reset Form */}
+        {/* If NOT Logged In: Login or Password Reset Card */}
         {!session ? (
           <div className="max-w-md mx-auto bg-slate-900 border-2 border-amber-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
             
@@ -191,14 +186,12 @@ const Admin = () => {
                 <Lock className="w-10 h-10 text-amber-400 mx-auto mb-2" />
               )}
               <h2 className="text-xl font-bold text-amber-200 font-serif">
-                {isResetMode
-                  ? (isHindi ? 'पासवर्ड रीसेट करें' : 'Reset Password')
-                  : (isHindi ? 'एडमिन लॉगइन' : 'Admin Login')}
+                {isResetMode ? 'Reset Admin Password' : 'Admin Sign In'}
               </h2>
               <p className="text-xs text-slate-400">
                 {isResetMode
-                  ? (isHindi ? 'अपना पंजीकृत एडमिन ईमेल दर्ज करें, रीसेट लिंक भेज दिया जाएगा' : 'Enter your registered admin email to get a reset link')
-                  : (isHindi ? 'Supabase Auth एडमिन ईमेल एवं पासवर्ड से लॉगइन करें' : 'Login with your Supabase Auth admin account')}
+                  ? 'Enter your registered admin email address to receive a password reset link'
+                  : 'Enter your Supabase Auth admin credentials to manage testimonials'}
               </p>
             </div>
 
@@ -207,7 +200,7 @@ const Admin = () => {
               <div className="p-3.5 rounded-xl bg-red-950/90 border border-red-500/50 text-red-200 text-xs font-medium space-y-1">
                 <p>{loginError}</p>
                 <div className="text-[11px] text-amber-300 pt-1 border-t border-red-800/60">
-                  💡 <strong>Tip:</strong> यदि आपने अभी Supabase में User बनाया है, तो Dashboard -&gt; Authentication -&gt; Users में जाएं और अपने यूजर के बगल में <strong>...</strong> पर क्लिक करके <strong>Confirm User</strong> पर क्लिक करें।
+                  💡 <strong>Tip:</strong> If you created a user in Supabase, go to <strong>Authentication -&gt; Users</strong> in Supabase Dashboard, click <strong>...</strong> next to your user, and click <strong>Confirm User</strong>.
                 </div>
               </div>
             )}
@@ -230,7 +223,7 @@ const Admin = () => {
               <form onSubmit={handleLogin} className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold text-amber-300 mb-1">
-                    {isHindi ? 'एडमिन ईमेल (Admin Email)' : 'Admin Email'}
+                    Admin Email Address
                   </label>
                   <input
                     type="email"
@@ -245,14 +238,14 @@ const Admin = () => {
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <label className="block text-xs font-bold text-amber-300">
-                      {isHindi ? 'पासवर्ड (Password)' : 'Password'}
+                      Password
                     </label>
                     <button
                       type="button"
                       onClick={() => setIsResetMode(true)}
-                      className="text-xs text-amber-400 hover:text-amber-300 hover:underline cursor-pointer"
+                      className="text-xs text-amber-400 hover:text-amber-300 hover:underline cursor-pointer font-medium"
                     >
-                      {isHindi ? 'पासवर्ड भूल गए?' : 'Forgot Password?'}
+                      Forgot Password?
                     </button>
                   </div>
                   <input
@@ -270,7 +263,7 @@ const Admin = () => {
                   disabled={loading}
                   className="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-xl transition-all cursor-pointer disabled:opacity-50"
                 >
-                  {loading ? (isHindi ? 'लॉगइन हो रहा है...' : 'Logging in...') : (isHindi ? 'लॉगइन करें' : 'Log In')}
+                  {loading ? 'Signing in...' : 'Sign In'}
                 </button>
               </form>
             ) : (
@@ -278,7 +271,7 @@ const Admin = () => {
               <form onSubmit={handleResetPassword} className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold text-amber-300 mb-1">
-                    {isHindi ? 'रजिस्टर्ड एडमिन ईमेल दर्ज करें' : 'Registered Admin Email'}
+                    Registered Admin Email
                   </label>
                   <input
                     type="email"
@@ -296,7 +289,7 @@ const Admin = () => {
                   className="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-xl transition-all cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   <Mail className="w-4 h-4" />
-                  <span>{loading ? (isHindi ? 'भेजा जा रहा है...' : 'Sending...') : (isHindi ? 'पासवर्ड रीसेट लिंक भेजें' : 'Send Reset Link')}</span>
+                  <span>{loading ? 'Sending...' : 'Send Password Reset Email'}</span>
                 </button>
 
                 <div className="text-center pt-2">
@@ -306,7 +299,7 @@ const Admin = () => {
                     className="inline-flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 hover:underline cursor-pointer"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>{isHindi ? 'लॉगइन पर वापस जाएं' : 'Back to Login'}</span>
+                    <span>Back to Sign In</span>
                   </button>
                 </div>
               </form>
@@ -317,10 +310,10 @@ const Admin = () => {
           /* If Logged In: Admin Dashboard Controls */
           <div className="space-y-6">
             
-            {/* Top Info Bar */}
+            {/* Top Admin Status Bar */}
             <div className="bg-slate-900 border border-amber-900/50 rounded-2xl p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4 shadow-xl">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-amber-950 border border-amber-500/40 flex items-center justify-center text-amber-400">
+                <div className="w-10 h-10 rounded-full bg-amber-950 border border-amber-500/40 flex items-center justify-center text-amber-400 shadow-sm">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
@@ -332,17 +325,17 @@ const Admin = () => {
               <div className="flex items-center gap-3">
                 <button
                   onClick={fetchAllTestimonials}
-                  className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+                  className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold flex items-center gap-1.5 cursor-pointer transition-colors"
                 >
                   <RefreshCw className={`w-3.5 h-3.5 ${fetching ? 'animate-spin' : ''}`} />
-                  <span>{isHindi ? 'रिफ्रेश' : 'Refresh'}</span>
+                  <span>Refresh</span>
                 </button>
                 <button
                   onClick={handleLogout}
-                  className="px-4 py-2 rounded-xl bg-red-950 hover:bg-red-900 border border-red-500/40 text-red-200 text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+                  className="px-4 py-2 rounded-xl bg-red-950 hover:bg-red-900 border border-red-500/40 text-red-200 text-xs font-bold flex items-center gap-1.5 cursor-pointer transition-colors"
                 >
                   <LogOut className="w-4 h-4" />
-                  <span>{isHindi ? 'लॉगआउट' : 'Logout'}</span>
+                  <span>Log Out</span>
                 </button>
               </div>
             </div>
@@ -351,7 +344,7 @@ const Admin = () => {
             <div className="flex items-center justify-between flex-wrap gap-4 border-b border-slate-800 pb-4">
               <div className="flex items-center gap-2">
                 <Filter className="w-4 h-4 text-amber-400" />
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">फ़िल्टर:</span>
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Filter:</span>
                 
                 <button
                   onClick={() => setFilter('all')}
@@ -361,7 +354,7 @@ const Admin = () => {
                       : 'bg-slate-900 text-slate-400 hover:bg-slate-800'
                   }`}
                 >
-                  {isHindi ? `सभी (${testimonials.length})` : `All (${testimonials.length})`}
+                  All ({testimonials.length})
                 </button>
 
                 <button
@@ -372,7 +365,7 @@ const Admin = () => {
                       : 'bg-slate-900 text-slate-400 hover:bg-slate-800'
                   }`}
                 >
-                  {isHindi ? `स्वीकृति प्रतीक्षित (Pending) (${testimonials.filter(t => !t.is_approved).length})` : `Pending (${testimonials.filter(t => !t.is_approved).length})`}
+                  Pending Approval ({testimonials.filter(t => !t.is_approved).length})
                 </button>
 
                 <button
@@ -383,7 +376,7 @@ const Admin = () => {
                       : 'bg-slate-900 text-slate-400 hover:bg-slate-800'
                   }`}
                 >
-                  {isHindi ? `स्वीकृत (Approved) (${testimonials.filter(t => t.is_approved).length})` : `Approved (${testimonials.filter(t => t.is_approved).length})`}
+                  Approved ({testimonials.filter(t => t.is_approved).length})
                 </button>
               </div>
             </div>
@@ -391,7 +384,7 @@ const Admin = () => {
             {/* Testimonials List */}
             {filteredList.length === 0 ? (
               <div className="text-center py-12 bg-slate-900/60 rounded-3xl border border-slate-800 text-slate-400 text-sm font-medium">
-                {isHindi ? 'कोई समीक्षा नहीं मिली।' : 'No testimonials found.'}
+                No testimonials found for this filter.
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -407,7 +400,7 @@ const Admin = () => {
                         <span className={`px-2.5 py-0.5 rounded-md text-[10px] font-extrabold uppercase ${
                           item.is_approved ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/40' : 'bg-amber-950 text-amber-300 border border-amber-500/40'
                         }`}>
-                          {item.is_approved ? (isHindi ? '✅ स्वीकृत (Approved)' : 'Approved') : (isHindi ? '⏳ लंबित (Pending)' : 'Pending')}
+                          {item.is_approved ? '✅ Approved' : '⏳ Pending Approval'}
                         </span>
                         
                         <div className="flex text-amber-400 items-center gap-1 text-xs">
@@ -433,18 +426,18 @@ const Admin = () => {
                         {!item.is_approved && (
                           <button
                             onClick={() => handleApprove(item.id)}
-                            className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-1 shadow-sm cursor-pointer"
+                            className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-1 shadow-sm cursor-pointer transition-colors"
                           >
                             <Check className="w-3.5 h-3.5" />
-                            <span>{isHindi ? 'स्वीकृत करें' : 'Approve'}</span>
+                            <span>Approve</span>
                           </button>
                         )}
                         <button
                           onClick={() => handleDelete(item.id)}
-                          className="px-3 py-1.5 rounded-lg bg-red-900/80 hover:bg-red-800 text-red-200 text-xs font-bold flex items-center gap-1 border border-red-500/30 cursor-pointer"
+                          className="px-3 py-1.5 rounded-lg bg-red-900/80 hover:bg-red-800 text-red-200 text-xs font-bold flex items-center gap-1 border border-red-500/30 cursor-pointer transition-colors"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
-                          <span>{isHindi ? 'डिलीट करें' : 'Delete'}</span>
+                          <span>Delete</span>
                         </button>
                       </div>
                     </div>
