@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Sparkles, Calendar, Clock, BookOpen, Phone, MessageCircle, CheckCircle2, ChevronRight, Sun, Flame, Award, Eye } from 'lucide-react';
+import { Sparkles, Calendar, Clock, BookOpen, Phone, CheckCircle2, ChevronRight, Sun, Flame, Award, Eye } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 import ganeshPoster from '../assets/ganesh_chaturthi_poster.jpg';
 import pujaKaalsarp from '../assets/puja_kaalsarp.jpg';
@@ -191,7 +192,7 @@ const Festivals = () => {
                   rel="noopener noreferrer"
                   className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 active:scale-98 transition-transform"
                 >
-                  <MessageCircle className="w-4.5 h-4.5" />
+                  <WhatsAppIcon className="w-5 h-5 fill-current" />
                   <span>{fest.bookFestivalPuja}</span>
                 </a>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Sparkles, Phone, MessageCircle, Landmark, ShieldCheck, Flame, MapPin } from 'lucide-react';
+import { Sparkles, Phone, Landmark, ShieldCheck, Flame, MapPin } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import sharmajiImg from '../assets/sharmaji.png';
 import mahakalGod from '../assets/mahakal_god.jpg';
 import kaalBhairavGod from '../assets/kaal_bhairav_god.jpg';
@@ -79,7 +80,7 @@ const About = () => {
                     className="py-2.5 px-3 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow hover:scale-102 transition-transform"
                     title={isHindi ? "पंडित हरिओम शर्मा जी को WhatsApp करें" : "WhatsApp Pt. Hariom Sharma"}
                   >
-                    <MessageCircle className="w-3.5 h-3.5" />
+                    <WhatsAppIcon className="w-4 h-4 fill-current" />
                     <span>WhatsApp</span>
                   </a>
                 </div>
@@ -237,7 +238,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md flex items-center gap-2"
               >
-                <MessageCircle className="w-4 h-4" />
+                <WhatsAppIcon className="w-4 h-4 fill-current" />
                 <span>WhatsApp</span>
               </a>
             </div>

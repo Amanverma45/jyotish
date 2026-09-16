@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Phone, Mail, ArrowUp } from 'lucide-react';
+import { Phone, Mail, ArrowUp } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const FloatingButtons = () => {
   const { lang } = useLanguage();
@@ -42,7 +43,7 @@ const FloatingButtons = () => {
             aria-label="Chat on WhatsApp"
             className="relative flex items-center justify-center w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-500 to-teal-400 hover:from-emerald-500 hover:to-emerald-400 text-white shadow-xl shadow-emerald-600/40 border-2 border-white hover:scale-110 active:scale-95 transition-all duration-300 group-hover:rotate-12 cursor-pointer"
           >
-            <MessageCircle className="w-5 h-5 sm:w-7 sm:h-7" />
+            <WhatsAppIcon className="w-6 h-6 sm:w-8 sm:h-8 fill-current" />
             
             {/* Floating Tooltip Label */}
             <span className="absolute right-14 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl bg-slate-900/95 text-amber-300 text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-xl border border-amber-500/30 pointer-events-none hidden sm:block backdrop-blur-md translate-x-2 group-hover:translate-x-0">

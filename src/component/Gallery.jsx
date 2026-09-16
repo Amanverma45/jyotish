@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Camera, Eye, X, Phone, MessageCircle, Award } from 'lucide-react';
+import { Camera, Eye, X, Phone, Award } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 import sharmaji from '../assets/sharmaji.png';
 
@@ -112,7 +113,7 @@ const Gallery = () => {
               rel="noopener noreferrer"
               className="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-md flex items-center justify-center gap-2"
             >
-              <MessageCircle className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4 fill-current" />
               <span>WhatsApp</span>
             </a>
 

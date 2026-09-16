@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Sparkles, Award, ShieldCheck, Phone, MessageCircle } from 'lucide-react';
+import { Sparkles, Award, ShieldCheck, Phone } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 // Images uploaded by user
 import sharmajiImg from '../assets/sharmaji.png';
@@ -134,7 +135,7 @@ const Panditji = () => {
                     className="py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
                     title={isHindi ? "पंडित हरिओम शर्मा जी को WhatsApp करें" : "WhatsApp Pt. Hariom Sharma"}
                   >
-                    <MessageCircle className="w-3.5 h-3.5" />
+                    <WhatsAppIcon className="w-4 h-4 fill-current" />
                     <span>WhatsApp</span>
                   </a>
                 </div>

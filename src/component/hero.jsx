@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Phone, MessageCircle, Sparkles, ChevronLeft, ChevronRight, Sun, Award, Users, Star } from 'lucide-react';
-import logoImg from '../assets/logo.png';
+import { Phone, Sparkles, ChevronLeft, ChevronRight, Sun, Award, Users, Star } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import sharmajiImg from '../assets/sharmaji.png';
 import hariomsharmaji1Img from '../assets/hariomsharmaji1.png';
 import hariomsharmaji2Img from '../assets/hariomsharmaji2.png';
@@ -207,7 +207,7 @@ const Hero = () => {
                         rel="noopener noreferrer"
                         className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow flex items-center justify-center gap-2"
                       >
-                        <MessageCircle className="w-4.5 h-4.5" />
+                        <WhatsAppIcon className="w-5 h-5 fill-current" />
                         <span>{isHindi ? 'WhatsApp पर तुरंत बात करें' : 'Chat on WhatsApp'}</span>
                       </a>
                     </div>

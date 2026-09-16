@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Phone, MessageCircle, MapPin, Clock, Mail, Sparkles, Send } from 'lucide-react';
+import { Phone, MapPin, Clock, Mail, Sparkles, Send } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const Contact = () => {
   const { t, lang } = useLanguage();
@@ -82,7 +83,7 @@ const Contact = () => {
             {/* WhatsApp Card */}
             <div className="bg-white border border-amber-200/90 rounded-2xl p-5 sm:p-6 flex items-start gap-4 hover:border-amber-400 hover:shadow-lg transition-all shadow-md">
               <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-300 flex items-center justify-center text-emerald-700 shrink-0 shadow-xs">
-                <MessageCircle className="w-6 h-6" />
+                <WhatsAppIcon className="w-6 h-6 fill-current text-emerald-600" />
               </div>
               <div>
                 <h3 className="text-lg font-bold font-serif text-slate-900">
@@ -255,7 +256,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-700 via-emerald-600 to-teal-700 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 active:scale-98 cursor-pointer"
               >
-                <MessageCircle className="w-4.5 h-4.5" />
+                <WhatsAppIcon className="w-5 h-5 fill-current" />
                 <span>{isHindi ? "व्हाट्सएप पर संदेश भेजें" : "Send Message on WhatsApp"}</span>
               </button>
             </form>

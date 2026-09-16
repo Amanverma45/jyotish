@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Sparkles, Phone, X, CheckCircle2, MessageCircle, MapPin, Clock } from 'lucide-react';
+import { Sparkles, Phone, X, CheckCircle2, MapPin, Clock } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 // Crisp 7 Puja Images
 import kaalsarpImg from '../assets/puja_kaalsarp.jpg';
@@ -233,7 +234,7 @@ const Service = () => {
                 rel="noopener noreferrer"
                 className="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md text-center flex items-center justify-center gap-2 transition-all cursor-pointer"
               >
-                <MessageCircle className="w-4 h-4" />
+                <WhatsAppIcon className="w-5 h-5 fill-current" />
                 <span>{isHindi ? "व्हाट्सएप पर जानकारी लें" : "WhatsApp Inquiry"}</span>
               </a>
             </div>
