@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Sparkles, Phone, MessageCircle, Landmark, ShieldCheck, Flame } from 'lucide-react';
+import { Sparkles, Phone, MessageCircle, Landmark, ShieldCheck, Flame, MapPin } from 'lucide-react';
 import sharmajiImg from '../assets/sharmaji.png';
 import mahakalGod from '../assets/mahakal_god.jpg';
 import kaalBhairavGod from '../assets/kaal_bhairav_god.jpg';
@@ -194,10 +194,19 @@ const About = () => {
                       </h4>
                     </div>
 
-                    <div className="p-5 sm:p-6 space-y-2 flex-1 flex flex-col justify-between bg-slate-950/80">
+                    <div className="p-5 sm:p-6 space-y-3 flex-1 flex flex-col justify-between bg-slate-950/80">
                       <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-normal">
                         {item.desc}
                       </p>
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.title + ", Ujjain, Madhya Pradesh")}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 hover:underline pt-2 cursor-pointer"
+                      >
+                        <MapPin className="w-4 h-4 text-red-400" />
+                        <span>{isHindi ? "📍 मैप्स पर लोकेशन देखें" : "📍 View Location on Google Maps"}</span>
+                      </a>
                     </div>
                   </div>
                 );

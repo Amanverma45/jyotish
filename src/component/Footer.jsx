@@ -88,7 +88,15 @@ const Footer = () => {
             <ul className="space-y-2 text-xs">
               <li className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
-                <span>{t?.contactInfo?.address || (isHindi ? "रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001" : "Ramghat Marg, Near Mahakaleshwar Temple, Ujjain (M.P.) 456001")}</span>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Ramghat Marg, Near Mahakaleshwar Temple, Ujjain, Madhya Pradesh 456001")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300 hover:underline cursor-pointer"
+                  title={isHindi ? "गूगल मैप्स में लोकेशन देखें" : "View Location on Google Maps"}
+                >
+                  {t?.contactInfo?.address || (isHindi ? "रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001" : "Ramghat Marg, Near Mahakaleshwar Temple, Ujjain (M.P.) 456001")}
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />

@@ -19,15 +19,21 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const whatsappMsg =
-      `*जय श्री महाकाल!*%0A` +
-      `*नया पूछताछ संदेश (Website Contact Form):*%0A%0A` +
-      `*नाम:* ${formData.name}%0A` +
-      `*फोन नंबर:* ${formData.phone}%0A` +
-      `*विषय/पूजा:* ${formData.topic}%0A` +
-      `*संदेश:* ${formData.message}`;
+    const rawMessage = isHindi
+      ? `*जय श्री महाकाल!*\n` +
+        `*नया पूछताछ संदेश (वेबसाइट संपर्क फॉर्म):*\n\n` +
+        `*नाम:* ${formData.name}\n` +
+        `*फोन नंबर:* ${formData.phone}\n` +
+        `*विषय/पूजा:* ${formData.topic}\n` +
+        `*संदेश:* ${formData.message}`
+      : `*Jai Shree Mahakal!*\n` +
+        `*New Contact Query (Website Form):*\n\n` +
+        `*Name:* ${formData.name}\n` +
+        `*Phone:* ${formData.phone}\n` +
+        `*Topic:* ${formData.topic}\n` +
+        `*Message:* ${formData.message}`;
 
-    window.location.href = `https://api.whatsapp.com/send?phone=919826525736&text=${whatsappMsg}`;
+    window.location.href = `https://api.whatsapp.com/send?phone=919826525736&text=${encodeURIComponent(rawMessage)}`;
   };
 
   return (
@@ -95,34 +101,52 @@ const Contact = () => {
             </div>
 
             {/* Main Puja Location Card */}
-            <div className="bg-white border border-amber-200/90 rounded-2xl p-5 sm:p-6 flex items-start gap-4 hover:border-amber-400 hover:shadow-lg transition-all shadow-md">
-              <div className="w-12 h-12 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-red-800 shrink-0 shadow-xs">
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Ramghat Marg, Near Mahakaleshwar Temple, Ujjain, Madhya Pradesh 456001")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white border border-amber-200/90 rounded-2xl p-5 sm:p-6 flex items-start gap-4 hover:border-amber-400 hover:shadow-lg transition-all shadow-md group cursor-pointer"
+            >
+              <div className="w-12 h-12 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-red-800 shrink-0 shadow-xs group-hover:bg-red-700 group-hover:text-amber-300 transition-colors">
                 <MapPin className="w-6 h-6" />
               </div>
-              <div>
-                <h3 className="text-lg font-bold font-serif text-slate-900">
+              <div className="space-y-1">
+                <h3 className="text-lg font-bold font-serif text-slate-900 group-hover:text-red-800 transition-colors">
                   {t?.contact?.pujaAddressTitle || (isHindi ? "मुख्य पूजन स्थल (उज्जैन महाकाल धाम)" : "Main Puja Location (Ujjain Dham)")}
                 </h3>
-                <p className="text-sm text-slate-700 font-semibold mt-1 leading-relaxed">
+                <p className="text-sm text-slate-700 font-semibold leading-relaxed">
                   {t?.contact?.pujaAddressDesc || (isHindi ? "रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001" : "Ramghat Marg, Near Mahakaleshwar Temple, Ujjain (M.P.) 456001")}
                 </p>
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-red-700 group-hover:underline pt-1">
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>{isHindi ? "📍 मैप्स ऐप में लोकेशन खोलें" : "📍 Open Location in Google Maps"}</span>
+                </span>
               </div>
-            </div>
+            </a>
 
             {/* Home & Permanent Address Card */}
-            <div className="bg-white border border-amber-200/90 rounded-2xl p-5 sm:p-6 flex items-start gap-4 hover:border-amber-400 hover:shadow-lg transition-all shadow-md">
-              <div className="w-12 h-12 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-red-800 shrink-0 shadow-xs">
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("L 04 /2, Shree City, Daudkhedi, Ujjain, Madhya Pradesh 456006")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white border border-amber-200/90 rounded-2xl p-5 sm:p-6 flex items-start gap-4 hover:border-amber-400 hover:shadow-lg transition-all shadow-md group cursor-pointer"
+            >
+              <div className="w-12 h-12 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-red-800 shrink-0 shadow-xs group-hover:bg-red-700 group-hover:text-amber-300 transition-colors">
                 <MapPin className="w-6 h-6" />
               </div>
-              <div>
-                <h3 className="text-lg font-bold font-serif text-slate-900">
+              <div className="space-y-1">
+                <h3 className="text-lg font-bold font-serif text-slate-900 group-hover:text-red-800 transition-colors">
                   {t?.contact?.homeAddressTitle || (isHindi ? "गृह एवं स्थायी निवास पता" : "Home & Permanent Address")}
                 </h3>
-                <p className="text-sm text-red-900 font-bold mt-1 leading-relaxed">
+                <p className="text-sm text-red-900 font-bold leading-relaxed">
                   {t?.contact?.homeAddressDesc || (isHindi ? "L 04 /2, श्री सिटी , दाउदखेडी उज्जैन- 456006" : "L 04 /2, Shree City, Daudkhedi Ujjain - 456006")}
                 </p>
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-red-700 group-hover:underline pt-1">
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>{isHindi ? "📍 मैप्स ऐप में लोकेशन खोलें" : "📍 Open Location in Google Maps"}</span>
+                </span>
               </div>
-            </div>
+            </a>
 
             {/* Email Card */}
             <div className="bg-white border border-amber-200/90 rounded-2xl p-5 sm:p-6 flex items-start gap-4 hover:border-amber-400 hover:shadow-lg transition-all shadow-md">

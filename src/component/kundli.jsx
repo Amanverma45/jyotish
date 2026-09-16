@@ -25,26 +25,28 @@ const Kundli = () => {
     e.preventDefault();
     setSubmitted(true);
 
-    const message = isHindi 
-      ? `*कुंडली परामर्श - पंडित हरिओम शर्मा वेबसाइट*%0A%0A` +
-        `*नाम:* ${formData.name}%0A` +
-        `*फोन:* ${formData.phone}%0A` +
-        `*जन्म तिथि:* ${formData.dob}%0A` +
-        `*जन्म समय:* ${formData.tob}%0A` +
-        `*जन्म स्थान:* ${formData.pob}%0A` +
-        `*लिंग:* ${formData.gender}%0A` +
-        `*समस्या:* ${formData.query}`
-      : `*Kundli Consultation - Pt. Hariom Sharma Website*%0A%0A` +
-        `*Name:* ${formData.name}%0A` +
-        `*Phone:* ${formData.phone}%0A` +
-        `*DOB:* ${formData.dob}%0A` +
-        `*Time:* ${formData.tob}%0A` +
-        `*Place:* ${formData.pob}%0A` +
-        `*Gender:* ${formData.gender}%0A` +
+    const rawMessage = isHindi 
+      ? `*जय श्री महाकाल!*\n` +
+        `*कुंडली परामर्श विवरण (वेबसाइट):*\n\n` +
+        `*नाम:* ${formData.name}\n` +
+        `*फोन:* ${formData.phone}\n` +
+        `*जन्म तिथि:* ${formData.dob}\n` +
+        `*जन्म समय:* ${formData.tob}\n` +
+        `*जन्म स्थान:* ${formData.pob}\n` +
+        `*लिंग:* ${formData.gender}\n` +
+        `*समस्या/प्रश्न:* ${formData.query}`
+      : `*Jai Shree Mahakal!*\n` +
+        `*Kundli Consultation Details (Website):*\n\n` +
+        `*Name:* ${formData.name}\n` +
+        `*Phone:* ${formData.phone}\n` +
+        `*DOB:* ${formData.dob}\n` +
+        `*Time:* ${formData.tob}\n` +
+        `*Place:* ${formData.pob}\n` +
+        `*Gender:* ${formData.gender}\n` +
         `*Query:* ${formData.query}`;
 
-    // Use direct location redirection for mobile browser compatibility (avoids popup blockers)
-    window.location.href = `https://api.whatsapp.com/send?phone=919826525736&text=${message}`;
+    // Use safe URI encoding to handle special characters (&, #, %, etc.) in user input
+    window.location.href = `https://api.whatsapp.com/send?phone=919826525736&text=${encodeURIComponent(rawMessage)}`;
   };
 
   return (

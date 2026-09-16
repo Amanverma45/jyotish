@@ -167,10 +167,16 @@ const Service = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent" />
               
               <div className="absolute bottom-3 left-3 right-3 text-white text-xs sm:text-sm font-semibold flex flex-wrap gap-2">
-                <span className="bg-amber-500 text-slate-950 px-3 py-1 rounded-full font-bold flex items-center gap-1.5 shadow-sm">
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((selectedPuja.location || "Ujjain Mahakal Dham") + ", Ujjain, Madhya Pradesh")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-amber-500 hover:bg-amber-400 text-slate-950 px-3 py-1 rounded-full font-bold flex items-center gap-1.5 shadow-sm transition-colors cursor-pointer"
+                  title={isHindi ? "गूगल मैप्स पर लोकेशन देखें" : "View Location on Google Maps"}
+                >
                   <MapPin className="w-3.5 h-3.5" />
-                  <span>{selectedPuja.location || (isHindi ? "उज्जैन महाकाल धाम / सिद्ध मंदिर" : "Ujjain Sacred Temple")}</span>
-                </span>
+                  <span>{selectedPuja.location || (isHindi ? "उज्जैन महाकाल धाम / सिद्ध मंदिर" : "Ujjain Sacred Temple")} (📍 Map)</span>
+                </a>
                 <span className="bg-slate-900/80 backdrop-blur-xs px-3 py-1 rounded-full text-amber-300 border border-amber-400/40 flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5" />
                   <span>{selectedPuja.duration || (isHindi ? "अवधि: 2 - 3 घंटे" : "Duration: 2-3 Hours")}</span>

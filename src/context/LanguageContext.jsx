@@ -111,7 +111,7 @@ export const translations = {
           id: "kanha",
           name: "पं. कान्हा शर्मा जी",
           role: "कर्मकांडी विद्वान पंडित",
-          experience: "2 वर्षों का अनुभव",
+          experience: "4 वर्षों का अनुभव",
           specialty: "रुद्राभिषेक, शिव पूजन व नवग्रह जाप",
           photoKey: "kanha"
         },
@@ -119,7 +119,7 @@ export const translations = {
           id: "rishi",
           name: "पं. ऋषि गुरुजी",
           role: "वैदिक ज्योतिष व अनुष्ठान विद्वान",
-          experience: "2 वर्षों का अनुभव",
+          experience: "6 वर्षों का अनुभव",
           specialty: "कालसर्प शांति, वास्तु दोष व गृह शांति",
           photoKey: "rishi"
         },
@@ -127,7 +127,7 @@ export const translations = {
           id: "dipesh",
           name: "पं. दिपेश जोशी जी",
           role: "वैदिक कर्मकांडी पंडित",
-          experience: "1 वर्ष का अनुभव",
+          experience: "4 वर्षों का अनुभव",
           specialty: "महामृत्युंजय जाप व महाकाल अभिषेक",
           photoKey: "dipesh"
         },
@@ -135,7 +135,7 @@ export const translations = {
           id: "shivam",
           name: "पं. शिवम शर्मा जी",
           role: "कर्मकांडी एवं पूजा सहायक",
-          experience: "2 वर्षों का अनुभव",
+          experience: "5 वर्षों का अनुभव",
           specialty: "पितृदोष शांति व मंगल भात पूजा सहायक",
           photoKey: "shivam"
         }
@@ -567,7 +567,7 @@ export const translations = {
           id: "kanha",
           name: "Pt. Kanha Sharma Ji",
           role: "Vedic Scholar Pandit",
-          experience: "2 Years Exp.",
+          experience: "4 Years Exp.",
           specialty: "Rudrabhishek, Shiv Puja & Navgrah Jaap",
           photoKey: "kanha"
         },
@@ -575,7 +575,7 @@ export const translations = {
           id: "rishi",
           name: "Pt. Rishi Guruji",
           role: "Vedic Astrology & Ritual Scholar",
-          experience: "2 Years Exp.",
+          experience: "6 Years Exp.",
           specialty: "Kaal Sarp Shanti, Vastu Dosh & Grah Shanti",
           photoKey: "rishi"
         },
@@ -583,7 +583,7 @@ export const translations = {
           id: "dipesh",
           name: "Pt. Dipesh Joshi Ji",
           role: "Vedic Scholar",
-          experience: "1 Year Exp.",
+          experience: "4 Years Exp.",
           specialty: "Mahamrityunjay Jaap & Mahakal Abhishek",
           photoKey: "dipesh"
         },
@@ -591,7 +591,7 @@ export const translations = {
           id: "shivam",
           name: "Pt. Shivam Sharma Ji",
           role: "Vedic Ritual Assistant",
-          experience: "2 Years Exp.",
+          experience: "5 Years Exp.",
           specialty: "Pitru Dosh Shanti & Mangal Bhaat Puja Assistant",
           photoKey: "shivam"
         }
