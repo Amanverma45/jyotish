@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../supabaseClient';
-import { ShieldCheck, Lock, LogOut, Check, Trash2, Star, Sparkles, Filter, RefreshCw, KeyRound, Mail, ArrowLeft, UserCheck } from 'lucide-react';
+import { ShieldCheck, Lock, LogOut, Check, Trash2, Star, Sparkles, Filter, RefreshCw, KeyRound, Mail, ArrowLeft, CheckCircle2, ShieldAlert } from 'lucide-react';
 
 const Admin = () => {
   const [session, setSession] = useState(null);
@@ -9,8 +9,11 @@ const Admin = () => {
   const [loginError, setLoginError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Forgot password states
+  // Forgot password & New Password Update states
   const [isResetMode, setIsResetMode] = useState(false);
+  const [isNewPasswordMode, setIsNewPasswordMode] = useState(false);
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [resetMsg, setResetMsg] = useState({ type: '', text: '' });
 
   const [testimonials, setTestimonials] = useState([]);
@@ -18,12 +21,21 @@ const Admin = () => {
   const [fetching, setFetching] = useState(false);
 
   useEffect(() => {
+    // Check initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    // Check URL hash for recovery token or auth state change
+    if (window.location.hash.includes('type=recovery')) {
+      setIsNewPasswordMode(true);
+    }
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       setSession(session);
+      if (event === 'PASSWORD_RECOVERY') {
+        setIsNewPasswordMode(true);
+      }
     });
 
     return () => subscription.unsubscribe();
@@ -71,12 +83,56 @@ const Admin = () => {
       });
 
       if (error) {
-        setResetMsg({ type: 'error', text: `Error: ${error.message}` });
+        let errorStr = error.message;
+        if (errorStr.toLowerCase().includes('rate limit') || errorStr.toLowerCase().includes('security purposes') || error.status === 429) {
+          errorStr = 'Email rate limit exceeded! For security, Supabase allows 1 reset email per 60 seconds. Please wait 1 minute before trying again, or check your email inbox/spam folder for the link already sent.';
+        }
+        setResetMsg({ type: 'error', text: errorStr });
       } else {
         setResetMsg({
           type: 'success',
           text: 'Password reset link sent to your email! Please check your inbox and spam folder.'
         });
+      }
+    } catch (err) {
+      setResetMsg({ type: 'error', text: err.message });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleUpdateNewPassword = async (e) => {
+    e.preventDefault();
+    setResetMsg({ type: '', text: '' });
+
+    if (newPassword.length < 6) {
+      setResetMsg({ type: 'error', text: 'Password must be at least 6 characters long.' });
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      setResetMsg({ type: 'error', text: 'New password and confirmation password do not match.' });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const { error } = await supabase.auth.updateUser({
+        password: newPassword
+      });
+
+      if (error) {
+        setResetMsg({ type: 'error', text: `Failed to update password: ${error.message}` });
+      } else {
+        setResetMsg({
+          type: 'success',
+          text: 'Password updated successfully! You can now sign in with your new password.'
+        });
+        setIsNewPasswordMode(false);
+        setIsResetMode(false);
+        setNewPassword('');
+        setConfirmPassword('');
+        window.history.replaceState(null, '', window.location.pathname);
       }
     } catch (err) {
       setResetMsg({ type: 'error', text: err.message });
@@ -174,8 +230,71 @@ const Admin = () => {
           </p>
         </div>
 
-        {/* If NOT Logged In: Login or Password Reset Card */}
-        {!session ? (
+        {/* New Password Form (When user opens reset link from email) */}
+        {isNewPasswordMode ? (
+          <div className="max-w-md mx-auto bg-slate-900 border-2 border-amber-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+            <div className="text-center space-y-1 border-b border-amber-900/40 pb-4">
+              <KeyRound className="w-10 h-10 text-amber-400 mx-auto mb-2 animate-bounce" />
+              <h2 className="text-xl font-bold text-amber-200 font-serif">
+                Set New Admin Password
+              </h2>
+              <p className="text-xs text-slate-400">
+                Enter your new password below to update your account
+              </p>
+            </div>
+
+            {resetMsg.text && (
+              <div
+                className={`p-3.5 rounded-xl border text-xs font-medium ${
+                  resetMsg.type === 'error'
+                    ? 'bg-red-950/90 border-red-500/50 text-red-200'
+                    : 'bg-emerald-950/90 border-emerald-500/50 text-emerald-200'
+                }`}
+              >
+                {resetMsg.text}
+              </div>
+            )}
+
+            <form onSubmit={handleUpdateNewPassword} className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold text-amber-300 mb-1">
+                  New Password
+                </label>
+                <input
+                  type="password"
+                  required
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                  placeholder="At least 6 characters"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-amber-900/80 text-amber-100 placeholder-slate-600 focus:outline-none focus:border-amber-400 text-sm font-medium"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-amber-300 mb-1">
+                  Confirm New Password
+                </label>
+                <input
+                  type="password"
+                  required
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder="Re-enter new password"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-amber-900/80 text-amber-100 placeholder-slate-600 focus:outline-none focus:border-amber-400 text-sm font-medium"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-xl transition-all cursor-pointer disabled:opacity-50"
+              >
+                {loading ? 'Updating Password...' : 'Save & Set New Password'}
+              </button>
+            </form>
+          </div>
+        ) : !session ? (
+          /* If NOT Logged In: Login or Password Reset Request Card */
           <div className="max-w-md mx-auto bg-slate-900 border-2 border-amber-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
             
             {/* Header Icon */}
@@ -242,7 +361,10 @@ const Admin = () => {
                     </label>
                     <button
                       type="button"
-                      onClick={() => setIsResetMode(true)}
+                      onClick={() => {
+                        setIsResetMode(true);
+                        setResetMsg({ type: '', text: '' });
+                      }}
                       className="text-xs text-amber-400 hover:text-amber-300 hover:underline cursor-pointer font-medium"
                     >
                       Forgot Password?
@@ -295,7 +417,10 @@ const Admin = () => {
                 <div className="text-center pt-2">
                   <button
                     type="button"
-                    onClick={() => setIsResetMode(false)}
+                    onClick={() => {
+                      setIsResetMode(false);
+                      setResetMsg({ type: '', text: '' });
+                    }}
                     className="inline-flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 hover:underline cursor-pointer"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
