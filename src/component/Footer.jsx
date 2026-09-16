@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Phone, Mail, MapPin, MessageCircle, Heart } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Heart, Lock } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
 const Footer = () => {
@@ -130,8 +130,12 @@ const Footer = () => {
 
         <div className="mt-8 pt-4 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
           <p>© {new Date().getFullYear()} {t.footer.designedFor}. {t.footer.rights}</p>
-          <div className="flex items-center gap-1 text-amber-400/80">
+          <div className="flex items-center gap-4 text-amber-400/80">
             <span>{isHindi ? 'उज्जैन महाकालेश्वर धाम' : 'Ujjain Mahakaleshwar Dham'}</span>
+            <Link to="/admin" className="text-slate-600 hover:text-amber-400 transition-colors flex items-center gap-1 text-[11px]" title="Admin Portal">
+              <Lock className="w-3 h-3" />
+              <span>Admin</span>
+            </Link>
           </div>
         </div>
       </div>

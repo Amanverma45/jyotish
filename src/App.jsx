@@ -13,6 +13,7 @@ import Kundli from './component/kundli';
 import Contact from './component/contact';
 import Festivals from './component/festivals';
 import Gallery from './component/Gallery';
+import Admin from './component/Admin';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/kundli" element={<Kundli />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/admin" element={<Admin />} />
             </Routes>
           </div>
 
