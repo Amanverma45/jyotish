@@ -128,8 +128,23 @@ const Footer = () => {
 
         </div>
 
-        <div className="mt-8 pt-4 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div className="mt-8 pt-4 border-t border-slate-800 text-center text-xs text-slate-400 flex flex-col md:flex-row justify-between items-center gap-3">
           <p>© {new Date().getFullYear()} {t.footer.designedFor}. {t.footer.rights}</p>
+          
+          <p className="text-slate-400 text-xs flex items-center gap-1 font-medium">
+            <span>Developed by</span>
+            <span className="font-bold text-amber-300">Aman Verma</span>
+            <span>·</span>
+            <a
+              href="https://webforge-lab.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-400 hover:text-amber-300 font-bold hover:underline transition-colors"
+            >
+              WebForge Lab
+            </a>
+          </p>
+
           <div className="flex items-center gap-4 text-amber-400/80">
             <span>{isHindi ? 'उज्जैन महाकालेश्वर धाम' : 'Ujjain Mahakaleshwar Dham'}</span>
             <Link to="/admin" className="text-slate-600 hover:text-amber-400 transition-colors flex items-center gap-1 text-[11px]" title="Admin Portal">
