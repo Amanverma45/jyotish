@@ -151,7 +151,7 @@ const Testimonials = () => {
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-amber-400" />
               <span className="text-xs sm:text-sm font-bold">
-                {isHindi ? `एडमिन मोड सक्रिय (${session.user.email})` : `Admin Mode Active (${session.user.email})`}
+                {isHindi ? `एडमिन मोड सक्रिय (${session?.user?.email || 'Admin'})` : `Admin Mode Active (${session?.user?.email || 'Admin'})`}
               </span>
             </div>
             <div className="flex items-center gap-3">
