@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Star, Quote, Sparkles, PlusCircle, CheckCircle2, MessageSquarePlus, UserCheck, ShieldCheck, Check, Trash2, LogOut } from 'lucide-react';
-import { supabase } from '../supabaseClient';
+import { supabase, isSupabaseConfigured } from '../supabaseClient';
 import { Link } from 'react-router-dom';
 
 const Testimonials = () => {
@@ -62,6 +62,13 @@ const Testimonials = () => {
   const handleAddReview = async (e) => {
     e.preventDefault();
     if (!name.trim() || !review.trim()) return;
+
+    if (!isSupabaseConfigured) {
+      alert(isHindi 
+        ? 'त्रुटि: Vercel पर Environment Variables (VITE_SUPABASE_URL & VITE_SUPABASE_ANON_KEY) कॉन्फ़िगर नहीं हैं! कृपया Vercel Settings -> Environment Variables में मान जोड़ें।'
+        : 'Error: Supabase environment variables missing on Vercel! Please configure VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in Vercel Settings.');
+      return;
+    }
 
     try {
       const { error } = await supabase

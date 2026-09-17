@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseClient';
+import { supabase, isSupabaseConfigured } from '../supabaseClient';
 import { ShieldCheck, Lock, LogOut, Check, Trash2, Star, Sparkles, Filter, RefreshCw, KeyRound, Mail, ArrowLeft, CheckCircle2, ShieldAlert } from 'lucide-react';
 
 const Admin = () => {
@@ -313,6 +313,24 @@ const Admin = () => {
                   : 'Enter your Supabase Auth admin credentials to manage testimonials'}
               </p>
             </div>
+
+            {/* Missing Supabase Env Vars Alert for Vercel */}
+            {!isSupabaseConfigured && (
+              <div className="p-4 rounded-xl bg-amber-950/90 border border-amber-500/80 text-amber-200 text-xs space-y-2">
+                <div className="flex items-center gap-2 text-amber-400 font-bold">
+                  <ShieldAlert className="w-5 h-5 shrink-0" />
+                  <span>Vercel Configuration Alert</span>
+                </div>
+                <p>
+                  Vercel environment variables missing! Localhost works because `.env` exists locally, but `.env` is ignored by Git and not uploaded to Vercel.
+                </p>
+                <div className="bg-slate-950 p-2.5 rounded-lg border border-amber-900/60 font-mono text-[11px] text-amber-300">
+                  Add to Vercel Settings -&gt; Environment Variables:<br/>
+                  • <strong>VITE_SUPABASE_URL</strong><br/>
+                  • <strong>VITE_SUPABASE_ANON_KEY</strong>
+                </div>
+              </div>
+            )}
 
             {/* Login Error Alert */}
             {!isResetMode && loginError && (
