@@ -72,7 +72,7 @@ const FloatingButtons = () => {
         {/* Email Button */}
         <div className="relative group animate-float-slow">
           <a
-            href="mailto:hariomsharma@gmail.com"
+            href="mailto:jyotishhariomsharma@gmail.com"
             aria-label="Send Email"
             className="relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-tr from-red-900 via-red-800 to-red-700 hover:from-red-800 hover:to-red-600 text-white shadow-xl shadow-red-950/40 border-2 border-white hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
           >

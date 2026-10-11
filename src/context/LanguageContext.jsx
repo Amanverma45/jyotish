@@ -410,7 +410,7 @@ export const translations = {
     // Contact Details
     contactInfo: {
       phone: "+91-9826525736",
-      email: "hariomsharma@gmail.com",
+      email: "jyotishhariomsharma@gmail.com",
       address: "रामघाट मार्ग, महाकालेश्वर मंदिर के पास, उज्जैन (म.प्र.) 456001",
       homeAddress: "L 04 /2, श्री सिटी , दाउदखेडी उज्जैन- 456006"
     },
@@ -428,7 +428,7 @@ export const translations = {
       homeAddressTitle: "गृह एवं स्थायी निवास पता",
       homeAddressDesc: "L 04 /2, श्री सिटी , दाउदखेडी उज्जैन- 456006",
       emailTitle: "ईमेल पता",
-      emailDesc: "hariomsharma@gmail.com",
+      emailDesc: "jyotishhariomsharma@gmail.com",
       timingTitle: "संपर्क व परामर्श समय",
       timingDesc: "प्रातः 07:00 बजे से रात्रि 10:00 बजे तक (प्रतिदिन)",
       sendMessage: "संदेश भेजें"
@@ -866,7 +866,7 @@ export const translations = {
     // Contact Details
     contactInfo: {
       phone: "+91-9826525736",
-      email: "hariomsharma@gmail.com",
+      email: "jyotishhariomsharma@gmail.com",
       address: "Ramghat Marg, Near Mahakaleshwar Temple, Ujjain (M.P.) 456001",
       homeAddress: "L 04 /2, Shree City, Daudkhedi Ujjain - 456006"
     },
@@ -884,7 +884,7 @@ export const translations = {
       homeAddressTitle: "Home & Permanent Address",
       homeAddressDesc: "L 04 /2, Shree City, Daudkhedi Ujjain - 456006",
       emailTitle: "Email Address",
-      emailDesc: "hariomsharma@gmail.com",
+      emailDesc: "jyotishhariomsharma@gmail.com",
       timingTitle: "Consultation Timings",
       timingDesc: "07:00 AM to 10:00 PM (Daily)",
       sendMessage: "Send Message"

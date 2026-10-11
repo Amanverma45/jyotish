@@ -158,8 +158,8 @@ const Contact = () => {
                 <h3 className="text-lg font-bold font-serif text-slate-900">
                   {t?.contact?.emailTitle || (isHindi ? "ईमेल पता" : "Email Address")}
                 </h3>
-                <a href="mailto:hariomsharma@gmail.com" className="text-sm text-red-900 hover:underline font-bold mt-1 block">
-                  {t?.contact?.emailDesc || "hariomsharma@gmail.com"}
+                <a href="mailto:jyotishhariomsharma@gmail.com" className="text-sm text-red-900 hover:underline font-bold mt-1 block">
+                  {t?.contact?.emailDesc || "jyotishhariomsharma@gmail.com"}
                 </a>
               </div>
             </div>
